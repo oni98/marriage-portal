@@ -2,29 +2,21 @@
 @section('title', 'Home')
 @section('content')
     <!-- Splash Screen -->
-    <div class="splash">
+    {{-- <div class="splash">
         <div class="splash-content">
             <img id="splash-gif" src="{{ asset('assets/frontend/img/home/splash.gif') }}" alt="Logo">
         </div>
-    </div>
-    <!-- Hero Slider -->
-    <div class="hero-slider ">
-        <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
-            <div class="carousel-inner hero-slider">
-                <div class="carousel-item active slider-container">
-                    <img class="d-block" src="{{ asset('assets/frontend/img/home/slider/marriage.webp') }}"
-                        alt="Bidhoba Bibah">
-                </div>
-                <div class="carousel-item">
-                    <img class="d-block" src="{{ asset('assets/frontend/img/home/slider/marriage1.webp') }}"
-                        alt="Second slide">
-                </div>
-            </div>
-        </div>
-    </div>
+    </div> --}}
+    <!-- Hero Video -->
+    <video width="100%" height="100%" playsinline autoplay muted loop class="hero-video">
+        <source src="{{ asset('assets/frontend/img/home/marriage-media.mp4') }}" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
+    <div id="stickyNav"></div>
 
     <!-- Why Choose Us -->
-    <div class="container mb-5">
+    <div class="container mb-5" id="choose">
         <div class="achievement mt-5 pt-4">
             <h2 class="text-center mb-5 text-primary font-weight-bolder text-uppercase">Why Choose Biye Media</h2>
             <div class="row mb-5">
@@ -376,7 +368,70 @@
             </div>
         </div>
     </div>
+
 @endsection
 @push('js')
     <script src="{{ asset('assets/frontend/js/clock.js') }}"></script>
+
+    <script>
+        var navbar = document.querySelector(".navbar");
+        navbar.style.background = "transparent";
+        document.getElementById("navBrand").style.display = "none";
+
+        var section = document.querySelector("#stickyNav");
+
+        window.addEventListener("scroll", function() {
+            if (window.pageYOffset >= section.offsetTop) {
+                document.getElementById("navBrand").style.display = "block";
+                navbar.style.backgroundImage = "linear-gradient(to right, #ffdaea , #4f9f49)";
+                navbar.style.transitionTimingFunction = "background-image .5s ease";
+            } else {
+                navbar.style.background = "transparent";
+                document.getElementById("navBrand").style.display = "none";
+            }
+        });
+    </script>
+    <script>
+        var images = [
+            "url('assets/frontend/img/menu.png')",
+            "url('assets/frontend/img/menu-hover.png')"
+        ];
+
+        var menus = document.querySelectorAll(".menuItem1, .menuItem2, .menuItem3, .menuItem4, .menuItem5");
+        var currentImage = 0;
+
+        setInterval(function() {
+            currentImage = (currentImage + 1) % images.length;
+            menus.forEach(function(menu) {
+                menu.style.backgroundImage = images[currentImage];
+                for (var i = 0; i < menus.length; i++) {
+                    menus[i].style.backgroundImage = images[currentImage];
+                    menus[i].style.height = "75px";
+                    menus[i].style.backgroundRepeat = "no-repeat";
+                    menus[i].style.backgroundSize = "cover";
+
+                    if (currentImage == 0) {
+                        menus[i].addEventListener("mouseover", function() {
+                            this.style.backgroundImage =
+                                "url('assets/frontend/img/menu-hover.png')";
+                        });
+
+                        menus[i].addEventListener("mouseout", function() {
+                            this.style.backgroundImage = "url('assets/frontend/img/menu.png')";
+                        });
+                    } else {
+                        menus[i].addEventListener("mouseover", function() {
+                            this.style.backgroundImage = "url('assets/frontend/img/menu.png')";
+                        });
+
+                        menus[i].addEventListener("mouseout", function() {
+                            this.style.backgroundImage =
+                                "url('assets/frontend/img/menu-hover.png')";
+                        });
+                    }
+
+                }
+            });
+        }, 7000);
+    </script>
 @endpush

@@ -295,8 +295,11 @@ a:not(.btn-social-icon):not(.btn-social):not(.page-link) .fab {
 
 .navbar-color{
     background-image: linear-gradient(to right, #ffdaea , #4f9f49);
+    /* background: transparent; */
+
 }
-.menu-wrapper li {
+
+#menu li {
     background-image: url(../img/menu.png);
     height: 75px;
     background-repeat: no-repeat;
@@ -304,7 +307,7 @@ a:not(.btn-social-icon):not(.btn-social):not(.page-link) .fab {
     list-style-type: none;
 }
 
-.menu-wrapper li:hover {
+#menu li:hover {
     background-image: url(../img/menu-hover.png);
 }
 
@@ -368,6 +371,10 @@ a:not(.btn-social-icon):not(.btn-social):not(.page-link) .fab {
 .hero-slider .carousel-item img {
     width: 100%;
     height: 600px;
+}
+
+.hero-video{
+    margin-top: -80px;
 }
 
 .nav-dropdown {
@@ -612,43 +619,6 @@ a:not(.btn-social-icon):not(.btn-social):not(.page-link) .fab {
     background-image: url(../img/home/button-send-pink.png);
     
 }
-/* .hover-switch>img {
-    width: 35%;
-    position: absolute;
-    top: 65%;
-    left: 2%;
-    margin-top: 5%;
-}
-
-.hover-switch.send>img {
-    top: 80%;
-    left: 4%;
-} */
-
-/* 
-   * Show the last image by default
-  */
-/* .hover-switch>img:last-of-type {
-    opacity: 1;
-    transition: opacity 0.5s ease-in-out;
-    -moz-transition: opacity 0.5s ease-in-out;
-    -webkit-transition: opacity 0.5s ease-in-out;
-}
-
-.hover-switch>img:first-of-type {
-    opacity: 0;
-} */
-
-/* 
-   * Hide the last image on hover
-  */
-/* .hover-switch:hover>img:last-of-type {
-    opacity: 0;
-}
-
-.hover-switch:hover>img:first-of-type {
-    opacity: 1;
-} */
 
 .scroll-top {
     background: url(../img/up-arrow.png);
