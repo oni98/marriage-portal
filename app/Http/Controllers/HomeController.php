@@ -26,4 +26,19 @@ class HomeController extends Controller
         $unions = Union::all();
         return view('frontend.register', ['divisions' => $divisions, 'districts' => $districts, 'upazilas' => $upazilas, 'unions' => $unions]);
     }
+
+    public function fetchDistricts($id){
+        $districts = District::where('division_id', $id)->get();
+        return response()->json($districts);
+    }
+
+    public function fetchUpazilas($id){
+        $upazilas = Upazila::where('district_id', $id)->get();
+        return response()->json($upazilas);
+    }
+
+    public function fetchUnions($id){
+        $unions = Union::where('upazila_id', $id)->get();
+        return response()->json($unions);
+    }
 }

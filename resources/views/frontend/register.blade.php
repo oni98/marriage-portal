@@ -3,7 +3,8 @@
 @section('content')
     <div class="container">
         <div class="register-form" id="register">
-            <form>
+            <form method="POST" action="{{ route('register.profile') }}" enctype="multipart/form-data">
+                @csrf
                 <h4 class="text-primary font-weight-bold">Basic Information</h4>
                 <div class="form-row align-items-center">
                     <div class="col-md-6 my-1 pr-4">
@@ -36,7 +37,7 @@
                                         src="{{ asset('assets/frontend/img/register-form/Bride-Groom.png') }}"
                                         alt="" width="30px"></div>
                             </div>
-                            <select class="form-control select" name="user_looking_for" id="">
+                            <select class="form-control select" name="looking_for" id="">
                                 <option selected disabled>যে কোনো একটি সিলেক্ট করুন</option>
                                 <option value="Bride">Bride</option>
                                 <option value="Groom">Groom</option>
@@ -55,8 +56,7 @@
                                         src="{{ asset('assets/frontend/img/register-form/Name.png') }}" alt=""
                                         width="30px"></div>
                             </div>
-                            <input type="text" name="candidate_name" class="form-control"
-                                placeholder="আপনার পুরো নাম লিখুন">
+                            <input type="text" name="name" class="form-control" placeholder="আপনার পুরো নাম লিখুন">
                         </div>
                     </div>
                     <div class="col-md-6 my-1 pr-4">
@@ -67,7 +67,7 @@
                                         src="{{ asset('assets/frontend/img/register-form/Name.png') }}" alt=""
                                         width="30px"></div>
                             </div>
-                            <input type="text" name="candidate_surname" class="form-control" placeholder="বংশ">
+                            <input type="text" name="surname" class="form-control" placeholder="বংশ">
                         </div>
                     </div>
                 </div>
@@ -81,7 +81,7 @@
                                         src="{{ asset('assets/frontend/img/register-form/Religion.png') }}" alt=""
                                         width="30px"></div>
                             </div>
-                            <select name="user_religion" id="user_religion" class="form-control ">
+                            <select name="religion" id="religion" class="form-control ">
                                 <option selected disabled>যে কোনো একটি সিলেক্ট করুন</option>
                                 <option value="1">Muslim</option>
                                 <option value="2">Hindu</option>
@@ -100,7 +100,7 @@
                                         src="{{ asset('assets/frontend/img/register-form/Caste.png') }}" alt=""
                                         width="30px"></div>
                             </div>
-                            <select class="form-control select" name="" id="">
+                            <select class="form-control select" name="caste" id="">
                                 <option selected disabled>যে কোনো একটি সিলেক্ট করুন</option>
                                 <option value=""></option>
                             </select>
@@ -118,7 +118,7 @@
                                         src="{{ asset('assets/frontend/img/register-form/Date-of-Birth.png') }}"
                                         alt="" width="30px"></div>
                             </div>
-                            <input type="date" class="form-control" date-format="dd/mm/yy">
+                            <input type="date" class="form-control" date-format="dd/mm/yy" name="dob">
                         </div>
                     </div>
                     <div class="col-md-6 my-1 pr-4">
@@ -130,7 +130,7 @@
                                         src="{{ asset('assets/frontend/img/register-form/Marital-Status.png') }}"
                                         alt="" width="30px"></div>
                             </div>
-                            <select name="user_marital_status" id="" class="form-control ">
+                            <select name="marital_status" id="" class="form-control ">
                                 <option selected disabled>সিলেক্ট করুন</option>
                                 <option value="1">Never Married</option>
                                 <option value="2">Widowed</option>
@@ -152,7 +152,7 @@
                                         src="{{ asset('assets/frontend/img/register-form/Education.png') }}"
                                         alt="" width="30px"></div>
                             </div>
-                            <select name="user_high_education" id="" class="form-control ">
+                            <select name="education" id="" class="form-control ">
                                 <option selected disabled>সিলেক্ট করুন</option>
                                 <option value="1">Associates Degree</option>
                                 <option value="2">Bachelor</option>
@@ -198,7 +198,7 @@
                                         src="{{ asset('assets/frontend/img/register-form/Profession.png') }}"
                                         alt="" width="30px"></div>
                             </div>
-                            <select name="user_profession" id="" class="form-control ">
+                            <select name="profession" id="" class="form-control ">
                                 <option value="" selected="" disabled="">Select Profession</option>
                                 <option value="1">Not working</option>
                                 <option value="3">Non-mainstream professional</option>
@@ -339,7 +339,7 @@
                                         src="{{ asset('assets/frontend/img/register-form/Division.png') }}"
                                         alt="" width="30px"></div>
                             </div>
-                            <select class="form-control select2" name="" id="division" v-on:keyup="division({{ $division->id }})">
+                            <select class="form-control select2" name="division" id="division">
                                 <option selected disabled>সিলেক্ট করুন</option>
                                 @foreach ($divisions as $division)
                                     <option value="{{ $division->id }}">{{ $division->name }}</option>
@@ -356,7 +356,7 @@
                                         src="{{ asset('assets/frontend/img/register-form/District.png') }}"
                                         alt="" width="30px"></div>
                             </div>
-                            <select class="form-control select2" name="" id="district">
+                            <select class="form-control select2" name="district" id="district">
                                 <option selected disabled>সিলেক্ট করুন</option>
                                 @foreach ($districts as $district)
                                     <option value="{{ $district->id }}">{{ $district->name }}</option>
@@ -376,7 +376,7 @@
                                         src="{{ asset('assets/frontend/img/register-form/Upazila-City.png') }}"
                                         alt="" width="30px"></div>
                             </div>
-                            <select class="form-control select2" name="" id="upazila">
+                            <select class="form-control select2" name="upazila" id="upazila">
                                 <option selected disabled>সিলেক্ট করুন</option>
                                 @foreach ($upazilas as $upazila)
                                     <option value="{{ $upazila->id }}">{{ $upazila->name }}</option>
@@ -393,7 +393,7 @@
                                         src="{{ asset('assets/frontend/img/register-form/Village.png') }}" alt=""
                                         width="30px"></div>
                             </div>
-                            <select class="form-control select2" name="" id="union">
+                            <select class="form-control select2" name="union" id="union">
                                 <option selected disabled>সিলেক্ট করুন</option>
                                 @foreach ($unions as $union)
                                     <option value="{{ $union->id }}">{{ $union->name }}</option>
@@ -413,7 +413,8 @@
                                         src="{{ asset('assets/frontend/img/register-form/Area.png') }}" alt=""
                                         width="30px"></div>
                             </div>
-                            <input type="text" class="form-control" placeholder="আপনার এলাকার নাম লিখুন">
+                            <input type="text" name="area" class="form-control"
+                                placeholder="আপনার এলাকার নাম লিখুন">
                         </div>
                     </div>
                     <div class="col-md-6 my-1 pr-4">
@@ -425,9 +426,14 @@
                                         src="{{ asset('assets/frontend/img/register-form/Resident.png') }}"
                                         alt="" width="30px"></div>
                             </div>
-                            <select class="form-control select" name="" id="">
+                            <select name="present_residence_status" id="" class="form-control select">
                                 <option selected disabled>সিলেক্ট করুন</option>
-                                <option value=""></option>
+                                <option value="1"> Citizen </option>
+                                <option value="2"> Permanent Resident </option>
+                                <option value="3"> Student Visa </option>
+                                <option value="4"> Temporary Visa </option>
+                                <option value="5"> Work Permit </option>
+                                <option value="6"> Rental Residence </option>
                             </select>
                         </div>
                     </div>
@@ -444,7 +450,7 @@
                                         src="{{ asset('assets/frontend/img/register-form/Email.png') }}" alt=""
                                         width="30px"></div>
                             </div>
-                            <input type="text" class="form-control" placeholder="আপনার ইমেইল এড্রেস লিখুন">
+                            <input type="email" name="email" class="form-control" placeholder="আপনার ইমেইল এড্রেস লিখুন">
                         </div>
                     </div>
                     <div class="col-md-6 my-1 pr-4">
@@ -456,7 +462,7 @@
                                         src="{{ asset('assets/frontend/img/register-form/WhatsApp.png') }}"
                                         alt="" width="30px"></div>
                             </div>
-                            <input type="text" class="form-control" placeholder="আপনার হোয়াটসঅ্যাপ নাম্বার লিখুন">
+                            <input type="text" name="whatsapp" class="form-control" placeholder="আপনার হোয়াটসঅ্যাপ নাম্বার লিখুন">
                         </div>
                     </div>
                 </div>
@@ -471,7 +477,7 @@
                                         src="{{ asset('assets/frontend/img/register-form/Phone.png') }}" alt=""
                                         width="30px"></div>
                             </div>
-                            <input type="text" class="form-control" placeholder="আপনার মোবাইল নাম্বার লিখুন">
+                            <input type="text" name="phone" class="form-control" placeholder="আপনার মোবাইল নাম্বার লিখুন">
                         </div>
                     </div>
                     <div class="col-md-6 my-1 pr-4">
@@ -483,7 +489,7 @@
                                         src="{{ asset('assets/frontend/img/register-form/Guardian-phone.png') }}"
                                         alt="" width="30px"></div>
                             </div>
-                            <input type="text" class="form-control" placeholder="অভিভাবকের মোবাইল নাম্বার লিখুন">
+                            <input type="text" name="guardian_phone" class="form-control" placeholder="অভিভাবকের মোবাইল নাম্বার লিখুন">
                         </div>
                     </div>
                 </div>
@@ -498,7 +504,7 @@
                                         src="{{ asset('assets/frontend/img/register-form/Password.png') }}"
                                         alt="" width="30px"></div>
                             </div>
-                            <input type="text" class="form-control" placeholder="আপনার পাসওয়ার্ড লিখুন">
+                            <input type="password" name="password" class="form-control" placeholder="আপনার পাসওয়ার্ড লিখুন" autocomplete="off">
                         </div>
                     </div>
                     <div class="col-md-6 my-1 pr-4">
@@ -510,7 +516,7 @@
                                         src="{{ asset('assets/frontend/img/register-form/Confirm-Password.png') }}"
                                         alt="" width="30px"></div>
                             </div>
-                            <input type="text" class="form-control" placeholder="আপনার পাসওয়ার্ডটি পুনরায় লিখুন">
+                            <input type="password" name="confirm_password" class="form-control" placeholder="আপনার পাসওয়ার্ডটি পুনরায় লিখুন" autocomplete="off">
                         </div>
                     </div>
                 </div>
@@ -534,18 +540,55 @@
 
 @push('js')
     <script>
-        let app = new Vue({
-            el: '#register',
-            data: {
-            },
-            methods: {
-                division: function(id){
-                    console.log(id);
-                }
-            },
-            created: function() {
-                
-            }
+        $(document).ready(function() {
+            $('#division').change(function() {
+                var divisionId = $(this).val();
+                $.ajax({
+                    url: '/get-districts/' + divisionId,
+                    type: 'GET',
+                    dataType: 'json',
+                    success: function(districts) {
+                        $('#district').empty();
+                        $('#district').append('<option selected disabled>Select</option>');
+                        $.each(districts, function(index, district) {
+                            $('#district').append('<option value="' + district.id +
+                                '">' + district.name + '</option>');
+                        });
+                    }
+                });
+            });
+            $('#district').change(function() {
+                var districtId = $(this).val();
+                $.ajax({
+                    url: '/get-upazilas/' + districtId,
+                    type: 'GET',
+                    dataType: 'json',
+                    success: function(upazilas) {
+                        $('#upazila').empty();
+                        $('#upazila').append('<option selected disabled>Select</option>');
+                        $.each(upazilas, function(index, upazila) {
+                            $('#upazila').append('<option value="' + upazila.id + '">' +
+                                upazila.name + '</option>');
+                        });
+                    }
+                });
+            });
+            $('#upazila').change(function() {
+                var upazilaId = $(this).val();
+                $.ajax({
+                    url: '/get-unions/' + upazilaId,
+                    type: 'GET',
+                    dataType: 'json',
+                    success: function(unions) {
+                        $('#union').empty();
+                        $('#union').append('<option selected disabled>Select</option>');
+                        $.each(unions, function(index, union) {
+                            $('#union').append('<option value="' + union.id + '">' +
+                                union.name + '</option>');
+                        });
+                    }
+                });
+            });
         });
     </script>
 @endpush

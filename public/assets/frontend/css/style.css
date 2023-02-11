@@ -659,6 +659,11 @@ a:hover {
     color: var(--primary);
 }
 
+.notify{
+    z-index: 999 !important;
+    align-items: flex-end !important;
+}
+
 /* #choose {
     position: relative;
 }
