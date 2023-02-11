@@ -339,7 +339,7 @@
                                         src="{{ asset('assets/frontend/img/register-form/Division.png') }}"
                                         alt="" width="30px"></div>
                             </div>
-                            <select class="form-control select2" name="" id="division">
+                            <select class="form-control select2" name="" id="division" v-on:keyup="division({{ $division->id }})">
                                 <option selected disabled>সিলেক্ট করুন</option>
                                 @foreach ($divisions as $division)
                                     <option value="{{ $division->id }}">{{ $division->name }}</option>
@@ -534,12 +534,17 @@
 
 @push('js')
     <script>
-        const app = new Vue({
+        let app = new Vue({
             el: '#register',
             data: {
             },
             methods: {
-
+                division: function(id){
+                    console.log(id);
+                }
+            },
+            created: function() {
+                
             }
         });
     </script>
