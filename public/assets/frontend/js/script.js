@@ -1,13 +1,6 @@
 // document.addEventListener('contextmenu', event => event.preventDefault());
 
-var splashGif = new Image();
-splashGif.src = "/assets/loader.gif";
-splashGif.onload = function() {
-  var duration = splashGif.naturalWidth; // assuming 10 frames per second
-  setTimeout(function() {
-    document.querySelector(".splash").style.display = "none";
-  }, duration * 5);
-}
+$('.select2').select2();
 
 $(document).ready(function () {
     if ($(window).width() > 991) {
@@ -22,7 +15,6 @@ $(document).ready(function () {
 $('.carousel').carousel({
     interval: 2000
 })
-
 
 // ScrollBar
 function scrollToTop() {

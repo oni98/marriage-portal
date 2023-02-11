@@ -2,11 +2,11 @@
 @section('title', 'Home')
 @section('content')
     <!-- Splash Screen -->
-    {{-- <div class="splash">
+    <div class="splash">
         <div class="splash-content">
             <img id="splash-gif" src="{{ asset('assets/frontend/img/home/splash.gif') }}" alt="Logo">
         </div>
-    </div> --}}
+    </div>
     <!-- Hero Video -->
     <video width="100%" height="100%" playsinline autoplay muted loop class="hero-video">
         <source src="{{ asset('assets/frontend/img/home/marriage-media.mp4') }}" type="video/mp4">
@@ -145,7 +145,7 @@
                     <img src="{{ asset('assets/frontend/img/home/badge.png') }}" alt="" width="100%">
                 </div>
                 <div class="col-md-6">
-                    <h4 class="text-primary font-weight-bolder text-uppercase">9-Points Verification System</h4>
+                    <h4 class="text-primary font-weight-bolder text-uppercase">Rainbow Verification System</h4>
                     <p class="text-justify py-4">Biye Media or <a href="https://www.facebook.com/biyemedia" target="_blank">
                             Marriage Media BD </a>uses unique 9-Points Trust and Safety features, for the
                         security of our members, called “Verification Badges” that display on member profiles after they
@@ -369,10 +369,19 @@
         </div>
     </div>
 
+    {{-- Zoom Cursor --}}
+    {{-- <div class="cursor"></div> --}}
 @endsection
 @push('js')
     <script src="{{ asset('assets/frontend/js/clock.js') }}"></script>
 
+    {{-- <script>
+        const cursor = document.querySelector(".cursor");
+        document.addEventListener('mousemove', (e) => {
+            cursor.style.left = e.pageX + 'px';
+            cursor.style.top = e.pageY + 'px';
+        })
+    </script> --}}
     <script>
         var navbar = document.querySelector(".navbar");
         navbar.style.background = "transparent";
@@ -392,6 +401,13 @@
         });
     </script>
     <script>
+        window.onload = function() {
+            setTimeout(function() {
+                document.querySelector('.splash').style.display = 'none';
+            }, 7000);
+        };
+    </script>
+    <script>
         var images = [
             "url('assets/frontend/img/menu.png')",
             "url('assets/frontend/img/menu-hover.png')"
@@ -399,6 +415,7 @@
 
         var menus = document.querySelectorAll(".menuItem1, .menuItem2, .menuItem3, .menuItem4, .menuItem5");
         var currentImage = 0;
+        var interval = 8000;
 
         setInterval(function() {
             currentImage = (currentImage + 1) % images.length;
@@ -432,6 +449,7 @@
 
                 }
             });
-        }, 7000);
+            interval = (interval == 8000) ? 6000 : 8000;
+        }, interval);
     </script>
 @endpush
