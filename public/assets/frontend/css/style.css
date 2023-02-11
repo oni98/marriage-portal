@@ -57,7 +57,7 @@
 
 * {
     font-family: "Philosopher-Bold", sans-serif !important;
-    cursor: url('../img/cursor.png'), auto;
+    /* cursor: url('../img/cursor.png'), auto; */
 }
 
 
@@ -553,11 +553,22 @@ a:not(.btn-social-icon):not(.btn-social):not(.page-link) .fab {
     }
 }
 
-.form-control {
+.form-control{
     height: 38px;
     background: #f0ffec;
     border-radius: 0px;
     box-shadow: inset 2px 2px 2px -1px #000000;
+}
+
+#select2--container, .select2, .select2-container--default .select2-selection--single {
+    height: 37px;
+    background: #f0ffec;
+    border-radius: 0px;
+    box-shadow: inset 2px 2px 2px -1px #000000;
+    font-size: 1rem;
+    font-weight: 600;
+    line-height: 2.5;
+    color: #495057;
 }
 
 .form-control::placeholder {
@@ -647,3 +658,22 @@ a:hover {
     text-decoration: none;
     color: var(--primary);
 }
+
+/* #choose {
+    position: relative;
+}
+.cursor {
+    position: fixed !important;
+    width: 20px !important;
+    height: 20px !important;
+    border-radius: 50% !important;
+    background: #fff !important;
+    transition: 0.1s !important;
+    transform: translate(-50%, -50%) !important;
+    pointer-events: none !important;
+    mix-blend-mode: difference !important;
+}
+
+#choose:hover ~ .cursor {
+    transform: scale(6);
+} */

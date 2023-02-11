@@ -2,7 +2,7 @@
 @section('title', 'Create Profile')
 @section('content')
     <div class="container">
-        <div class="register-form">
+        <div class="register-form" id="register">
             <form>
                 <h4 class="text-primary font-weight-bold">Basic Information</h4>
                 <div class="form-row align-items-center">
@@ -315,7 +315,7 @@
 
                 <h4 class="text-primary font-weight-bold mt-5">Present Location</h4>
                 <div class="form-row align-items-center">
-                    <div class="col-md-6 my-1 pr-4">
+                    {{-- <div class="col-md-6 my-1 pr-4">
                         <label class="font-weight-bold" for="inlineFormInputGroupUsername">Country Of Present Location
                             <span class="text-danger">*</span></label>
                         <div class="input-group">
@@ -329,7 +329,7 @@
                                 <option value=""></option>
                             </select>
                         </div>
-                    </div>
+                    </div> --}}
                     <div class="col-md-6 my-1 pr-4">
                         <label class="font-weight-bold" for="inlineFormInputGroupUsername">Present Division <span
                                 class="text-danger">*</span></label>
@@ -339,15 +339,14 @@
                                         src="{{ asset('assets/frontend/img/register-form/Division.png') }}"
                                         alt="" width="30px"></div>
                             </div>
-                            <select class="form-control select" name="" id="">
+                            <select class="form-control select2" name="" id="division" v-on:keyup="division({{ $division->id }})">
                                 <option selected disabled>সিলেক্ট করুন</option>
-                                <option value=""></option>
+                                @foreach ($divisions as $division)
+                                    <option value="{{ $division->id }}">{{ $division->name }}</option>
+                                @endforeach
                             </select>
                         </div>
                     </div>
-                </div>
-
-                <div class="form-row align-items-center">
                     <div class="col-md-6 my-1 pr-4">
                         <label class="font-weight-bold" for="inlineFormInputGroupUsername">Present District
                             <span class="text-danger">*</span></label>
@@ -357,12 +356,17 @@
                                         src="{{ asset('assets/frontend/img/register-form/District.png') }}"
                                         alt="" width="30px"></div>
                             </div>
-                            <select class="form-control select" name="" id="">
+                            <select class="form-control select2" name="" id="district">
                                 <option selected disabled>সিলেক্ট করুন</option>
-                                <option value=""></option>
+                                @foreach ($districts as $district)
+                                    <option value="{{ $district->id }}">{{ $district->name }}</option>
+                                @endforeach
                             </select>
                         </div>
                     </div>
+                </div>
+
+                <div class="form-row align-items-center">
                     <div class="col-md-6 my-1 pr-4">
                         <label class="font-weight-bold" for="inlineFormInputGroupUsername">Present Upazila / City <span
                                 class="text-danger">*</span></label>
@@ -372,15 +376,14 @@
                                         src="{{ asset('assets/frontend/img/register-form/Upazila-City.png') }}"
                                         alt="" width="30px"></div>
                             </div>
-                            <select class="form-control select" name="" id="">
+                            <select class="form-control select2" name="" id="upazila">
                                 <option selected disabled>সিলেক্ট করুন</option>
-                                <option value=""></option>
+                                @foreach ($upazilas as $upazila)
+                                    <option value="{{ $upazila->id }}">{{ $upazila->name }}</option>
+                                @endforeach
                             </select>
                         </div>
                     </div>
-                </div>
-
-                <div class="form-row align-items-center">
                     <div class="col-md-6 my-1 pr-4">
                         <label class="font-weight-bold" for="inlineFormInputGroupUsername">Village / Area <span
                                 class="text-danger">*</span></label>
@@ -390,12 +393,17 @@
                                         src="{{ asset('assets/frontend/img/register-form/Village.png') }}" alt=""
                                         width="30px"></div>
                             </div>
-                            <select class="form-control select" name="" id="">
+                            <select class="form-control select2" name="" id="union">
                                 <option selected disabled>সিলেক্ট করুন</option>
-                                <option value=""></option>
+                                @foreach ($unions as $union)
+                                    <option value="{{ $union->id }}">{{ $union->name }}</option>
+                                @endforeach
                             </select>
                         </div>
                     </div>
+                </div>
+
+                <div class="form-row align-items-center">
                     <div class="col-md-6 my-1 pr-4">
                         <label class="font-weight-bold" for="inlineFormInputGroupUsername">Location / Landmark / Area
                             <span class="text-danger">*</span></label>
@@ -408,9 +416,6 @@
                             <input type="text" class="form-control" placeholder="আপনার এলাকার নাম লিখুন">
                         </div>
                     </div>
-                </div>
-
-                <div class="form-row align-items-center">
                     <div class="col-md-6 my-1 pr-4">
                         <label class="font-weight-bold" for="inlineFormInputGroupUsername">Residency Status <span
                                 class="text-danger">*</span></label>
@@ -513,7 +518,8 @@
                 <div class="form-check mt-4">
                     <input type="checkbox" class="form-check-input" id="exampleCheck1">
                     <label class="form-check-label" for="exampleCheck1">I affirm that I have read and agreed to the
-                        Privacy Policy and Terms & Conditions of Bibahabd.com for your convenience, these documents.</label>
+                        Privacy Policy and Terms & Conditions of biyemedia.com for your convenience, these
+                        documents.</label>
                 </div>
 
                 <div class="form-row align-items-center">
@@ -525,3 +531,21 @@
         </div>
     </div>
 @endsection
+
+@push('js')
+    <script>
+        let app = new Vue({
+            el: '#register',
+            data: {
+            },
+            methods: {
+                division: function(id){
+                    console.log(id);
+                }
+            },
+            created: function() {
+                
+            }
+        });
+    </script>
+@endpush
