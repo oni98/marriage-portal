@@ -2,11 +2,11 @@
 @section('title', 'Home')
 @section('content')
     <!-- Splash Screen -->
-    {{-- <div class="splash">
+    <div class="splash">
         <div class="splash-content">
             <img id="splash-gif" src="{{ asset('assets/frontend/img/home/splash.gif') }}" alt="Logo">
         </div>
-    </div> --}}
+    </div>
     <!-- Hero Video -->
     <video width="100%" height="100%" playsinline autoplay muted loop class="hero-video">
         <source src="{{ asset('assets/frontend/img/home/marriage-media.mp4') }}" type="video/mp4">

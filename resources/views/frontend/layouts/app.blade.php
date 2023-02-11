@@ -9,6 +9,8 @@
     <meta name="description"
         content="Looking for the best Bangladeshi matrimonial service out there? Look no further! On BiyeMedia.com Search for any of the following terms: biye, shadi, nikah, marriage, patro, patri, bride, and groom.">
     <title>@yield('title') | Marriage Media BD</title>
+    <!-- laravel Notify CSS -->
+    @notifyCss
     <link rel="icon" type="image/x-icon" href="{{ asset('assets/fav-light.png') }}">
     <!-- General CSS Files -->
     <link rel="stylesheet" href="{{ asset('assets/backend/library/bootstrap/dist/css/bootstrap.min.css') }}">
@@ -16,8 +18,7 @@
         integrity="sha512-nMNlpuaDPrqlEls3IX/Q56H36qvBASwb3ipuo3MxeWbsQB1881ox0cRv7UPTgBlriqoynt35KjEwgGUeUXIPnw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="{{ asset('assets/backend/fontawesome/css/all.min.css') }}">
-    <!-- laravel Notify CSS -->
-    @notifyCss
+    
     <!-- Custom CSS Files -->
     <link rel="stylesheet" href="{{ asset('assets/frontend/css/style.css') }}">
     @stack('css')

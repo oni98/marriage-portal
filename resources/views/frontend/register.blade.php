@@ -16,7 +16,7 @@
                                         src="{{ asset('assets/frontend/img/register-form/Profile-created-by.png') }}"
                                         alt="" width="30px"></div>
                             </div>
-                            <select class="form-control select" name="profile_created_by" id="">
+                            <select class="form-control select" name="profile_created_by" id="" required>
                                 <option selected disabled>যে কোনো একটি সিলেক্ট করুন</option>
                                 <option value="Friend">Friend </option>
                                 <option value="Self">Self</option>
@@ -37,7 +37,7 @@
                                         src="{{ asset('assets/frontend/img/register-form/Bride-Groom.png') }}"
                                         alt="" width="30px"></div>
                             </div>
-                            <select class="form-control select" name="looking_for" id="">
+                            <select class="form-control select" name="looking_for" id="" required>
                                 <option selected disabled>যে কোনো একটি সিলেক্ট করুন</option>
                                 <option value="Bride">Bride</option>
                                 <option value="Groom">Groom</option>
@@ -56,7 +56,7 @@
                                         src="{{ asset('assets/frontend/img/register-form/Name.png') }}" alt=""
                                         width="30px"></div>
                             </div>
-                            <input type="text" name="name" class="form-control" placeholder="আপনার পুরো নাম লিখুন">
+                            <input type="text" name="name" class="form-control" placeholder="আপনার পুরো নাম লিখুন" required>
                         </div>
                     </div>
                     <div class="col-md-6 my-1 pr-4">
@@ -74,14 +74,15 @@
 
                 <div class="form-row align-items-center">
                     <div class="col-md-6 my-1 pr-4">
-                        <label class="font-weight-bold" for="inlineFormInputGroupUsername">Community / Religion </label>
+                        <label class="font-weight-bold" for="inlineFormInputGroupUsername">Community / Religion <span
+                            class="text-danger">*</span></label>
                         <div class="input-group">
                             <div class="input-group-prepend">
                                 <div class="input-group-text"><img
                                         src="{{ asset('assets/frontend/img/register-form/Religion.png') }}" alt=""
                                         width="30px"></div>
                             </div>
-                            <select name="religion" id="religion" class="form-control ">
+                            <select name="religion" id="religion" class="form-control select" required>
                                 <option selected disabled>যে কোনো একটি সিলেক্ট করুন</option>
                                 <option value="1">Muslim</option>
                                 <option value="2">Hindu</option>
@@ -92,15 +93,14 @@
                         </div>
                     </div>
                     <div class="col-md-6 my-1 pr-4">
-                        <label class="font-weight-bold" for="inlineFormInputGroupUsername">Caste / Social order <span
-                                class="text-danger">*</span></label>
+                        <label class="font-weight-bold" for="inlineFormInputGroupUsername">Caste / Social order</label>
                         <div class="input-group">
                             <div class="input-group-prepend">
                                 <div class="input-group-text"><img
                                         src="{{ asset('assets/frontend/img/register-form/Caste.png') }}" alt=""
                                         width="30px"></div>
                             </div>
-                            <select class="form-control select" name="caste" id="">
+                            <select class="form-control select" name="caste" id="caste">
                                 <option selected disabled>যে কোনো একটি সিলেক্ট করুন</option>
                                 <option value=""></option>
                             </select>
@@ -118,7 +118,7 @@
                                         src="{{ asset('assets/frontend/img/register-form/Date-of-Birth.png') }}"
                                         alt="" width="30px"></div>
                             </div>
-                            <input type="date" class="form-control" date-format="dd/mm/yy" name="dob">
+                            <input type="date" class="form-control" date-format="dd/mm/yy" name="dob" required>
                         </div>
                     </div>
                     <div class="col-md-6 my-1 pr-4">
@@ -130,7 +130,7 @@
                                         src="{{ asset('assets/frontend/img/register-form/Marital-Status.png') }}"
                                         alt="" width="30px"></div>
                             </div>
-                            <select name="marital_status" id="" class="form-control ">
+                            <select name="marital_status" id="" class="form-control " required>
                                 <option selected disabled>সিলেক্ট করুন</option>
                                 <option value="1">Never Married</option>
                                 <option value="2">Widowed</option>
@@ -152,7 +152,7 @@
                                         src="{{ asset('assets/frontend/img/register-form/Education.png') }}"
                                         alt="" width="30px"></div>
                             </div>
-                            <select name="education" id="" class="form-control ">
+                            <select name="education" id="" class="form-control " required>
                                 <option selected disabled>সিলেক্ট করুন</option>
                                 <option value="1">Associates Degree</option>
                                 <option value="2">Bachelor</option>
@@ -198,7 +198,7 @@
                                         src="{{ asset('assets/frontend/img/register-form/Profession.png') }}"
                                         alt="" width="30px"></div>
                             </div>
-                            <select name="profession" id="" class="form-control ">
+                            <select name="profession" id="" class="form-control " required>
                                 <option value="" selected="" disabled="">Select Profession</option>
                                 <option value="1">Not working</option>
                                 <option value="3">Non-mainstream professional</option>
@@ -339,7 +339,7 @@
                                         src="{{ asset('assets/frontend/img/register-form/Division.png') }}"
                                         alt="" width="30px"></div>
                             </div>
-                            <select class="form-control select2" name="division" id="division">
+                            <select class="form-control select2" name="division" id="division" required>
                                 <option selected disabled>সিলেক্ট করুন</option>
                                 @foreach ($divisions as $division)
                                     <option value="{{ $division->id }}">{{ $division->name }}</option>
@@ -356,7 +356,7 @@
                                         src="{{ asset('assets/frontend/img/register-form/District.png') }}"
                                         alt="" width="30px"></div>
                             </div>
-                            <select class="form-control select2" name="district" id="district">
+                            <select class="form-control select2" name="district" id="district" required>
                                 <option selected disabled>সিলেক্ট করুন</option>
                                 @foreach ($districts as $district)
                                     <option value="{{ $district->id }}">{{ $district->name }}</option>
@@ -376,7 +376,7 @@
                                         src="{{ asset('assets/frontend/img/register-form/Upazila-City.png') }}"
                                         alt="" width="30px"></div>
                             </div>
-                            <select class="form-control select2" name="upazila" id="upazila">
+                            <select class="form-control select2" name="upazila" id="upazila" required>
                                 <option selected disabled>সিলেক্ট করুন</option>
                                 @foreach ($upazilas as $upazila)
                                     <option value="{{ $upazila->id }}">{{ $upazila->name }}</option>
@@ -393,7 +393,7 @@
                                         src="{{ asset('assets/frontend/img/register-form/Village.png') }}" alt=""
                                         width="30px"></div>
                             </div>
-                            <select class="form-control select2" name="union" id="union">
+                            <select class="form-control select2" name="union" id="union" required>
                                 <option selected disabled>সিলেক্ট করুন</option>
                                 @foreach ($unions as $union)
                                     <option value="{{ $union->id }}">{{ $union->name }}</option>
@@ -414,7 +414,7 @@
                                         width="30px"></div>
                             </div>
                             <input type="text" name="area" class="form-control"
-                                placeholder="আপনার এলাকার নাম লিখুন">
+                                placeholder="আপনার এলাকার নাম লিখুন" required>
                         </div>
                     </div>
                     <div class="col-md-6 my-1 pr-4">
@@ -426,7 +426,7 @@
                                         src="{{ asset('assets/frontend/img/register-form/Resident.png') }}"
                                         alt="" width="30px"></div>
                             </div>
-                            <select name="present_residence_status" id="" class="form-control select">
+                            <select name="present_residence_status" id="" class="form-control select" required>
                                 <option selected disabled>সিলেক্ট করুন</option>
                                 <option value="1"> Citizen </option>
                                 <option value="2"> Permanent Resident </option>
@@ -450,19 +450,20 @@
                                         src="{{ asset('assets/frontend/img/register-form/Email.png') }}" alt=""
                                         width="30px"></div>
                             </div>
-                            <input type="email" name="email" class="form-control" placeholder="আপনার ইমেইল এড্রেস লিখুন">
+                            <input type="email" name="email" class="form-control"
+                                placeholder="আপনার ইমেইল এড্রেস লিখুন" required>
                         </div>
                     </div>
                     <div class="col-md-6 my-1 pr-4">
-                        <label class="font-weight-bold" for="inlineFormInputGroupUsername">WhatsApp <span
-                                class="text-danger">*</span></label>
+                        <label class="font-weight-bold" for="inlineFormInputGroupUsername">WhatsApp</label>
                         <div class="input-group">
                             <div class="input-group-prepend">
                                 <div class="input-group-text"><img
                                         src="{{ asset('assets/frontend/img/register-form/WhatsApp.png') }}"
                                         alt="" width="30px"></div>
                             </div>
-                            <input type="text" name="whatsapp" class="form-control" placeholder="আপনার হোয়াটসঅ্যাপ নাম্বার লিখুন">
+                            <input type="text" name="whatsapp" class="form-control"
+                                placeholder="আপনার হোয়াটসঅ্যাপ নাম্বার লিখুন">
                         </div>
                     </div>
                 </div>
@@ -477,19 +478,20 @@
                                         src="{{ asset('assets/frontend/img/register-form/Phone.png') }}" alt=""
                                         width="30px"></div>
                             </div>
-                            <input type="text" name="phone" class="form-control" placeholder="আপনার মোবাইল নাম্বার লিখুন">
+                            <input type="text" name="phone" class="form-control"
+                                placeholder="আপনার মোবাইল নাম্বার লিখুন" required>
                         </div>
                     </div>
                     <div class="col-md-6 my-1 pr-4">
-                        <label class="font-weight-bold" for="inlineFormInputGroupUsername">Guardian Phone Number <span
-                                class="text-danger">*</span></label>
+                        <label class="font-weight-bold" for="inlineFormInputGroupUsername">Guardian Phone Number</label>
                         <div class="input-group">
                             <div class="input-group-prepend">
                                 <div class="input-group-text"><img
                                         src="{{ asset('assets/frontend/img/register-form/Guardian-phone.png') }}"
                                         alt="" width="30px"></div>
                             </div>
-                            <input type="text" name="guardian_phone" class="form-control" placeholder="অভিভাবকের মোবাইল নাম্বার লিখুন">
+                            <input type="text" name="guardian_phone" class="form-control"
+                                placeholder="অভিভাবকের মোবাইল নাম্বার লিখুন" required>
                         </div>
                     </div>
                 </div>
@@ -504,7 +506,8 @@
                                         src="{{ asset('assets/frontend/img/register-form/Password.png') }}"
                                         alt="" width="30px"></div>
                             </div>
-                            <input type="password" name="password" class="form-control" placeholder="আপনার পাসওয়ার্ড লিখুন" autocomplete="off">
+                            <input type="password" name="password" class="form-control"
+                                placeholder="আপনার পাসওয়ার্ড লিখুন" required>
                         </div>
                     </div>
                     <div class="col-md-6 my-1 pr-4">
@@ -512,11 +515,10 @@
                                 class="text-danger">*</span></label>
                         <div class="input-group">
                             <div class="input-group-prepend">
-                                <div class="input-group-text"><img
-                                        src="{{ asset('assets/frontend/img/register-form/Confirm-Password.png') }}"
-                                        alt="" width="30px"></div>
+                                <div class="input-group-text"><img src="{{ asset('assets/frontend/img/register-form/Confirm-password.png') }}" alt="" width="30px"></div>
                             </div>
-                            <input type="password" name="confirm_password" class="form-control" placeholder="আপনার পাসওয়ার্ডটি পুনরায় লিখুন" autocomplete="off">
+                            <input type="password" name="confirm_password" class="form-control"
+                                placeholder="আপনার পাসওয়ার্ডটি পুনরায় লিখুন" required>
                         </div>
                     </div>
                 </div>
@@ -539,6 +541,22 @@
 @endsection
 
 @push('js')
+    <script>
+        document.getElementById("religion").addEventListener("change", function() {
+            var casteSelect = document.getElementById("caste");
+            casteSelect.innerHTML = ""; // clear the options
+            if (this.value === "2") { // if Hindu is selected as religion
+                // add options for Hindu castes
+                var options = ["", "Brahmin", "Kshatriya", "Vaishya", "Shudra"];
+                options.forEach(function(option) {
+                    var opt = document.createElement("option");
+                    opt.value = option;
+                    opt.innerHTML = option;
+                    casteSelect.appendChild(opt);
+                });
+            }
+        });
+    </script>
     <script>
         $(document).ready(function() {
             $('#division').change(function() {
