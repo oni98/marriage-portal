@@ -84,11 +84,9 @@
                             </div>
                             <select name="religion" id="religion" class="form-control select" required>
                                 <option selected disabled>যে কোনো একটি সিলেক্ট করুন</option>
-                                <option value="1">Muslim</option>
-                                <option value="2">Hindu</option>
-                                <option value="3">Christian</option>
-                                <option value="4">Buddhist</option>
-                                <option value="5">Spiritual</option>
+                                @foreach ($religions as $rel)
+                                    <option value="{{ $rel->id }}">{{ $rel->name }}</option>
+                                @endforeach
                             </select>
                         </div>
                     </div>
@@ -132,11 +130,9 @@
                             </div>
                             <select name="marital_status" id="" class="form-control " required>
                                 <option selected disabled>সিলেক্ট করুন</option>
-                                <option value="1">Never Married</option>
-                                <option value="2">Widowed</option>
-                                <option value="3">Awaiting Divorce</option>
-                                <option value="4">Annulled</option>
-                                <option value="5">Divorced</option>
+                                @foreach ($marital_statuses as $mar)
+                                    <option value="{{ $mar->id }}">{{ $mar->name }}</option>
+                                @endforeach
                             </select>
                         </div>
                     </div>
@@ -154,38 +150,9 @@
                             </div>
                             <select name="education" id="" class="form-control " required>
                                 <option selected disabled>সিলেক্ট করুন</option>
-                                <option value="1">Associates Degree</option>
-                                <option value="2">Bachelor</option>
-                                <option value="14">B.C.S Cadre</option>
-                                <option value="15">BBA</option>
-                                <option value="24">BBS</option>
-                                <option value="16">BA|BSS|BCOM|BSC</option>
-                                <option value="17">BSC-Honours</option>
-                                <option value="22">BDS|Dental Surgery</option>
-                                <option value="25">B-Tech</option>
-                                <option value="23">C.A </option>
-                                <option value="3">Diploma</option>
-                                <option value="21">DVM</option>
-                                <option value="6">Honours Degree</option>
-                                <option value="18">Higher Diploma</option>
-                                <option value="5">High School</option>
-                                <option value="7">H.S.C</option>
-                                <option value="8">Masters</option>
-                                <option value="19">M.A|M.SS|M.COM|MSC</option>
-                                <option value="9">MBA</option>
-                                <option value="10">MBBS</option>
-                                <option value="20">FCPS Part - 2</option>
-                                <option value="11">M.Phil</option>
-                                <option value="4">PHD|Doctorate</option>
-                                <option value="12">Trade school</option>
-                                <option value="13">Undergraduate</option>
-                                <option value="26">FCPS Part - 1</option>
-                                <option value="27">A Level</option>
-                                <option value="28">Dakhil</option>
-                                <option value="29">Alim</option>
-                                <option value="30">Fazil</option>
-                                <option value="31">Kamil</option>
-                                <option value="32">O level</option>
+                                @foreach ($education as $edu)
+                                    <option value="{{ $edu->id }}">{{ $edu->name }}</option>
+                                @endforeach
                             </select>
                         </div>
                     </div>
@@ -199,115 +166,10 @@
                                         alt="" width="30px"></div>
                             </div>
                             <select name="profession" id="" class="form-control " required>
-                                <option value="" selected="" disabled="">Select Profession</option>
-                                <option value="1">Not working</option>
-                                <option value="3">Non-mainstream professional</option>
-                                <option value="4">Accountant</option>
-                                <option value="5">Acting Professional</option>
-                                <option value="6">Actor</option>
-                                <option value="7">Administration Professional</option>
-                                <option value="8">Advertising Professional</option>
-                                <option value="9">Air Hostess</option>
-                                <option value="10">Airline</option>
-                                <option value="11">Architect</option>
-                                <option value="12">Artisan</option>
-                                <option value="13">Audiologist</option>
-                                <option value="14">Banker</option>
-                                <option value="15">Beautician</option>
-                                <option value="16">Biologist / Botanist</option>
-                                <option value="17">Business Person</option>
-                                <option value="18">Chartered Accountant</option>
-                                <option value="19">Civil Engineer</option>
-                                <option value="20">Clerical Official</option>
-                                <option value="21">Commercial Pilot</option>
-                                <option value="22">Company Secretary</option>
-                                <option value="23">Computer Professional</option>
-                                <option value="24">Consultant</option>
-                                <option value="25">Contractor</option>
-                                <option value="26">Cost Accountant</option>
-                                <option value="27">Creative Person</option>
-                                <option value="28">Customer Support Professional</option>
-                                <option value="29">Defense Employee</option>
-                                <option value="30">Dentist</option>
-                                <option value="31">Designer</option>
-                                <option value="32">Doctor</option>
-                                <option value="33">Economist</option>
-                                <option value="34">Engineer</option>
-                                <option value="35">Engineer (Mechanical)</option>
-                                <option value="36">Engineer (Project)</option>
-                                <option value="37">Entertainment Professional</option>
-                                <option value="38">Event Manager</option>
-                                <option value="39">Executive</option>
-                                <option value="40">Factory worker</option>
-                                <option value="41">Farmer</option>
-                                <option value="42">Fashion Designer</option>
-                                <option value="43">Finance Professional</option>
-                                <option value="44">Flight Attendant</option>
-                                <option value="45">Government Employee</option>
-                                <option value="46">Health Care Professional</option>
-                                <option value="47">Home Maker</option>
-                                <option value="48">Hotel And Restaurant Professional</option>
-                                <option value="49">Human Resources Professional</option>
-                                <option value="50">Interior Designer</option>
-                                <option value="51">Investment Professional</option>
-                                <option value="52">IT / Telecom Professional</option>
-                                <option value="53">Journalist</option>
-                                <option value="54">Lawyer</option>
-                                <option value="55">Lecturer</option>
-                                <option value="56">Legal Professional</option>
-                                <option value="57">Manager</option>
-                                <option value="58">Merchandiser</option>
-                                <option value="59">Marketing Professional</option>
-                                <option value="60">Media Professional</option>
-                                <option value="61">Medical Professional</option>
-                                <option value="62">Medical Transcriptionist</option>
-                                <option value="63">Merchant Naval Officer</option>
-                                <option value="64">Nurse</option>
-                                <option value="65">Occupational Therapist</option>
-                                <option value="66">Optician</option>
-                                <option value="67">Pharmacist</option>
-                                <option value="68">Private services</option>
-                                <option value="69">Physician Assistant</option>
-                                <option value="70">Physicist</option>
-                                <option value="71">Physiotherapist</option>
-                                <option value="72">Pilot</option>
-                                <option value="73">Politician</option>
-                                <option value="74">Production professional</option>
-                                <option value="75">Professor</option>
-                                <option value="76">Psychologist</option>
-                                <option value="77">Public Relations Professional</option>
-                                <option value="78">Real Estate Professional</option>
-                                <option value="79">Research Scholar</option>
-                                <option value="80">Retired Person</option>
-                                <option value="81">Retail Professional</option>
-                                <option value="82">Sales Professional</option>
-                                <option value="83">Scientist</option>
-                                <option value="84">Self-employed Person</option>
-                                <option value="85">Social Worker</option>
-                                <option value="86">Software Engineer</option>
-                                <option value="87">Software Consultant</option>
-                                <option value="88">Sportsman</option>
-                                <option value="89">Student</option>
-                                <option value="90">Teacher</option>
-                                <option value="91">Technician</option>
-                                <option value="92">Training Professional</option>
-                                <option value="93">Transportation Professional</option>
-                                <option value="94">Veterinary Doctor</option>
-                                <option value="95">Volunteer</option>
-                                <option value="96">Writer</option>
-                                <option value="2">Working Abroad</option>
-                                <option value="97">Zoologist</option>
-                                <option value="98">Others</option>
-                                <option value="99">Professional</option>
-                                <option value="100">Not Employeed</option>
-                                <option value="101">Employeed</option>
-                                <option value="103">Retired</option>
-                                <option value="104">Marine Professional</option>
-                                <option value="105">Shipping Professional</option>
-                                <option value="106">Marine Engineer</option>
-                                <option value="107">NGO</option>
-                                <option value="108">Retired Gov. Person</option>
-                                <option value="109">Magistrate</option>
+                                <option selected disabled>সিলেক্ট করুন</option>
+                                @foreach ($professions as $prof)
+                                    <option value="{{ $prof->id }}">{{ $prof->name }}</option>
+                                @endforeach
                             </select>
                         </div>
                     </div>
@@ -428,12 +290,12 @@
                             </div>
                             <select name="present_residence_status" id="" class="form-control select" required>
                                 <option selected disabled>সিলেক্ট করুন</option>
-                                <option value="1"> Citizen </option>
-                                <option value="2"> Permanent Resident </option>
-                                <option value="3"> Student Visa </option>
-                                <option value="4"> Temporary Visa </option>
-                                <option value="5"> Work Permit </option>
-                                <option value="6"> Rental Residence </option>
+                                <option value="Citizen"> Citizen </option>
+                                <option value="Permanent Resident"> Permanent Resident </option>
+                                <option value="Student Visa "> Student Visa </option>
+                                <option value="Temporary Visa"> Temporary Visa </option>
+                                <option value="Work Permit"> Work Permit </option>
+                                <option value="Rental Residence"> Rental Residence </option>
                             </select>
                         </div>
                     </div>

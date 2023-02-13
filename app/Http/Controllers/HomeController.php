@@ -2,6 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Education;
+use App\Models\MaritalStatus;
+use App\Models\Profession;
+use App\Models\Religion;
 use Illuminate\Http\Request;
 use Devfaysal\BangladeshGeocode\Models\Division;
 use Devfaysal\BangladeshGeocode\Models\District;
@@ -20,11 +24,15 @@ class HomeController extends Controller
 
     public function registerProfile()
     {
+        $religions = Religion::all();
+        $marital_statuses = MaritalStatus::all();
+        $education = Education::all();
+        $professions = Profession::all();
         $divisions = Division::all();
         $districts = District::all();
         $upazilas = Upazila::all();
         $unions = Union::all();
-        return view('frontend.register', ['divisions' => $divisions, 'districts' => $districts, 'upazilas' => $upazilas, 'unions' => $unions]);
+        return view('frontend.register', ['religions'=>$religions, 'marital_statuses'=>$marital_statuses, 'education'=>$education, 'professions'=>$professions, 'divisions'=>$divisions, 'districts'=>$districts, 'upazilas'=>$upazilas, 'unions'=>$unions]);
     }
 
     public function fetchDistricts($id){

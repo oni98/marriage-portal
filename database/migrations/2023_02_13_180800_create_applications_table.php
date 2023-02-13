@@ -13,18 +13,18 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('registers', function (Blueprint $table) {
+        Schema::create('applications', function (Blueprint $table) {
             $table->id();
             $table->string('profile_created_by');
             $table->string('looking_for')->nullable();
             $table->string('name');
             $table->string('surname')->nullable();
-            $table->string('religion');
+            $table->foreignId('religion_id')->constrained('religions')->onUpdate('cascade')->onDelete('cascade');
             $table->string('caste')->nullable();
             $table->string('dob');
-            $table->string('marital_status');
-            $table->string('education');
-            $table->string('profession');
+            $table->foreignId('marital_status_id')->constrained('marital_statuses')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignId('education_id')->constrained('education')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignId('profession_id')->constrained('professions')->onUpdate('cascade')->onDelete('cascade');
             $table->foreignId('division_id')->constrained('divisions')->onUpdate('cascade')->onDelete('cascade');
             $table->foreignId('district_id')->constrained('districts')->onUpdate('cascade')->onDelete('cascade');
             $table->foreignId('upazila_id')->constrained('upazilas')->onUpdate('cascade')->onDelete('cascade');
@@ -48,6 +48,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('registers');
+        Schema::dropIfExists('applications');
     }
 };

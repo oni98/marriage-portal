@@ -1,10 +1,10 @@
 <?php
 
+use App\Http\Controllers\Backend\ApplicationController;
 use App\Http\Controllers\Auth\RolesController;
 use App\Http\Controllers\Auth\UsersController;
 use App\Http\Controllers\Backend\DashboardController;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\RegisterController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -21,7 +21,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/create-new-profile', [HomeController::class, 'registerProfile'])->name('registerProfile');
-Route::post('/register-profile', [RegisterController::class, 'store'])->name('register.profile');
+Route::post('/register-profile', [ApplicationController::class, 'store'])->name('register.profile');
 
 // Dependent Selects
 Route::get('/get-districts/{divisionId}', [HomeController::class, 'fetchDistricts']);
@@ -43,5 +43,7 @@ Route::middleware(['auth'])->group(function () {
         Route::resource('roles', RolesController::class, ['name' => 'roles']);
         // User Management Routes
         Route::resource('users', UsersController::class, ['name' => 'users']);
+
+        Route::get('applications', [ApplicationController::class, 'index'])->name('applications');
     });
 });

@@ -26,8 +26,8 @@
                             Management</span></a>
                 </li>
             @endrole
-            <li class="menu-header">Starter</li>
-            <li class="nav-item dropdown {{ Request::is('layout') ? 'active' : '' }}">
+            <li class="menu-header">Application Details</li>
+            {{-- <li class="nav-item dropdown {{ Request::is('layout') ? 'active' : '' }}">
                 <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-columns"></i>
                     <span>Menu</span></a>
                 <ul class="dropdown-menu">
@@ -38,9 +38,9 @@
                         <a class="nav-link" href="#">Sub Menu 2</a>
                     </li>
                 </ul>
-            </li>
-            <li class="{{ Request::is('blank-page') ? 'active' : '' }}">
-                <a class="nav-link" href="#"><i class="fas fa-square"></i> <span>BlankPage</span></a>
+            </li> --}}
+            <li class="{{ Request::is('admin/applications') ? 'active' : '' }}">
+                <a class="nav-link" href="{{ route('applications') }}"><i class="fas fa-list"></i> <span>Applications</span></a>
             </li>
         </ul>
 
