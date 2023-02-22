@@ -17,7 +17,7 @@
                                         alt="" width="30px"></div>
                             </div>
                             <select class="form-control select" name="profile_created_by" id="" required>
-                                <option selected disabled>যে কোনো একটি সিলেক্ট করুন</option>
+                                <option selected disabled value="">যে কোনো একটি সিলেক্ট করুন</option>
                                 <option value="Friend">Friend </option>
                                 <option value="Self">Self</option>
                                 <option value="Guardian">Guardian</option>
@@ -38,7 +38,7 @@
                                         alt="" width="30px"></div>
                             </div>
                             <select class="form-control select" name="looking_for" id="" required>
-                                <option selected disabled>যে কোনো একটি সিলেক্ট করুন</option>
+                                <option selected disabled value="">যে কোনো একটি সিলেক্ট করুন</option>
                                 <option value="Bride">Bride</option>
                                 <option value="Groom">Groom</option>
                             </select>
@@ -83,7 +83,7 @@
                                         width="30px"></div>
                             </div>
                             <select name="religion" id="religion" class="form-control select" required>
-                                <option selected disabled>যে কোনো একটি সিলেক্ট করুন</option>
+                                <option selected disabled value="">যে কোনো একটি সিলেক্ট করুন</option>
                                 @foreach ($religions as $rel)
                                     <option value="{{ $rel->id }}">{{ $rel->name }}</option>
                                 @endforeach
@@ -99,7 +99,7 @@
                                         width="30px"></div>
                             </div>
                             <select class="form-control select" name="caste" id="caste">
-                                <option selected disabled>যে কোনো একটি সিলেক্ট করুন</option>
+                                <option selected disabled value="">যে কোনো একটি সিলেক্ট করুন</option>
                                 <option value=""></option>
                             </select>
                         </div>
@@ -129,7 +129,7 @@
                                         alt="" width="30px"></div>
                             </div>
                             <select name="marital_status" id="" class="form-control " required>
-                                <option selected disabled>সিলেক্ট করুন</option>
+                                <option selected disabled value="">সিলেক্ট করুন</option>
                                 @foreach ($marital_statuses as $mar)
                                     <option value="{{ $mar->id }}">{{ $mar->name }}</option>
                                 @endforeach
@@ -149,7 +149,7 @@
                                         alt="" width="30px"></div>
                             </div>
                             <select name="education" id="" class="form-control " required>
-                                <option selected disabled>সিলেক্ট করুন</option>
+                                <option selected disabled value="">সিলেক্ট করুন</option>
                                 @foreach ($education as $edu)
                                     <option value="{{ $edu->id }}">{{ $edu->name }}</option>
                                 @endforeach
@@ -166,7 +166,7 @@
                                         alt="" width="30px"></div>
                             </div>
                             <select name="profession" id="" class="form-control " required>
-                                <option selected disabled>সিলেক্ট করুন</option>
+                                <option selected disabled value="">সিলেক্ট করুন</option>
                                 @foreach ($professions as $prof)
                                     <option value="{{ $prof->id }}">{{ $prof->name }}</option>
                                 @endforeach
@@ -202,7 +202,7 @@
                                         alt="" width="30px"></div>
                             </div>
                             <select class="form-control select2" name="division" id="division" required>
-                                <option selected disabled>সিলেক্ট করুন</option>
+                                <option selected disabled value="">সিলেক্ট করুন</option>
                                 @foreach ($divisions as $division)
                                     <option value="{{ $division->id }}">{{ $division->name }}</option>
                                 @endforeach
@@ -219,7 +219,7 @@
                                         alt="" width="30px"></div>
                             </div>
                             <select class="form-control select2" name="district" id="district" required>
-                                <option selected disabled>সিলেক্ট করুন</option>
+                                <option selected disabled value="">সিলেক্ট করুন</option>
                                 @foreach ($districts as $district)
                                     <option value="{{ $district->id }}">{{ $district->name }}</option>
                                 @endforeach
@@ -239,7 +239,7 @@
                                         alt="" width="30px"></div>
                             </div>
                             <select class="form-control select2" name="upazila" id="upazila" required>
-                                <option selected disabled>সিলেক্ট করুন</option>
+                                <option selected disabled value="">সিলেক্ট করুন</option>
                                 @foreach ($upazilas as $upazila)
                                     <option value="{{ $upazila->id }}">{{ $upazila->name }}</option>
                                 @endforeach
@@ -256,7 +256,7 @@
                                         width="30px"></div>
                             </div>
                             <select class="form-control select2" name="union" id="union" required>
-                                <option selected disabled>সিলেক্ট করুন</option>
+                                <option selected disabled value="">সিলেক্ট করুন</option>
                                 @foreach ($unions as $union)
                                     <option value="{{ $union->id }}">{{ $union->name }}</option>
                                 @endforeach
@@ -289,7 +289,7 @@
                                         alt="" width="30px"></div>
                             </div>
                             <select name="present_residence_status" id="" class="form-control select" required>
-                                <option selected disabled>সিলেক্ট করুন</option>
+                                <option selected disabled value="">সিলেক্ট করুন</option>
                                 <option value="Citizen"> Citizen </option>
                                 <option value="Permanent Resident"> Permanent Resident </option>
                                 <option value="Student Visa "> Student Visa </option>

@@ -502,7 +502,7 @@
             brandText: 'Biye Media',
             brandText2: 'Bangladesh',
             secondHandColor: '#df146e',
-            size: 150
+            size: 120
         });
 
     });

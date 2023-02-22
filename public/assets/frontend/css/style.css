@@ -60,6 +60,9 @@
     cursor: url('../img/cursor.png'), auto;
 }
 
+.gray {
+    filter: grayscale(100%);
+  }
 
 .btn:focus,
 .btn:active,
@@ -521,22 +524,33 @@ a:not(.btn-social-icon):not(.btn-social):not(.page-link) .fab {
     }
 }
 
+.choose-card {
+    /* background-image: url(../img/home/card-bg1.png); */
+    border-radius: 50% !important;
+    height: 20vw !important;
+    background-color: transparent;
+    background-size: cover !important;
+    width: 20vw;
+    border: none;
+}
+
 .card-item {
     position: relative;
 }
 
 .card-item:before {
-    content: '';
+    /* content: ''; */
     position: absolute;
-    left: -2px;
-    top: -2px;
+    left: 6px;
+    top: 6px;
     background: linear-gradient(45deg, #df146e, #ffffff);
     background-size: 400%;
-    width: calc(100% + 5px);
-    height: calc(100% + 5px);
+    width: calc(19vw);
+    height: calc(19vw);
     z-index: -1;
     animation: glower 10s linear infinite;
     box-shadow: 0 0 8px 0px #df146e6b;
+    border-radius: 50%;
 }
 
 @keyframes glower {

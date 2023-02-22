@@ -7,7 +7,7 @@
                     here. We want to
                     make it easier for people to find their match. Marriage is a matter of life, So, Best Wishes.</p>
             </div>
-            <div class="col-md-2 text-justify mb-4">
+            <div class="col-md-3 text-justify mb-4">
                 <h4 class="text-primary2 font-weight-bold">PACKAGES :::</h4>
                 <div class="row">
                     <div class="col-md-6">
@@ -47,31 +47,31 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-4 text-justify">
+            <div class="col-md-3 text-justify">
                 <h4 class="text-primary2 font-weight-bold">CONTACT :::</h4>
                 <div class="row">
-                    <div class="col-md-6">
-                        <a class="text-dark" href="https://wa.me/8801715949825" target="_blank">
+                    <div class="col-md-12">
+                        <a class="text-dark d-flex" href="https://wa.me/8801715949825" target="_blank">
                             <img src="{{ asset('assets/frontend/img/Marriage Media_Whatsapp.png') }}"
-                                alt="Marriage Media Whatsapp" width="15%"> 017 1594 9825
+                                alt="Marriage Media Whatsapp" width="15%"> <h5 class="my-auto">017 1594 9825</h5>
                         </a>
                     </div>
-                    <div class="col-md-6">
-                        <a class="text-dark" href="https://wa.me/8801715585700" target="_blank">
+                    {{-- <div class="col-md-6">
+                        <a class="text-dark d-flex" href="https://wa.me/8801715585700" target="_blank">
                             <img src="{{ asset('assets/frontend/img/Marriage Media_Whatsapp.png') }}"
                                 alt="Marriage Media Whatsapp" width="15%"> 017 1558 5700
                         </a>
-                    </div>
+                    </div> --}}
                 </div>
-                <div class="row">
+                {{-- <div class="row">
                     <div class="col-md-6">
-                        <a class="text-dark" href="https://wa.me/8801715952838" target="_blank">
+                        <a class="text-dark d-flex" href="https://wa.me/8801715952838" target="_blank">
                             <img src="{{ asset('assets/frontend/img/Marriage Media_Whatsapp.png') }}"
                                 alt="Marriage Media Whatsapp" width="15%"> 017 1595 2838
                         </a>
                     </div>
                     <div class="col-md-6">
-                        <a class="text-dark" href="https://wa.me/8801715578649" target="_blank">
+                        <a class="text-dark d-flex" href="https://wa.me/8801715578649" target="_blank">
                             <img src="{{ asset('assets/frontend/img/Marriage Media_Whatsapp.png') }}"
                                 alt="Marriage Media Whatsapp" width="15%"> 017 1557 8649
                         </a>
@@ -79,13 +79,13 @@
                 </div>
                 <div class="row">
                     <div class="col-md-6">
-                        <a class="text-dark" href="https://wa.me/8801715340634" target="_blank">
+                        <a class="text-dark d-flex" href="https://wa.me/8801715340634" target="_blank">
                             <img src="{{ asset('assets/frontend/img/Marriage Media_Whatsapp.png') }}"
                                 alt="Marriage Media Whatsapp" width="15%"> 017 1534 0634
                         </a>
                     </div>
                     <div class="col-md-6">
-                        <a class="text-dark" href="https://wa.me/8801715578504" target="_blank">
+                        <a class="text-dark d-flex" href="https://wa.me/8801715578504" target="_blank">
                             <img src="{{ asset('assets/frontend/img/Marriage Media_Whatsapp.png') }}"
                                 alt="Marriage Media Whatsapp" width="15%"> 017 1557 8504
                         </a>
@@ -93,18 +93,18 @@
                 </div>
                 <div class="row">
                     <div class="col-md-6">
-                        <a class="text-dark" href="https://wa.me/8801715583664" target="_blank">
+                        <a class="text-dark d-flex" href="https://wa.me/8801715583664" target="_blank">
                             <img src="{{ asset('assets/frontend/img/Marriage Media_Whatsapp.png') }}"
                                 alt="Marriage Media Whatsapp" width="15%"> 017 1558 3664
                         </a>
                     </div>
                     <div class="col-md-6">
-                        <a class="text-dark" href="https://wa.me/8801715598953" target="_blank">
+                        <a class="text-dark d-flex" href="https://wa.me/8801715598953" target="_blank">
                             <img src="{{ asset('assets/frontend/img/Marriage Media_Whatsapp.png') }}"
                                 alt="Marriage Media Whatsapp" width="15%"> 017 1559 8953
                         </a>
                     </div>
-                </div>
+                </div> --}}
             </div>
         </div>
     </div>

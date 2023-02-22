@@ -9,50 +9,57 @@
     </div>
     <!-- Hero Video -->
     <video width="100%" height="100%" playsinline autoplay muted loop class="hero-video">
-        <source src="{{ asset('assets/frontend/img/home/marriage-media.mp4') }}" type="video/mp4">
+        <source src="{{ asset('assets/frontend/img/home/hero.mp4') }}" type="video/mp4">
         Your browser does not support the video tag.
     </video>
 
     <div id="stickyNav"></div>
-
+    {{-- <button id="toggle-button">Toggle Gray</button> --}}
     <!-- Why Choose Us -->
-    <div class="container mb-5" id="choose">
-        <div class="achievement mt-5 pt-4">
-            <h2 class="text-center mb-5 text-primary font-weight-bolder text-uppercase">Why Choose Biye Media</h2>
-            <div class="row mb-5">
-                <div class="col-md-3 col-6 mb-5">
-                    <div class="card d-block text-center card-item shadow rounded h-100">
-                        <img class="mt-5" src="{{ asset('assets/frontend/img/home/Trusted-Marriage-Media.png') }}"
-                            alt="Trusted Marriage Media" width="60%">
-                        <div class="card-body">
-                            <h6>Trusted By Millions Of Members</h6>
+    <div style="background: url('{{ asset('assets/frontend/img/home/choose-bg.jpg') }}'); margin: -48px 0px !important; background-position: center;">
+        <div class="container mb-5" id="choose">
+            <div class="achievement mt-5 pt-4">
+                <h2 class="text-center mb-5 text-primary font-weight-bolder text-uppercase">Why Choose Biye Media</h2>
+                <div class="row mb-5">
+                    <div class="col-md-3 col-6 mb-5">
+                        <div class="card text-center align-items-center card-item h-100 choose-card"
+                            style="background: url('{{ asset('assets/frontend/img/home/card-bg2.png') }}')">
+                            <img class="mt-5" src="{{ asset('assets/frontend/img/home/Trusted-Marriage-Media.png') }}"
+                                alt="Trusted Marriage Media" width="40%">
+                            <div class="card-body">
+                                <h6>Trusted By Millions Of Members</h6>
+                            </div>
                         </div>
                     </div>
-                </div>
-
-                <div class="col-md-3 col-6 mb-5">
-                    <div class="card d-block text-center card-item rounded h-100">
-                        <img class="mt-5" src="{{ asset('assets/frontend/img/home/Marriage-Media-Enhanced-Icon.png') }}"
-                            alt="Biye Media Privacy Setting" width="60%">
-                        <div class="card-body">
-                            <h6>Enhanced Privacy Settings For You</h6>
+                    <div class="col-md-3 col-6 mb-5">
+                        <div class="card align-items-center text-center card-item rounded h-100 choose-card"
+                        style="background: url('{{ asset('assets/frontend/img/home/card-bg2.png') }}')">
+                            <img class="mt-5"
+                                src="{{ asset('assets/frontend/img/home/Marriage-Media-Enhanced-Icon.png') }}"
+                                alt="Biye Media Privacy Setting" width="40%">
+                            <div class="card-body">
+                                <h6>Enhanced Privacy Settings For You</h6>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-3 col-6 mb-5">
-                    <div class="card d-block text-center card-item shadow rounded h-100">
-                        <img class="mt-5" src="{{ asset('assets/frontend/img/home/Intelligent-Matchmaking-System.png') }}"
-                            alt="Marriage Media Match Making System" width="60%">
-                        <div class="card-body">
-                            <h6>Intelligent Matchmaking System</h6>
+                    <div class="col-md-3 col-6 mb-5">
+                        <div class="card align-items-center text-center card-item h-100 choose-card"
+                        style="background: url('{{ asset('assets/frontend/img/home/card-bg2.png') }}')">
+                            <img class="mt-5"
+                                src="{{ asset('assets/frontend/img/home/Intelligent-Matchmaking-System.png') }}"
+                                alt="Marriage Media Match Making System" width="40%">
+                            <div class="card-body">
+                                <h6>Intelligent Matchmaking System</h6>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-3 col-6 mb-5">
-                    <div class="card d-block text-center card-item shadow rounded h-100">
-                        <div id="myclock" class="pt-5"></div>
-                        <div class="card-body px-4">
-                            <h6>Avoid Delay In Your Marriage</h6>
+                    <div class="col-md-3 col-6 mb-5">
+                        <div class="card align-items-center text-center card-item h-100 choose-card"
+                        style="background: url('{{ asset('assets/frontend/img/home/card-bg2.png') }}')">
+                            <div id="myclock" class="pt-5"></div>
+                            <div class="card-body px-4">
+                                <h6>Avoid Delay In Your Marriage</h6>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -96,8 +103,22 @@
     <!-- Slider -->
     <div class="container mb-5">
         <div class="row justify-content-between">
-            <div class="col-md-6 mb-5 pb-5">
-                <h4 class="text-primary font-weight-bolder text-uppercase">The perfect marriage media site for a perfect
+            <div class="col-md-4">
+                <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active slider-container">
+                            <img class="d-block" src="{{ asset('assets/frontend/img/home/slider/slider-1.png') }}"
+                                alt="Sylheti Bride" width="100%">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block" src="{{ asset('assets/frontend/img/home/slider/slider-3.png') }}"
+                                alt="Sylheti Bride" width="100%">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-5 pb-5">
+                <h4 class="text-primary font-weight-bolder text-uppercase ">The perfect marriage media site for a perfect
                     match
                 </h4>
                 <p class="text-justify py-4">Biye Media or <a href="https://www.facebook.com/biyemedia" target="_blank">
@@ -105,31 +126,22 @@
                     perfect families. Because at m4marry, we believe that a marriage is not about just two persons but
                     about two families too. Biye Media helps you find your right partner and family who match your
                     community, interests and preferences through its personalized search assistance.</p>
-                <h5 class="text-dark">Millions of families have found each other on Biye Media. Find yours.</h5>
+                {{-- <h5 class="text-dark">Millions of families have found each other on Biye Media. Find yours.</h5> --}}
 
                 <div class="btn-register">
                     <a href="{{ route('registerProfile') }}"></a>
                 </div>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-4">
                 <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
                     <div class="carousel-inner">
                         <div class="carousel-item active slider-container">
-                            <img class="d-block"
-                                src="{{ asset('assets/frontend/img/home/slider/Divorce Patro Patri.webp') }}"
-                                alt="Bidhoba Bibah" width="100%" height="500px">
-                            {{-- <div class="slider-overlay">
-                                <div class="slider-text">Widow Marriage</div>
-                            </div> --}}
+                            <img class="d-block" src="{{ asset('assets/frontend/img/home/slider/slider-2.png') }}"
+                                alt="Sylheti Bride" width="100%">
                         </div>
                         <div class="carousel-item">
-                            <img class="d-block" src="{{ asset('assets/frontend/img/home/slider/Hindu Patro Patri.webp') }}"
-                                alt="Hindu Bibah" width="100%" height="500px">
-                        </div>
-                        <div class="carousel-item">
-                            <img class="d-block"
-                                src="{{ asset('assets/frontend/img/home/slider/Syhleti Patro Patri.webp') }}"
-                                alt="Sylheti Bride" width="100%" height="500px">
+                            <img class="d-block" src="{{ asset('assets/frontend/img/home/slider/slider-4.png') }}"
+                                alt="Sylheti Bride" width="100%">
                         </div>
                     </div>
                 </div>
@@ -138,7 +150,7 @@
     </div>
 
     <!-- Verification System -->
-    <div style="background: url({{ asset('assets/frontend/img/bg-pattern.jpg') }})">
+    <div style="background: url({{ asset('assets/frontend/img/home/rainbow-bg.jpg') }}); background-size: cover">
         <div class="container my-5 py-5">
             <div class="row justify-content-between">
                 <div class="col-md-5">
@@ -159,13 +171,13 @@
         </div>
     </div>
 
-    <!-- Blog -->
+    <!-- Featured -->
     <div class="mt-5 py-5">
         <div class="container">
             <h2 class="text-center text-primary font-weight-bolder mb-5 text-uppercase">Most Recent</h2>
             <div class="row justify-content-between">
                 <div class="col-md-6">
-                    <div class="card rounded mb-5">
+                    <div class="card rounded mb-5" style="background: url({{ asset('assets/frontend/img/home/featured-bg.jpg') }}); background-size: cover">
                         <div class="card-head text-center py-3">
                             <h6 class="text-primary">Proposal Id: 12345 | 3 Days Ago</h6>
                         </div>
@@ -198,7 +210,7 @@
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <div class="card rounded mb-5">
+                    <div class="card rounded mb-5" style="background: url({{ asset('assets/frontend/img/home/featured-bg.jpg') }}); background-size: cover">
                         <div class="card-head text-center py-3">
                             <h6 class="text-primary">Proposal Id: 12345 | 3 Days Ago</h6>
                         </div>
@@ -231,7 +243,7 @@
                     </div>
                 </div>
                 <div class="col-md-6 hide-in-mobile">
-                    <div class="card rounded mb-5">
+                    <div class="card rounded mb-5" style="background: url({{ asset('assets/frontend/img/home/featured-bg.jpg') }}); background-size: cover">
                         <div class="card-head text-center py-3">
                             <h6 class="text-primary">Proposal Id: 12345 | 3 Days Ago</h6>
                         </div>
@@ -264,7 +276,7 @@
                     </div>
                 </div>
                 <div class="col-md-6 hide-in-mobile">
-                    <div class="card rounded mb-5">
+                    <div class="card rounded mb-5" style="background: url({{ asset('assets/frontend/img/home/featured-bg.jpg') }}); background-size: cover">
                         <div class="card-head text-center py-3">
                             <h6 class="text-primary">Proposal Id: 12345 | 3 Days Ago</h6>
                         </div>
@@ -369,19 +381,18 @@
         </div>
     </div>
 
-    {{-- Zoom Cursor --}}
-    {{-- <div class="cursor"></div> --}}
 @endsection
 @push('js')
     <script src="{{ asset('assets/frontend/js/clock.js') }}"></script>
 
-    {{-- <script>
-        const cursor = document.querySelector(".cursor");
-        document.addEventListener('mousemove', (e) => {
-            cursor.style.left = e.pageX + 'px';
-            cursor.style.top = e.pageY + 'px';
-        })
-    </script> --}}
+    <script>
+        function toggleGray() {
+            document.body.classList.toggle("gray");
+        }
+
+        document.getElementById("toggle-button").addEventListener("click", toggleGray);
+    </script>
+
     <script>
         var navbar = document.querySelector(".navbar");
         navbar.style.background = "transparent";
@@ -450,6 +461,6 @@
                 }
             });
             interval = (interval == 8000) ? 6000 : 8000;
-        }, interval);
+        }, 7000);
     </script>
 @endpush
