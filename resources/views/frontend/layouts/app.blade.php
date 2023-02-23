@@ -40,7 +40,8 @@
         <!-- Footer -->
         @include('frontend.partials.footer')
 
-        <div id="scroll" class="scroll-top" onclick="scrollToTop()"></div>
+        <!-- Back to Top -->
+        <div id="scroll" class="scroll-top" onclick="scrollToTop()" title="Back To Top"></div>
     </div>
 
     <!-- General JS Scripts -->

@@ -62,7 +62,7 @@
 
 .gray {
     filter: grayscale(100%);
-  }
+}
 
 .btn:focus,
 .btn:active,
@@ -280,7 +280,7 @@ a:not(.btn-social-icon):not(.btn-social):not(.page-link) .fab {
 }
 
 /* Homepage Splash Screen */
-  .splash {
+#splash {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -292,12 +292,12 @@ a:not(.btn-social-icon):not(.btn-social):not(.page-link) .fab {
     bottom: 0;
     background-color: #ffffff;
     z-index: 9999;
-  }
+}
 
 /* Navbar */
 
-.navbar-color{
-    background-image: linear-gradient(to right, #ffdaea , #4f9f49);
+.navbar-color {
+    background-image: linear-gradient(to right, #ffdaea, #4f9f49);
     /* background: transparent; */
 
 }
@@ -376,7 +376,7 @@ a:not(.btn-social-icon):not(.btn-social):not(.page-link) .fab {
     height: 600px;
 }
 
-.hero-video{
+.hero-video {
     margin-top: -80px;
 }
 
@@ -428,7 +428,7 @@ a:not(.btn-social-icon):not(.btn-social):not(.page-link) .fab {
 
 .people {
     min-height: 100%;
-    background: linear-gradient(0deg, rgba(231 0 181 / 5%), rgba(231 0 181 / 5%)), url(../img/home/bride-groom.webp);
+    background: linear-gradient(0deg, rgba(231 0 181 / 5%), rgba(231 0 181 / 5%)), url(../img/home/bride-groom.jpg);
     background-size: cover;
     background-position-x: center;
     height: 280px;
@@ -491,11 +491,11 @@ a:not(.btn-social-icon):not(.btn-social):not(.page-link) .fab {
         left: 8% !important;
     }
 
-    .btn-register{
+    .btn-register {
         height: 13% !important;
     }
 
-    .btn-send{
+    .btn-send {
         height: 60px !important;
         width: 50% !important;
     }
@@ -567,14 +567,16 @@ a:not(.btn-social-icon):not(.btn-social):not(.page-link) .fab {
     }
 }
 
-.form-control{
+.form-control {
     height: 38px;
     background: #f0ffec;
     border-radius: 0px;
     box-shadow: inset 2px 2px 2px -1px #000000;
 }
 
-#select2--container, .select2, .select2-container--default .select2-selection--single {
+#select2--container,
+.select2,
+.select2-container--default .select2-selection--single {
     height: 37px;
     background: #f0ffec;
     border-radius: 0px;
@@ -611,7 +613,7 @@ a:not(.btn-social-icon):not(.btn-social):not(.page-link) .fab {
 /* 
  * Position both images in same place
 */
-.btn-register{
+.btn-register {
     background-image: url(../img/home/button-register-green.png);
     height: 20%;
     width: 40%;
@@ -620,9 +622,9 @@ a:not(.btn-social-icon):not(.btn-social):not(.page-link) .fab {
     list-style-type: none;
 }
 
-.btn-register:hover{
+.btn-register:hover {
     background-image: url(../img/home/button-register-pink.png);
-    
+
 }
 
 .btn-register a {
@@ -631,7 +633,7 @@ a:not(.btn-social-icon):not(.btn-social):not(.page-link) .fab {
     height: 100%;
 }
 
-.btn-send{
+.btn-send {
     background-image: url(../img/home/button-send-green.png);
     height: 70px;
     width: 35%;
@@ -640,9 +642,26 @@ a:not(.btn-social-icon):not(.btn-social):not(.page-link) .fab {
     list-style-type: none;
 }
 
-.btn-send:hover{
+.btn-send:hover {
     background-image: url(../img/home/button-send-pink.png);
-    
+
+}
+
+.color-change {
+    background: url(../img/light-on.png);
+    cursor: pointer;
+    text-align: center;
+    font-size: 24px;
+    position: fixed;
+    width: 48px;
+    height: 48px;
+    line-height: 50px;
+    bottom: 90px;
+    left: 20px;
+    color: #fff;
+    z-index: 99;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
 }
 
 .scroll-top {
@@ -673,7 +692,7 @@ a:hover {
     color: var(--primary);
 }
 
-.notify{
+.notify {
     z-index: 999 !important;
     align-items: flex-end !important;
 }

@@ -2,7 +2,7 @@
 @section('title', 'Home')
 @section('content')
     <!-- Splash Screen -->
-    <div class="splash">
+    <div id="splash">
         <div class="splash-content">
             <img id="splash-gif" src="{{ asset('assets/frontend/img/home/splash.gif') }}" alt="Logo">
         </div>
@@ -14,94 +14,55 @@
     </video>
 
     <div id="stickyNav"></div>
-    {{-- <button id="toggle-button">Toggle Gray</button> --}}
     <!-- Why Choose Us -->
-    <div style="background: url('{{ asset('assets/frontend/img/home/choose-bg.jpg') }}'); margin: -48px 0px !important; background-position: center;">
+    <div class="why-choose-us"
+        style="background: url('{{ asset('assets/frontend/img/home/choose-bg.jpg') }}'); margin: -48px 0px !important; background-position: center;">
         <div class="container mb-5" id="choose">
             <div class="achievement mt-5 pt-4">
-                <h2 class="text-center mb-5 text-primary font-weight-bolder text-uppercase">Why Choose Biye Media</h2>
-                <div class="row mb-5">
+                <div class="d-flex justify-content-center">
+                    <img src="{{ asset('assets/frontend/img/home/why-choose-us.png') }}" alt="Choose Biye Media">
+                </div>
+                <div class="row mb-5 mt-5">
                     <div class="col-md-3 col-6 mb-5">
-                        <div class="card text-center align-items-center card-item h-100 choose-card"
+                        <div class="card text-center align-items-center card-item h-100 choose-card">
+                            <img class="mb-5" src="{{ asset('assets/frontend/img/home/choose1.png') }}"
+                                alt="Trusted Marriage Media" width="80%">
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-6 mb-5">
+                        <div class="card text-center align-items-center card-item h-100 choose-card">
+                            <img class="mb-5" src="{{ asset('assets/frontend/img/home/choose2.png') }}"
+                                alt="Trusted Marriage Media" width="80%">
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-6 mb-5">
+                        <div class="card text-center align-items-center card-item h-100 choose-card">
+                            <img class="mb-5" src="{{ asset('assets/frontend/img/home/choose3.png') }}"
+                                alt="Trusted Marriage Media" width="80%">
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-6 mb-5">
+                        <div class="card text-center align-items-center card-item h-100 choose-card" style="background: url('{{ asset('assets/frontend/img/home/choose4.png') }}');     height: 78% !important; width: 85%; !important">
+                            {{-- <img class="mb-5" src="" alt="Trusted Marriage Media" width="80%"> --}}
+                                <div id="myclock" class="pt-5"></div>
+                        </div>
+                    </div>
+                    {{-- <div class="col-md-3 col-6 mb-5">
+                        <div class="card align-items-center text-center card-item h-100 choose-card"
                             style="background: url('{{ asset('assets/frontend/img/home/card-bg2.png') }}')">
-                            <img class="mt-5" src="{{ asset('assets/frontend/img/home/Trusted-Marriage-Media.png') }}"
-                                alt="Trusted Marriage Media" width="40%">
-                            <div class="card-body">
-                                <h6>Trusted By Millions Of Members</h6>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-6 mb-5">
-                        <div class="card align-items-center text-center card-item rounded h-100 choose-card"
-                        style="background: url('{{ asset('assets/frontend/img/home/card-bg2.png') }}')">
-                            <img class="mt-5"
-                                src="{{ asset('assets/frontend/img/home/Marriage-Media-Enhanced-Icon.png') }}"
-                                alt="Biye Media Privacy Setting" width="40%">
-                            <div class="card-body">
-                                <h6>Enhanced Privacy Settings For You</h6>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-6 mb-5">
-                        <div class="card align-items-center text-center card-item h-100 choose-card"
-                        style="background: url('{{ asset('assets/frontend/img/home/card-bg2.png') }}')">
-                            <img class="mt-5"
-                                src="{{ asset('assets/frontend/img/home/Intelligent-Matchmaking-System.png') }}"
-                                alt="Marriage Media Match Making System" width="40%">
-                            <div class="card-body">
-                                <h6>Intelligent Matchmaking System</h6>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 col-6 mb-5">
-                        <div class="card align-items-center text-center card-item h-100 choose-card"
-                        style="background: url('{{ asset('assets/frontend/img/home/card-bg2.png') }}')">
                             <div id="myclock" class="pt-5"></div>
                             <div class="card-body px-4">
                                 <h6>Avoid Delay In Your Marriage</h6>
                             </div>
                         </div>
-                    </div>
+                    </div> --}}
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Bride/Groom List -->
-    <div class="my-5 people">
-        {{-- <div class="container">
-            <div class="row text-primary justify-content-between">
-                <div class="col-md-2 text-center">
-                    <img class="mb-3 rounded-circle blur" src="{{ asset('assets/frontend/img/user.webp') }}" alt=""
-                        width="80%" height="60%">
-                    <p> <span class="font-weight-bold">Mohammad Zahin </span> <br> 27 Yrs</p>
-                </div>
-                <div class="col-md-2 text-center">
-                    <img class="mb-3 rounded-circle blur" src="{{ asset('assets/frontend/img/user-female.jpg') }}"
-                        alt="" width="80%" height="60%">
-                    <p> <span class="font-weight-bold">Mohua Mou </span> <br> 22 Yrs</p>
-                </div>
-                <div class="col-md-2 text-center">
-                    <img class="mb-3 rounded-circle blur" src="{{ asset('assets/frontend/img/user.webp') }}" alt=""
-                        width="80%" height="60%">
-                    <p> <span class="font-weight-bold">Riad Ahmed</span> <br> 32 Yrs</p>
-                </div>
-                <div class="col-md-2 text-center">
-                    <img class="mb-3 rounded-circle blur" src="{{ asset('assets/frontend/img/user-female.jpg') }}"
-                        alt="" width="80%" height="60%">
-                    <p> <span class="font-weight-bold">Tajrin Tuba </span> <br> 26 Yrs</p>
-                </div>
-                <div class="col-md-2 text-center">
-                    <img class="mb-3 rounded-circle blur" src="{{ asset('assets/frontend/img/user.webp') }}" alt=""
-                        width="80%" height="60%">
-                    <p> <span class="font-weight-bold">Sajid Khan </span> <br> 28 Yrs</p>
-                </div>
-            </div>
-        </div> --}}
-    </div>
-
     <!-- Slider -->
-    <div class="container mb-5">
+    <div class="container pt-5 double-slider">
         <div class="row justify-content-between">
             <div class="col-md-4">
                 <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
@@ -149,8 +110,15 @@
         </div>
     </div>
 
+    <!-- Bride/Groom List -->
+    <div class="mt-5 people">
+        {{-- <div class="container">
+            </div> --}}
+    </div>
+
     <!-- Verification System -->
-    <div style="background: url({{ asset('assets/frontend/img/home/rainbow-bg.jpg') }}); background-size: cover">
+    <div class="rainbow-verification"
+        style="background: url({{ asset('assets/frontend/img/home/rainbow-bg.jpg') }}); background-size: cover">
         <div class="container my-5 py-5">
             <div class="row justify-content-between">
                 <div class="col-md-5">
@@ -172,12 +140,13 @@
     </div>
 
     <!-- Featured -->
-    <div class="mt-5 py-5">
+    <div class="featured-cards mt-5 py-5">
         <div class="container">
             <h2 class="text-center text-primary font-weight-bolder mb-5 text-uppercase">Most Recent</h2>
             <div class="row justify-content-between">
                 <div class="col-md-6">
-                    <div class="card rounded mb-5" style="background: url({{ asset('assets/frontend/img/home/featured-bg.jpg') }}); background-size: cover">
+                    <div class="card rounded mb-5"
+                        style="background: url({{ asset('assets/frontend/img/home/featured-bg.jpg') }}); background-size: cover">
                         <div class="card-head text-center py-3">
                             <h6 class="text-primary">Proposal Id: 12345 | 3 Days Ago</h6>
                         </div>
@@ -210,7 +179,8 @@
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <div class="card rounded mb-5" style="background: url({{ asset('assets/frontend/img/home/featured-bg.jpg') }}); background-size: cover">
+                    <div class="card rounded mb-5"
+                        style="background: url({{ asset('assets/frontend/img/home/featured-bg.jpg') }}); background-size: cover">
                         <div class="card-head text-center py-3">
                             <h6 class="text-primary">Proposal Id: 12345 | 3 Days Ago</h6>
                         </div>
@@ -243,7 +213,8 @@
                     </div>
                 </div>
                 <div class="col-md-6 hide-in-mobile">
-                    <div class="card rounded mb-5" style="background: url({{ asset('assets/frontend/img/home/featured-bg.jpg') }}); background-size: cover">
+                    <div class="card rounded mb-5"
+                        style="background: url({{ asset('assets/frontend/img/home/featured-bg.jpg') }}); background-size: cover">
                         <div class="card-head text-center py-3">
                             <h6 class="text-primary">Proposal Id: 12345 | 3 Days Ago</h6>
                         </div>
@@ -276,7 +247,8 @@
                     </div>
                 </div>
                 <div class="col-md-6 hide-in-mobile">
-                    <div class="card rounded mb-5" style="background: url({{ asset('assets/frontend/img/home/featured-bg.jpg') }}); background-size: cover">
+                    <div class="card rounded mb-5"
+                        style="background: url({{ asset('assets/frontend/img/home/featured-bg.jpg') }}); background-size: cover">
                         <div class="card-head text-center py-3">
                             <h6 class="text-primary">Proposal Id: 12345 | 3 Days Ago</h6>
                         </div>
@@ -313,7 +285,7 @@
     </div>
 
     <!-- Contact Us -->
-    <div class="position-relative">
+    <div class="contact position-relative">
         <div class="contact-section"></div>
         <div class="container centered text-dark px-5">
             <div class="row align-items-center">
@@ -381,86 +353,91 @@
         </div>
     </div>
 
+    <!-- Color Change -->
+    <button class="color-change" id="toggle-button" title="Turn Off Website Color"></button>
 @endsection
 @push('js')
     <script src="{{ asset('assets/frontend/js/clock.js') }}"></script>
 
     <script>
-        function toggleGray() {
-            document.body.classList.toggle("gray");
-        }
+        $(document).ready(function() {
 
-        document.getElementById("toggle-button").addEventListener("click", toggleGray);
-    </script>
+            // Color Toggle 
+            $("#toggle-button").click(function() {
+                $(".hero-video, .why-choose-us, .double-slider, .people, .rainbow-verification, .featured-cards, .contact, .color-change, .navbar, .scroll-top, .footer-above")
+                    .toggleClass("gray");
+            });
 
-    <script>
-        var navbar = document.querySelector(".navbar");
-        navbar.style.background = "transparent";
-        document.getElementById("navBrand").style.display = "none";
-
-        var section = document.querySelector("#stickyNav");
-
-        window.addEventListener("scroll", function() {
-            if (window.pageYOffset >= section.offsetTop) {
-                document.getElementById("navBrand").style.display = "block";
-                navbar.style.backgroundImage = "linear-gradient(to right, #ffdaea , #4f9f49)";
-                navbar.style.transitionTimingFunction = "background-image .5s ease";
-            } else {
-                navbar.style.background = "transparent";
-                document.getElementById("navBrand").style.display = "none";
-            }
-        });
-    </script>
-    <script>
-        window.onload = function() {
-            setTimeout(function() {
-                document.querySelector('.splash').style.display = 'none';
-            }, 7000);
-        };
-    </script>
-    <script>
-        var images = [
-            "url('assets/frontend/img/menu.png')",
-            "url('assets/frontend/img/menu-hover.png')"
-        ];
-
-        var menus = document.querySelectorAll(".menuItem1, .menuItem2, .menuItem3, .menuItem4, .menuItem5");
-        var currentImage = 0;
-        var interval = 8000;
-
-        setInterval(function() {
-            currentImage = (currentImage + 1) % images.length;
-            menus.forEach(function(menu) {
-                menu.style.backgroundImage = images[currentImage];
-                for (var i = 0; i < menus.length; i++) {
-                    menus[i].style.backgroundImage = images[currentImage];
-                    menus[i].style.height = "75px";
-                    menus[i].style.backgroundRepeat = "no-repeat";
-                    menus[i].style.backgroundSize = "cover";
-
-                    if (currentImage == 0) {
-                        menus[i].addEventListener("mouseover", function() {
-                            this.style.backgroundImage =
-                                "url('assets/frontend/img/menu-hover.png')";
-                        });
-
-                        menus[i].addEventListener("mouseout", function() {
-                            this.style.backgroundImage = "url('assets/frontend/img/menu.png')";
-                        });
-                    } else {
-                        menus[i].addEventListener("mouseover", function() {
-                            this.style.backgroundImage = "url('assets/frontend/img/menu.png')";
-                        });
-
-                        menus[i].addEventListener("mouseout", function() {
-                            this.style.backgroundImage =
-                                "url('assets/frontend/img/menu-hover.png')";
-                        });
-                    }
-
+            // Sticky Navbar Bg Show
+            var navbar = $(".navbar");
+            navbar.css("background", "transparent");
+            $("#navBrand").hide();
+            var section = $("#stickyNav");
+            $(window).scroll(function() {
+                if ($(window).scrollTop() >= section.offset().top) {
+                    $("#navBrand").show();
+                    navbar.css("background-image", "linear-gradient(to right, #ffdaea , #4f9f49)");
+                    navbar.css("transition-timing-function", "background-image .5s ease");
+                } else {
+                    navbar.css("background", "transparent");
+                    $("#navBrand").hide();
                 }
             });
-            interval = (interval == 8000) ? 6000 : 8000;
-        }, 7000);
+
+            // Show Splash Screen Once in 24 Hours
+            var splash = $('#splash');
+            splash.hide();
+            var lastExecutionTime = localStorage.getItem('lastExecutionTime');
+            var currentTime = new Date().getTime();
+            if (!lastExecutionTime || (currentTime - lastExecutionTime > 24 * 60 * 60 * 1000)) {
+                splash.show();
+                setTimeout(function() {
+                    splash.hide();
+                    localStorage.setItem('lastExecutionTime', currentTime);
+                }, 7000);
+            }
+
+            // Navbar Color Change
+            var images = [
+                "url('assets/frontend/img/menu.png')",
+                "url('assets/frontend/img/menu-hover.png')"
+            ];
+
+            var menus = $(".menuItem1, .menuItem2, .menuItem3, .menuItem4, .menuItem5");
+            var currentImage = 0;
+            // var interval = 8000;
+
+            setInterval(function() {
+                currentImage = (currentImage + 1) % images.length;
+                menus.each(function() {
+                    $(this).css({
+                        "background-image": images[currentImage],
+                        "height": "75px",
+                        "background-repeat": "no-repeat",
+                        "background-size": "cover"
+                    });
+
+                    if (currentImage == 0) {
+                        $(this).hover(function() {
+                            $(this).css("background-image",
+                                "url('assets/frontend/img/menu-hover.png')");
+                        }, function() {
+                            $(this).css("background-image",
+                                "url('assets/frontend/img/menu.png')");
+                        });
+                    } else {
+                        $(this).hover(function() {
+                            $(this).css("background-image",
+                                "url('assets/frontend/img/menu.png')");
+                        }, function() {
+                            $(this).css("background-image",
+                                "url('assets/frontend/img/menu-hover.png')");
+                        });
+                    }
+                });
+                // interval = (interval == 8000) ? 6000 : 8000;
+            }, 7000);
+
+        });
     </script>
 @endpush
