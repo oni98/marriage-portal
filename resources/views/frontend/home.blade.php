@@ -348,8 +348,8 @@
         </div>
     </div>
 
-    <button id="scrollButton">Start Scrolling</button>
-    <button id="scrollBtn" onclick="scrollToBottom()">Scroll Down</button>
+    {{-- <button id="scrollButton">Start Scrolling</button> --}}
+    {{-- <button id="scrollBtn" onclick="scrollToBottom()">Scroll Down</button> --}}
     <!-- Color Change -->
     <button class="color-change" id="toggle-button" title="Turn Off Website Color"></button>
 @endsection
