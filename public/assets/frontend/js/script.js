@@ -20,7 +20,7 @@ $('.carousel').carousel({
     interval: 2000
 })
 
-// ScrollBar
+// Scroll to Top
 function scrollToTop() {
     $("html, body").animate({ scrollTop: 0 }, "slow");
 }

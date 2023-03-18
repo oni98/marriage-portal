@@ -23,86 +23,81 @@
                     <img src="{{ asset('assets/frontend/img/home/why-choose-us.png') }}" alt="Choose Biye Media">
                 </div>
                 <div class="row mb-5 mt-5">
-                    <div class="col-md-3 col-6 mb-5">
+                    <div class="col-md-3 col-6 mb-5 d-flex justify-content-center">
                         <div class="card text-center align-items-center card-item h-100 choose-card">
                             <img class="mb-5" src="{{ asset('assets/frontend/img/home/choose1.png') }}"
-                                alt="Trusted Marriage Media" width="80%">
+                                alt="Trusted Marriage Media" width="90%">
                         </div>
                     </div>
-                    <div class="col-md-3 col-6 mb-5">
+                    <div class="col-md-3 col-6 mb-5 d-flex justify-content-center">
                         <div class="card text-center align-items-center card-item h-100 choose-card">
                             <img class="mb-5" src="{{ asset('assets/frontend/img/home/choose2.png') }}"
-                                alt="Trusted Marriage Media" width="80%">
+                                alt="Trusted Marriage Media" width="90%">
                         </div>
                     </div>
-                    <div class="col-md-3 col-6 mb-5">
+                    <div class="col-md-3 col-6 mb-5 d-flex justify-content-center">
                         <div class="card text-center align-items-center card-item h-100 choose-card">
                             <img class="mb-5" src="{{ asset('assets/frontend/img/home/choose3.png') }}"
-                                alt="Trusted Marriage Media" width="80%">
+                                alt="Trusted Marriage Media" width="90%">
                         </div>
                     </div>
-                    <div class="col-md-3 col-6 mb-5">
-                        <div class="card text-center align-items-center card-item h-100 choose-card" style="background: url('{{ asset('assets/frontend/img/home/choose4.png') }}');     height: 78% !important; width: 85%; !important">
+                    <div class="col-md-3 col-6 mb-5 d-flex justify-content-center">
+                        <div class="card text-center align-items-center card-item h-100 choose-card"
+                            style="background: url('{{ asset('assets/frontend/img/home/choose4.png') }}');     height: 84% !important; width: 90%; !important">
                             {{-- <img class="mb-5" src="" alt="Trusted Marriage Media" width="80%"> --}}
-                                <div id="myclock" class="pt-5"></div>
+                            <div id="myclock" class="pt-5"></div>
                         </div>
                     </div>
-                    {{-- <div class="col-md-3 col-6 mb-5">
-                        <div class="card align-items-center text-center card-item h-100 choose-card"
-                            style="background: url('{{ asset('assets/frontend/img/home/card-bg2.png') }}')">
-                            <div id="myclock" class="pt-5"></div>
-                            <div class="card-body px-4">
-                                <h6>Avoid Delay In Your Marriage</h6>
-                            </div>
-                        </div>
-                    </div> --}}
                 </div>
             </div>
         </div>
     </div>
 
     <!-- Slider -->
-    <div class="container pt-5 double-slider">
-        <div class="row justify-content-between">
-            <div class="col-md-4">
-                <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
-                    <div class="carousel-inner">
-                        <div class="carousel-item active slider-container">
-                            <img class="d-block" src="{{ asset('assets/frontend/img/home/slider/slider-1.png') }}"
-                                alt="Sylheti Bride" width="100%">
-                        </div>
-                        <div class="carousel-item">
-                            <img class="d-block" src="{{ asset('assets/frontend/img/home/slider/slider-3.png') }}"
-                                alt="Sylheti Bride" width="100%">
+    <div class="double-slider">
+        <div class="container pt-5">
+            <div class="row justify-content-between">
+                <div class="col-md-4">
+                    <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active slider-container">
+                                <img class="d-block" src="{{ asset('assets/frontend/img/home/slider/slider-1.png') }}"
+                                    alt="Sylheti Bride" width="100%">
+                            </div>
+                            <div class="carousel-item">
+                                <img class="d-block" src="{{ asset('assets/frontend/img/home/slider/slider-3.png') }}"
+                                    alt="Sylheti Bride" width="100%">
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-4 mb-5 pb-5">
-                <h4 class="text-primary font-weight-bolder text-uppercase ">The perfect marriage media site for a perfect
-                    match
-                </h4>
-                <p class="text-justify py-4">Biye Media or <a href="https://www.facebook.com/biyemedia" target="_blank">
-                        Marriage Media BD </a>have helped lakhs of people find their perfect partner and
-                    perfect families. Because at m4marry, we believe that a marriage is not about just two persons but
-                    about two families too. Biye Media helps you find your right partner and family who match your
-                    community, interests and preferences through its personalized search assistance.</p>
-                {{-- <h5 class="text-dark">Millions of families have found each other on Biye Media. Find yours.</h5> --}}
+                <div class="col-md-4 mb-5 pb-5">
+                    <h4 class="text-primary font-weight-bolder text-uppercase ">The perfect marriage media site for a
+                        perfect
+                        match
+                    </h4>
+                    <p class="text-justify py-4">Biye Media or <a href="https://www.facebook.com/biyemedia" target="_blank">
+                            Marriage Media BD </a>have helped lakhs of people find their perfect partner and
+                        perfect families. Because at m4marry, we believe that a marriage is not about just two persons but
+                        about two families too. Biye Media helps you find your right partner and family who match your
+                        community, interests and preferences through its personalized search assistance.</p>
+                    {{-- <h5 class="text-dark">Millions of families have found each other on Biye Media. Find yours.</h5> --}}
 
-                <div class="btn-register">
-                    <a href="{{ route('registerProfile') }}"></a>
+                    <div class="btn-register">
+                        <a href="{{ route('registerProfile') }}"></a>
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-4">
-                <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
-                    <div class="carousel-inner">
-                        <div class="carousel-item active slider-container">
-                            <img class="d-block" src="{{ asset('assets/frontend/img/home/slider/slider-2.png') }}"
-                                alt="Sylheti Bride" width="100%">
-                        </div>
-                        <div class="carousel-item">
-                            <img class="d-block" src="{{ asset('assets/frontend/img/home/slider/slider-4.png') }}"
-                                alt="Sylheti Bride" width="100%">
+                <div class="col-md-4">
+                    <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active slider-container">
+                                <img class="d-block" src="{{ asset('assets/frontend/img/home/slider/slider-2.png') }}"
+                                    alt="Sylheti Bride" width="100%">
+                            </div>
+                            <div class="carousel-item">
+                                <img class="d-block" src="{{ asset('assets/frontend/img/home/slider/slider-4.png') }}"
+                                    alt="Sylheti Bride" width="100%">
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -111,7 +106,7 @@
     </div>
 
     <!-- Bride/Groom List -->
-    <div class="mt-5 people">
+    <div class="people">
         {{-- <div class="container">
             </div> --}}
     </div>
@@ -119,7 +114,7 @@
     <!-- Verification System -->
     <div class="rainbow-verification"
         style="background: url({{ asset('assets/frontend/img/home/rainbow-bg.jpg') }}); background-size: cover">
-        <div class="container my-5 py-5">
+        <div class="container py-5">
             <div class="row justify-content-between">
                 <div class="col-md-5">
                     <img src="{{ asset('assets/frontend/img/home/badge.png') }}" alt="" width="100%">
@@ -140,7 +135,7 @@
     </div>
 
     <!-- Featured -->
-    <div class="featured-cards mt-5 py-5">
+    <div class="featured-cards py-5">
         <div class="container">
             <h2 class="text-center text-primary font-weight-bolder mb-5 text-uppercase">Most Recent</h2>
             <div class="row justify-content-between">
@@ -353,6 +348,8 @@
         </div>
     </div>
 
+    <button id="scrollButton">Start Scrolling</button>
+    <button id="scrollBtn" onclick="scrollToBottom()">Scroll Down</button>
     <!-- Color Change -->
     <button class="color-change" id="toggle-button" title="Turn Off Website Color"></button>
 @endsection
@@ -362,13 +359,53 @@
     <script>
         $(document).ready(function() {
 
-            // Color Toggle 
+            /*
+             ** Change Color
+             */
             $("#toggle-button").click(function() {
-                $(".hero-video, .why-choose-us, .double-slider, .people, .rainbow-verification, .featured-cards, .contact, .color-change, .navbar, .scroll-top, .footer-above")
-                    .toggleClass("gray");
+                $("container, .hero-video, .why-choose-us, .double-slider, .people, .rainbow-verification, .featured-cards, .contact, .color-change, .navbar, .scroll-top, .footer-above").toggleClass("gray");
+                $("container, .hero-video *, .why-choose-us *, .double-slider *, .people *, .rainbow-verification *, .featured-cards *, .contact *, .color-change *, .navbar *, .scroll-top *, .footer-above *").toggleClass("gray");
             });
 
-            // Sticky Navbar Bg Show
+
+            /*
+             ** Scroll current view after every 5 seconds
+             */
+            var interval = 5000;
+            var timerId;
+            function scrollPage() {
+                $('html, body').animate({
+                    scrollTop: $(window).scrollTop() + $(window).height()
+                }, 'slow');
+            }
+            $('#scrollButton').click(function() {
+                if (timerId) {
+                    clearInterval(timerId);
+                    timerId = null;
+                    $(this).text('Start Scrolling');
+                } else {
+                    timerId = setInterval(scrollPage, interval);
+                    $(this).text('Stop Scrolling');
+                }
+            });
+
+
+            /*
+             ** Scroll From Top to Bottom slowly
+             */
+            function scrollToBottom() {
+                $("html, body").animate({
+                    scrollTop: 0
+                }, "slow");
+                $("html, body").animate({
+                    scrollTop: $(document).height()
+                }, 50000);
+            }
+
+
+            /*
+             ** Sticky Navbar Bg Show
+             */
             var navbar = $(".navbar");
             navbar.css("background", "transparent");
             $("#navBrand").hide();
@@ -384,7 +421,10 @@
                 }
             });
 
-            // Show Splash Screen Once in 24 Hours
+
+            /*
+             ** Show Splash Screen Once in 24 Hours
+             */
             var splash = $('#splash');
             splash.hide();
             var lastExecutionTime = localStorage.getItem('lastExecutionTime');
@@ -396,17 +436,12 @@
                     localStorage.setItem('lastExecutionTime', currentTime);
                 }, 7000);
             }
-
-            // Navbar Color Change
             var images = [
                 "url('assets/frontend/img/menu.png')",
                 "url('assets/frontend/img/menu-hover.png')"
             ];
-
             var menus = $(".menuItem1, .menuItem2, .menuItem3, .menuItem4, .menuItem5");
             var currentImage = 0;
-            // var interval = 8000;
-
             setInterval(function() {
                 currentImage = (currentImage + 1) % images.length;
                 menus.each(function() {
@@ -416,7 +451,6 @@
                         "background-repeat": "no-repeat",
                         "background-size": "cover"
                     });
-
                     if (currentImage == 0) {
                         $(this).hover(function() {
                             $(this).css("background-image",
@@ -435,7 +469,6 @@
                         });
                     }
                 });
-                // interval = (interval == 8000) ? 6000 : 8000;
             }, 7000);
 
         });
