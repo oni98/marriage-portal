@@ -42,10 +42,10 @@
                                             <a href="#" class="btn btn-sm btn-info" title="View Details" data-toggle="modal" data-target="#view-modal-{{ $application->id }}"><i class="fas fa-eye"></i>
                                             </a>
                             
-                                            <a class="btn btn-sm btn-danger" href="" title="Delete" class="nav-link" onclick="event.preventDefault(); if(confirm('Are you sure you want to delete this application?')) { document.getElementById('delete-form-{{ $application->id }}').submit(); }">
+                                            <a class="btn btn-sm btn-danger" href="{{ route('applications.destroy', $application->id) }}" title="Delete" class="nav-link" onclick="event.preventDefault(); if(confirm('Are you sure you want to delete this application?')) { document.getElementById('delete-form-{{ $application->id }}').submit(); }">
                                                 <i class="fas fa-trash"></i>
                                             </a>
-                                            <form id="delete-form-{{ $application->id }}" action="" method="POST" style="display: none;">
+                                            <form id="delete-form-{{ $application->id }}" action="{{ route('applications.destroy', $application->id) }}" method="POST" style="display: none;">
                                                 @method('DELETE')
                                                 @csrf
                                             </form>

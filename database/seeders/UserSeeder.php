@@ -20,6 +20,19 @@ class UserSeeder extends Seeder
             $user = new User();
             $user->name = "Admin";
             $user->email = "admin@admin.com";
+            $user->phone = "01768173259";
+            $user->password = Hash::make('password');
+            $user->email_verified_at = '2022-08-28 16:09:28';
+            $user->save();
+            $user->assignRole('admin');
+        }
+
+        $user = User::where('email', 'admin2@admin.com')->first();
+        if(is_null($user)){
+            $user = new User();
+            $user->name = "Admin2";
+            $user->email = "admin2@admin.com";
+            $user->phone = "01715949825";
             $user->password = Hash::make('password');
             $user->email_verified_at = '2022-08-28 16:09:28';
             $user->save();
@@ -31,6 +44,7 @@ class UserSeeder extends Seeder
             $user = new User();
             $user->name = "User";
             $user->email = "user@user.com";
+            $user->phone = "01521410347";
             $user->password = Hash::make('password');
             $user->email_verified_at = '2022-08-28 16:09:28';
             $user->save();

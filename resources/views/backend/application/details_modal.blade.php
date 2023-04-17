@@ -31,7 +31,7 @@
                 <p> <strong>Present District: </strong> {{$districts[$application->present_district - 1]->name }}</p>
                 <p> <strong>Area: </strong> {{$application->area }}</p>
                 <p> <strong>Email Address: </strong> {{$application->email }}</p>
-                <p> <strong>WhatsApp: </strong> <a href="https://wa.me/88</strong> {{$application->whatsapp }}" target="_blank"> {{$application->whatsapp }}</a></p>
+                <p> <strong>WhatsApp: </strong> <a href="https://wa.me/88{{$application->whatsapp }}" target="_blank"> {{$application->whatsapp }}</a></p>
                 <p> <strong>Bride/Groom Phone Number: </strong> {{$application->phone }}</p>
                 <p> <strong>Guardian Phone Number: </strong> {{$application->guardian_phone }}</p>
             </div>

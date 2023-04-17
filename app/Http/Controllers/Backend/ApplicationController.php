@@ -66,6 +66,7 @@ class ApplicationController extends Controller
             $register->save();
 
             $user = new User();
+            $user->application_id = $register->id;
             $user->name = $register->name;
             $user->phone = $register->phone;
             $user->email = $register->email;
@@ -76,7 +77,6 @@ class ApplicationController extends Controller
             $this->sendSms($register->phone);
             notify()->success('দ্রুত সার্ভিস পেতে পেইড সার্ভিস নেয়ার অনুরোধ করছি', 'ধন্যবাদ। আপনি সফলভাবে ফ্রি রেজিস্ট্রেশন করেছেন');
             return redirect('/create-new-profile');
-
         } catch (\Exception $e) {
             DB::rollBack();
             notify()->error('Something Went Wrong!! Please try again');
@@ -96,6 +96,21 @@ class ApplicationController extends Controller
         if (!empty($mobileNumber)) {
             $sms->setTemplate("আলহামদুলিল্লাহ, বিয়ে মিডিয়ায় নুতন একটি রেজিস্ট্রেশন হয়েছে");
             $sms->sendSms($mobileNumber);
+        }
+    }
+
+    public function destroy($id)
+    {
+        try {
+            $application = Application::find($id);
+            if ($application->delete()) {
+                notify()->success('User also deleted', 'Application Deleted');
+                return redirect('/admin/applications');
+            }
+        } catch (\Exception $e) {
+            DB::rollBack();
+            notify()->error('Something Went Wrong!! Please try again');
+            return redirect('/admin/applications');
         }
     }
 }

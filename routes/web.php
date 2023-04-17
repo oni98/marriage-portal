@@ -23,11 +23,6 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/create-new-profile', [HomeController::class, 'registerProfile'])->name('registerProfile');
 Route::post('/register-profile', [ApplicationController::class, 'store'])->name('register.profile');
 
-// Dependent Selects
-Route::get('/get-districts/{divisionId}', [HomeController::class, 'fetchDistricts']);
-Route::get('/get-upazilas/{districtId}', [HomeController::class, 'fetchUpazilas']);
-Route::get('/get-unions/{upazilaId}', [HomeController::class, 'fetchUnions']);
-
 Auth::routes();
 
 Route::middleware(['auth'])->group(function () {
@@ -44,6 +39,8 @@ Route::middleware(['auth'])->group(function () {
         // User Management Routes
         Route::resource('users', UsersController::class, ['name' => 'users']);
 
+        // Application Routes
         Route::get('applications', [ApplicationController::class, 'index'])->name('applications');
+        Route::delete('applications/{id}', [ApplicationController::class, 'destroy'])->name('applications.destroy');
     });
 });
