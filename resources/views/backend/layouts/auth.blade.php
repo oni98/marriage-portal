@@ -6,7 +6,7 @@
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no"
         name="viewport">
     <title>@yield('title') &mdash; {{ @config('app.name') }}</title>
-    <link rel="icon" type="image/x-icon" href="{{ asset('assets/fav.png') }}">
+    <link rel="icon" type="image/x-icon" href="{{ asset('assets/fav-light.png') }}">
 
     <!-- General CSS Files -->
     <link rel="stylesheet"

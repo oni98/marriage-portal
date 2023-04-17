@@ -13,10 +13,6 @@
             </div>
             <div class="container-fluid">
                 <div class="card">
-                    {{-- <div class="card-header row">
-                        <div class="col-md-12"><a href="{{ route('users.create') }}" class="btn btn-info">Create New User</a></div>
-                    </div> --}}
-                    <!-- /.card-header -->
                     <div class="card-body table-responsive">
                         @include('backend.partials.message')
                         <table id="table-1" class="table table-bordered table-striped">
@@ -43,13 +39,13 @@
                                         <td> <a href="https://wa.me/88{{ $application->whatsapp }}" target="_blank">{{ $application->whatsapp }}</a> </td>
                                         <td>{{ $application->phone }}</td>
                                         <td>
-                                            <a href="" class="btn btn-sm btn-info"><i class="fas fa-edit"></i></a>
-                                            <a class="btn btn-sm btn-danger" href="" class="nav-link" onclick="event.preventDefault(); document.getElementById('delete-form-{{ $application->id }}').submit();">
+                                            <a href="#" class="btn btn-sm btn-info" title="View Details" data-toggle="modal" data-target="#view-modal-{{ $application->id }}"><i class="fas fa-eye"></i>
+                                            </a>
+                            
+                                            <a class="btn btn-sm btn-danger" href="" title="Delete" class="nav-link" onclick="event.preventDefault(); if(confirm('Are you sure you want to delete this application?')) { document.getElementById('delete-form-{{ $application->id }}').submit(); }">
                                                 <i class="fas fa-trash"></i>
                                             </a>
-                                            <form id="delete-form-{{ $application->id }}"
-                                                action="" method="POST"
-                                                style="display: none;">
+                                            <form id="delete-form-{{ $application->id }}" action="" method="POST" style="display: none;">
                                                 @method('DELETE')
                                                 @csrf
                                             </form>
@@ -65,6 +61,9 @@
             </div><!-- /.container-fluid -->
         </section>
     </div>
+
+    <!-- Modal -->
+    @include('backend.application.details_modal')
 @endsection
 
 @push('scripts')

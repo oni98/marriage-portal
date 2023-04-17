@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-light navbar-color fixed-top">
     <div class="container">
         <a class="navbar-brand d-flex align-items-center navbar-content-width" href="{{ url('/') }}">
-            <img id="navBrand" src="{{ asset('assets/logo.png') }}" alt="" width="250px">
+            <img id="navBrand" src="{{ asset('assets/Marriage Media Logo.webp') }}" alt="" width="250px">
         </a>
         <button class="navbar-toggler navbar-toggler-right border-0 d-none" type="button" data-toggle="collapse"
             data-target="#navbar4">

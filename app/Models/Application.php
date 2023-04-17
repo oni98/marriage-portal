@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Devfaysal\BangladeshGeocode\Models\District;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -23,5 +24,9 @@ class Application extends Model
 
     public function profession(){
         return $this->belongsTo(Profession::class);
+    }
+
+    public function district(){
+        return $this->belongsTo(District::class);
     }
 }

@@ -20,7 +20,11 @@ class RedirectMobile
         $agent = new Agent();
 
         if ($agent->isMobile()) {
-            return redirect()->away('http://m.biyemedia.com');
+            $url = $request->url();
+            $url = str_replace('http://', 'https://', $url);
+            $url = str_replace('www.', '', $url);
+            $mobileUrl = 'https://m.biyemedia.com'.substr($url, strpos($url, '/', 8));
+            return redirect()->away($mobileUrl);
         }
 
         return $next($request);

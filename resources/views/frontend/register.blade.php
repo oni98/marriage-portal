@@ -2,6 +2,7 @@
 @section('title', 'Create Profile')
 @section('content')
     <div class="container">
+        @include('frontend.partials.message')
         <div class="register-form" id="register">
             <form method="POST" action="{{ route('register.profile') }}" enctype="multipart/form-data">
                 @csrf
@@ -39,14 +40,12 @@
                             </div>
                             <select class="form-control select" name="looking_for" id="" required>
                                 <option selected disabled value="">যে কোনো একটি সিলেক্ট করুন</option>
-                                <option value="Bride">Bride</option>
-                                <option value="Groom">Groom</option>
+                                <option value="Bride">Bride (পাত্রী)</option>
+                                <option value="Groom">Groom (পাত্র)</option>
                             </select>
                         </div>
                     </div>
-                </div>
 
-                <div class="form-row align-items-center">
                     <div class="col-md-6 my-1 pr-4">
                         <label class="font-weight-bold" for="inlineFormInputGroupUsername">Bride/Groom Name <span
                                 class="text-danger">*</span></label>
@@ -56,7 +55,8 @@
                                         src="{{ asset('assets/frontend/img/register-form/Name.png') }}" alt=""
                                         width="30px"></div>
                             </div>
-                            <input type="text" name="name" class="form-control" placeholder="আপনার পুরো নাম লিখুন" required>
+                            <input type="text" name="name" class="form-control" placeholder="আপনার পুরো নাম লিখুন"
+                                required>
                         </div>
                     </div>
                     <div class="col-md-6 my-1 pr-4">
@@ -70,12 +70,10 @@
                             <input type="text" name="surname" class="form-control" placeholder="বংশ">
                         </div>
                     </div>
-                </div>
 
-                <div class="form-row align-items-center">
                     <div class="col-md-6 my-1 pr-4">
                         <label class="font-weight-bold" for="inlineFormInputGroupUsername">Community / Religion <span
-                            class="text-danger">*</span></label>
+                                class="text-danger">*</span></label>
                         <div class="input-group">
                             <div class="input-group-prepend">
                                 <div class="input-group-text"><img
@@ -98,17 +96,12 @@
                                         src="{{ asset('assets/frontend/img/register-form/Caste.png') }}" alt=""
                                         width="30px"></div>
                             </div>
-                            <select class="form-control select" name="caste" id="caste">
-                                <option selected disabled value="">যে কোনো একটি সিলেক্ট করুন</option>
-                                <option value=""></option>
-                            </select>
+                            <input type="text" name="caste" class="form-control" placeholder="বংশ">
                         </div>
                     </div>
-                </div>
 
-                <div class="form-row align-items-center">
                     <div class="col-md-6 my-1 pr-4">
-                        <label class="font-weight-bold" for="inlineFormInputGroupUsername">Date of Birth <span
+                        <label class="font-weight-bold" for="inlineFormInputGroupUsername">Year of Birth <span
                                 class="text-danger">*</span></label>
                         <div class="input-group">
                             <div class="input-group-prepend">
@@ -116,7 +109,12 @@
                                         src="{{ asset('assets/frontend/img/register-form/Date-of-Birth.png') }}"
                                         alt="" width="30px"></div>
                             </div>
-                            <input type="date" class="form-control" date-format="dd/mm/yy" name="dob" required>
+                            <select id="dob" name="dob" class="form-control select2" required>
+                                <option disabled selected>সিলেক্ট করুন</option>
+                                @foreach (array_reverse(range(date('Y') - 11, 1960)) as $x)
+                                    <option value="{{ $x }}">{{ $x }}</option>
+                                @endforeach
+                            </select>
                         </div>
                     </div>
                     <div class="col-md-6 my-1 pr-4">
@@ -128,7 +126,7 @@
                                         src="{{ asset('assets/frontend/img/register-form/Marital-Status.png') }}"
                                         alt="" width="30px"></div>
                             </div>
-                            <select name="marital_status" id="" class="form-control " required>
+                            <select name="marital_status" id="" class="form-control select2" required>
                                 <option selected disabled value="">সিলেক্ট করুন</option>
                                 @foreach ($marital_statuses as $mar)
                                     <option value="{{ $mar->id }}">{{ $mar->name }}</option>
@@ -136,11 +134,29 @@
                             </select>
                         </div>
                     </div>
-                </div>
 
-                <div class="form-row align-items-center">
                     <div class="col-md-6 my-1 pr-4">
-                        <label class="font-weight-bold" for="inlineFormInputGroupUsername">Education <span
+                        <label class="font-weight-bold" for="education_system">Education System
+                            <span class="text-danger">*</span></label>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text"><img
+                                        src="{{ asset('assets/frontend/img/register-form/District.png') }}"
+                                        alt="" width="30px"></div>
+                            </div>
+                            <select class="form-control" name="education_system" id="education_system" required>
+                                <option selected disabled value="">সিলেক্ট করুন</option>
+                                <option value="Madrasa">Madrasa</option>
+                                <option value="Genaral">Genaral</option>
+                                <option value="English Medium">English Medium</option>
+                                <option value="Madrasa & General">Madrasa & General</option>
+                                <option value="English Medium & General">English Medium & General</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 my-1 pr-4">
+                        <label class="font-weight-bold" for="education">Highest Education <span
                                 class="text-danger">*</span></label>
                         <div class="input-group">
                             <div class="input-group-prepend">
@@ -148,7 +164,7 @@
                                         src="{{ asset('assets/frontend/img/register-form/Education.png') }}"
                                         alt="" width="30px"></div>
                             </div>
-                            <select name="education" id="" class="form-control " required>
+                            <select name="education" id="" class="form-control select2" required>
                                 <option selected disabled value="">সিলেক্ট করুন</option>
                                 @foreach ($education as $edu)
                                     <option value="{{ $edu->id }}">{{ $edu->name }}</option>
@@ -157,7 +173,25 @@
                         </div>
                     </div>
                     <div class="col-md-6 my-1 pr-4">
-                        <label class="font-weight-bold" for="inlineFormInputGroupUsername">Profession <span
+                        <label class="font-weight-bold" for="ssc_year">SSC/Dakhil/Equivalent Year
+                            <span class="text-danger">*</span></label>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text"><img
+                                        src="{{ asset('assets/frontend/img/register-form/Date-of-Birth.png') }}"
+                                        alt="" width="30px"></div>
+                            </div>
+                            <select id="ssc_year" name="ssc_year" class="form-control select2" required>
+                                <option disabled selected>সিলেক্ট করুন</option>
+                                <option value="Below SSC">Below SSC</option>
+                                @foreach (range(date('Y'), 1975) as $x)
+                                    <option value="{{ $x }}">{{ $x }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-6 my-1 pr-4">
+                        <label class="font-weight-bold" for="inlineFormInputGroupUsername">Bride/Groom's Profession <span
                                 class="text-danger">*</span></label>
                         <div class="input-group">
                             <div class="input-group-prepend">
@@ -165,52 +199,65 @@
                                         src="{{ asset('assets/frontend/img/register-form/Profession.png') }}"
                                         alt="" width="30px"></div>
                             </div>
-                            <select name="profession" id="" class="form-control " required>
+                            <select name="profession" id="profession" class="form-control select2" required>
                                 <option selected disabled value="">সিলেক্ট করুন</option>
                                 @foreach ($professions as $prof)
                                     <option value="{{ $prof->id }}">{{ $prof->name }}</option>
                                 @endforeach
                             </select>
                         </div>
-                    </div>
-                </div>
-
-                <h4 class="text-primary font-weight-bold mt-5">Present Location</h4>
-                <div class="form-row align-items-center">
-                    {{-- <div class="col-md-6 my-1 pr-4">
-                        <label class="font-weight-bold" for="inlineFormInputGroupUsername">Country Of Present Location
-                            <span class="text-danger">*</span></label>
                         <div class="input-group">
-                            <div class="input-group-prepend">
-                                <div class="input-group-text"><img
-                                        src="{{ asset('assets/frontend/img/register-form/Bangladesh.png') }}"
-                                        alt="" width="30px"></div>
-                            </div>
-                            <select class="form-control select" name="" id="">
-                                <option selected disabled>সিলেক্ট করুন</option>
-                                <option value=""></option>
-                            </select>
+                            <input type="text" id="other_profession" name="other_profession" class="form-control"
+                                placeholder="পাত্র/পাত্রীর পেশা লিখুন">
                         </div>
-                    </div> --}}
+                    </div>
                     <div class="col-md-6 my-1 pr-4">
-                        <label class="font-weight-bold" for="inlineFormInputGroupUsername">Present Division <span
+                        <label class="font-weight-bold" for="father_profession">Father's Profession <span
                                 class="text-danger">*</span></label>
                         <div class="input-group">
                             <div class="input-group-prepend">
                                 <div class="input-group-text"><img
-                                        src="{{ asset('assets/frontend/img/register-form/Division.png') }}"
+                                        src="{{ asset('assets/frontend/img/register-form/Profession.png') }}"
                                         alt="" width="30px"></div>
                             </div>
-                            <select class="form-control select2" name="division" id="division" required>
+                            <select name="father_profession" id="father_profession" class="form-control select2"
+                                required>
                                 <option selected disabled value="">সিলেক্ট করুন</option>
-                                @foreach ($divisions as $division)
-                                    <option value="{{ $division->id }}">{{ $division->name }}</option>
+                                @foreach ($professions as $prof)
+                                    <option value="{{ $prof->id }}">{{ $prof->name }}</option>
                                 @endforeach
                             </select>
                         </div>
+                        <div class="input-group">
+                            <input type="text" id="father_other_profession" name="father_other_profession" class="form-control"
+                                placeholder="পাত্র/পাত্রীর পিতার পেশা লিখুন">
+                        </div>
                     </div>
                     <div class="col-md-6 my-1 pr-4">
-                        <label class="font-weight-bold" for="inlineFormInputGroupUsername">Present District
+                        <label class="font-weight-bold" for="mother_profession">Mother's Profession <span
+                                class="text-danger">*</span></label>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text"><img
+                                        src="{{ asset('assets/frontend/img/register-form/Profession.png') }}"
+                                        alt="" width="30px"></div>
+                            </div>
+                            <select name="mother_profession" id="mother_profession" class="form-control select2"
+                                required>
+                                <option selected disabled value="">সিলেক্ট করুন</option>
+                                @foreach ($professions as $prof)
+                                    <option value="{{ $prof->id }}">{{ $prof->name }}</option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <div class="input-group">
+                            <input type="text" id="mother_other_profession" name="mother_other_profession" class="form-control"
+                                placeholder="পাত্র/পাত্রীর মাতার পেশা লিখুন">
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 my-1 pr-4">
+                        <label class="font-weight-bold" for="height">Height
                             <span class="text-danger">*</span></label>
                         <div class="input-group">
                             <div class="input-group-prepend">
@@ -218,7 +265,30 @@
                                         src="{{ asset('assets/frontend/img/register-form/District.png') }}"
                                         alt="" width="30px"></div>
                             </div>
-                            <select class="form-control select2" name="district" id="district" required>
+                            <select class="form-control" name="height" id="height" required>
+                                <option selected disabled value="">সিলেক্ট করুন</option>
+                                @for ($i = 48; $i <= 62; $i++)
+                                    <p>{{ $i / 10 }}"</p>
+                                    <option value="{{ number_format($i / 10, 1) }}">{{ number_format($i / 10, 1) }}"
+                                    </option>
+                                @endfor
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <h4 class="text-primary font-weight-bold mt-5">Location</h4>
+                <div class="form-row align-items-center">
+                    <div class="col-md-6 my-1 pr-4">
+                        <label class="font-weight-bold" for="father_district">Father's District
+                            <span class="text-danger">*</span></label>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text"><img
+                                        src="{{ asset('assets/frontend/img/register-form/District.png') }}"
+                                        alt="" width="30px"></div>
+                            </div>
+                            <select class="form-control select2" name="father_district" id="father_district" required>
                                 <option selected disabled value="">সিলেক্ট করুন</option>
                                 @foreach ($districts as $district)
                                     <option value="{{ $district->id }}">{{ $district->name }}</option>
@@ -226,46 +296,41 @@
                             </select>
                         </div>
                     </div>
-                </div>
-
-                <div class="form-row align-items-center">
                     <div class="col-md-6 my-1 pr-4">
-                        <label class="font-weight-bold" for="inlineFormInputGroupUsername">Present Upazila / City <span
-                                class="text-danger">*</span></label>
+                        <label class="font-weight-bold" for="mother_district">Mother's District
+                            <span class="text-danger">*</span></label>
                         <div class="input-group">
                             <div class="input-group-prepend">
                                 <div class="input-group-text"><img
-                                        src="{{ asset('assets/frontend/img/register-form/Upazila-City.png') }}"
+                                        src="{{ asset('assets/frontend/img/register-form/District.png') }}"
                                         alt="" width="30px"></div>
                             </div>
-                            <select class="form-control select2" name="upazila" id="upazila" required>
+                            <select class="form-control select2" name="mother_district" id="mother_district" required>
                                 <option selected disabled value="">সিলেক্ট করুন</option>
-                                @foreach ($upazilas as $upazila)
-                                    <option value="{{ $upazila->id }}">{{ $upazila->name }}</option>
+                                @foreach ($districts as $district)
+                                    <option value="{{ $district->id }}">{{ $district->name }}</option>
                                 @endforeach
                             </select>
                         </div>
                     </div>
                     <div class="col-md-6 my-1 pr-4">
-                        <label class="font-weight-bold" for="inlineFormInputGroupUsername">Village / Area <span
-                                class="text-danger">*</span></label>
+                        <label class="font-weight-bold" for="present_district">Present District
+                            <span class="text-danger">*</span></label>
                         <div class="input-group">
                             <div class="input-group-prepend">
                                 <div class="input-group-text"><img
-                                        src="{{ asset('assets/frontend/img/register-form/Village.png') }}" alt=""
-                                        width="30px"></div>
+                                        src="{{ asset('assets/frontend/img/register-form/District.png') }}"
+                                        alt="" width="30px"></div>
                             </div>
-                            <select class="form-control select2" name="union" id="union" required>
+                            <select class="form-control select2" name="present_district" id="present_district" required>
                                 <option selected disabled value="">সিলেক্ট করুন</option>
-                                @foreach ($unions as $union)
-                                    <option value="{{ $union->id }}">{{ $union->name }}</option>
+                                @foreach ($districts as $district)
+                                    <option value="{{ $district->id }}">{{ $district->name }}</option>
                                 @endforeach
                             </select>
                         </div>
                     </div>
-                </div>
 
-                <div class="form-row align-items-center">
                     <div class="col-md-6 my-1 pr-4">
                         <label class="font-weight-bold" for="inlineFormInputGroupUsername">Location / Landmark / Area
                             <span class="text-danger">*</span></label>
@@ -279,33 +344,12 @@
                                 placeholder="আপনার এলাকার নাম লিখুন" required>
                         </div>
                     </div>
-                    <div class="col-md-6 my-1 pr-4">
-                        <label class="font-weight-bold" for="inlineFormInputGroupUsername">Residency Status <span
-                                class="text-danger">*</span></label>
-                        <div class="input-group">
-                            <div class="input-group-prepend">
-                                <div class="input-group-text"><img
-                                        src="{{ asset('assets/frontend/img/register-form/Resident.png') }}"
-                                        alt="" width="30px"></div>
-                            </div>
-                            <select name="present_residence_status" id="" class="form-control select" required>
-                                <option selected disabled value="">সিলেক্ট করুন</option>
-                                <option value="Citizen"> Citizen </option>
-                                <option value="Permanent Resident"> Permanent Resident </option>
-                                <option value="Student Visa "> Student Visa </option>
-                                <option value="Temporary Visa"> Temporary Visa </option>
-                                <option value="Work Permit"> Work Permit </option>
-                                <option value="Rental Residence"> Rental Residence </option>
-                            </select>
-                        </div>
-                    </div>
                 </div>
 
                 <h4 class="text-primary font-weight-bold mt-5">Account Information</h4>
                 <div class="form-row align-items-center">
                     <div class="col-md-6 my-1 pr-4">
-                        <label class="font-weight-bold" for="inlineFormInputGroupUsername">Email Address
-                            <span class="text-danger">*</span></label>
+                        <label class="font-weight-bold" for="inlineFormInputGroupUsername">Email Address</label>
                         <div class="input-group">
                             <div class="input-group-prepend">
                                 <div class="input-group-text"><img
@@ -313,7 +357,7 @@
                                         width="30px"></div>
                             </div>
                             <input type="email" name="email" class="form-control"
-                                placeholder="আপনার ইমেইল এড্রেস লিখুন" required>
+                                placeholder="আপনার ইমেইল এড্রেস লিখুন">
                         </div>
                     </div>
                     <div class="col-md-6 my-1 pr-4">
@@ -324,13 +368,11 @@
                                         src="{{ asset('assets/frontend/img/register-form/WhatsApp.png') }}"
                                         alt="" width="30px"></div>
                             </div>
-                            <input type="text" name="whatsapp" class="form-control"
+                            <input type="number" name="whatsapp" class="form-control"
                                 placeholder="আপনার হোয়াটসঅ্যাপ নাম্বার লিখুন">
                         </div>
                     </div>
-                </div>
 
-                <div class="form-row align-items-center">
                     <div class="col-md-6 my-1 pr-4">
                         <label class="font-weight-bold" for="inlineFormInputGroupUsername">Bride/Groom Phone Number
                             <span class="text-danger">*</span></label>
@@ -340,8 +382,8 @@
                                         src="{{ asset('assets/frontend/img/register-form/Phone.png') }}" alt=""
                                         width="30px"></div>
                             </div>
-                            <input type="text" name="phone" class="form-control"
-                                placeholder="আপনার মোবাইল নাম্বার লিখুন" required>
+                            <input type="number" name="phone" class="form-control"
+                                placeholder="01xxxxxxxxx" required>
                         </div>
                     </div>
                     <div class="col-md-6 my-1 pr-4">
@@ -352,13 +394,11 @@
                                         src="{{ asset('assets/frontend/img/register-form/Guardian-phone.png') }}"
                                         alt="" width="30px"></div>
                             </div>
-                            <input type="text" name="guardian_phone" class="form-control"
+                            <input type="number" name="guardian_phone" class="form-control"
                                 placeholder="অভিভাবকের মোবাইল নাম্বার লিখুন" required>
                         </div>
                     </div>
-                </div>
 
-                <div class="form-row align-items-center">
                     <div class="col-md-6 my-1 pr-4">
                         <label class="font-weight-bold" for="inlineFormInputGroupUsername">Password
                             <span class="text-danger">*</span></label>
@@ -377,9 +417,11 @@
                                 class="text-danger">*</span></label>
                         <div class="input-group">
                             <div class="input-group-prepend">
-                                <div class="input-group-text"><img src="{{ asset('assets/frontend/img/register-form/Confirm-password.png') }}" alt="" width="30px"></div>
+                                <div class="input-group-text"><img
+                                        src="{{ asset('assets/frontend/img/register-form/Confirm-password.png') }}"
+                                        alt="" width="30px"></div>
                             </div>
-                            <input type="password" name="confirm_password" class="form-control"
+                            <input type="password" name="password_confirmation" class="form-control"
                                 placeholder="আপনার পাসওয়ার্ডটি পুনরায় লিখুন" required>
                         </div>
                     </div>
@@ -404,71 +446,18 @@
 
 @push('js')
     <script>
-        document.getElementById("religion").addEventListener("change", function() {
-            var casteSelect = document.getElementById("caste");
-            casteSelect.innerHTML = ""; // clear the options
-            if (this.value === "2") { // if Hindu is selected as religion
-                // add options for Hindu castes
-                var options = ["", "Brahmin", "Kshatriya", "Vaishya", "Shudra"];
-                options.forEach(function(option) {
-                    var opt = document.createElement("option");
-                    opt.value = option;
-                    opt.innerHTML = option;
-                    casteSelect.appendChild(opt);
-                });
-            }
+        $('#other_profession').hide();
+        $('#father_other_profession').hide();
+        $('#mother_other_profession').hide();
+
+        $('#profession').on('change', function() {
+            $('#other_profession').toggle($(this).find(':selected').text() === 'Others');
         });
-    </script>
-    <script>
-        $(document).ready(function() {
-            $('#division').change(function() {
-                var divisionId = $(this).val();
-                $.ajax({
-                    url: '/get-districts/' + divisionId,
-                    type: 'GET',
-                    dataType: 'json',
-                    success: function(districts) {
-                        $('#district').empty();
-                        $('#district').append('<option selected disabled>Select</option>');
-                        $.each(districts, function(index, district) {
-                            $('#district').append('<option value="' + district.id +
-                                '">' + district.name + '</option>');
-                        });
-                    }
-                });
-            });
-            $('#district').change(function() {
-                var districtId = $(this).val();
-                $.ajax({
-                    url: '/get-upazilas/' + districtId,
-                    type: 'GET',
-                    dataType: 'json',
-                    success: function(upazilas) {
-                        $('#upazila').empty();
-                        $('#upazila').append('<option selected disabled>Select</option>');
-                        $.each(upazilas, function(index, upazila) {
-                            $('#upazila').append('<option value="' + upazila.id + '">' +
-                                upazila.name + '</option>');
-                        });
-                    }
-                });
-            });
-            $('#upazila').change(function() {
-                var upazilaId = $(this).val();
-                $.ajax({
-                    url: '/get-unions/' + upazilaId,
-                    type: 'GET',
-                    dataType: 'json',
-                    success: function(unions) {
-                        $('#union').empty();
-                        $('#union').append('<option selected disabled>Select</option>');
-                        $.each(unions, function(index, union) {
-                            $('#union').append('<option value="' + union.id + '">' +
-                                union.name + '</option>');
-                        });
-                    }
-                });
-            });
+        $('#father_profession').on('change', function() {
+            $('#father_other_profession').toggle($(this).find(':selected').text() === 'Others');
+        });
+        $('#mother_profession').on('change', function() {
+            $('#mother_other_profession').toggle($(this).find(':selected').text() === 'Others');
         });
     </script>
 @endpush

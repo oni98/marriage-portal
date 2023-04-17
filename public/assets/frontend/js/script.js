@@ -4,17 +4,6 @@
 // Select2 select option
 $('.select2').select2();
 
-// Show navmenu after hero section
-// $(document).ready(function () {
-//     if ($(window).width() > 991) {
-//         $('.navbar-light .d-menu').hover(function () {
-//             $(this).find('.sm-menu').first().stop(true, true).slideDown(150);
-//         }, function () {
-//             $(this).find('.sm-menu').first().stop(true, true).delay(120).slideUp(100);
-//         });
-//     }
-// });
-
 // Carousel Slider
 $('.carousel').carousel({
     interval: 2000
@@ -34,7 +23,6 @@ $(window).scroll(function () {
         $('.scroll-top').fadeOut("slow");
     }
 });
-
 
 // Audio Play in every 24 hour
 var lastVisit = localStorage.getItem("lastVisit");

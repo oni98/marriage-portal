@@ -3,12 +3,12 @@
         <div class="sidebar-brand">
             <a href="{{ url('/') }}">
                 {{-- {{ @config('app.name') }} --}}
-                <img src="{{ asset('assets/logo.png') }}" alt="logo" width="60%" class="">
+                <img src="{{ asset('assets/Marriage Media Logo.webp') }}" alt="logo" width="60%" class="">
             </a>
         </div>
         <div class="sidebar-brand sidebar-brand-sm">
             <a href="{{ url('/') }}">
-                <img src="{{ asset('assets/fav.png') }}" alt="logo" width="50%" class="">
+                <img src="{{ asset('assets/Marriage Media Logo.webp') }}" alt="logo" width="50%" class="">
             </a>
         </div>
         <ul class="sidebar-menu">

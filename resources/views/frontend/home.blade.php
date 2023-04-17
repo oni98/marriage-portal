@@ -3,47 +3,51 @@
 @section('content')
     <!-- Splash Screen -->
     <div id="splash">
-        <div class="splash-content">
+        {{-- <div class="splash-content">
             <img id="splash-gif" src="{{ asset('assets/frontend/img/home/splash.gif') }}" alt="Logo">
-        </div>
+        </div> --}}
+        <video class="splash-content" width="100%" height="100%" playsinline autoplay muted loop class="hero-video">
+            <source src="{{ asset('assets/frontend/img/home/Marriage Media Dhaka -Splash.mp4') }}" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
     </div>
     <!-- Hero Video -->
     <video width="100%" height="100%" playsinline autoplay muted loop class="hero-video">
-        <source src="{{ asset('assets/frontend/img/home/hero.mp4') }}" type="video/mp4">
+        <source src="{{ asset('assets/frontend/img/home/Marriage Media Bd - Cover Video.mp4') }}" type="video/mp4">
         Your browser does not support the video tag.
     </video>
 
     <div id="stickyNav"></div>
     <!-- Why Choose Us -->
     <div class="why-choose-us"
-        style="background: url('{{ asset('assets/frontend/img/home/choose-bg.jpg') }}'); margin: -48px 0px !important; background-position: center;">
+        style="background: url('{{ asset('assets/frontend/img/home/Bride-Groom-bg1.webp') }}'); margin: -48px 0px !important; background-position: center;">
         <div class="container mb-5" id="choose">
             <div class="achievement mt-5 pt-4">
                 <div class="d-flex justify-content-center">
-                    <img src="{{ asset('assets/frontend/img/home/why-choose-us.png') }}" alt="Choose Biye Media">
+                    <img src="{{ asset('assets/frontend/img/home/Marriage Choosing.webp') }}" alt="Choose Biye Media">
                 </div>
                 <div class="row mb-5 mt-5">
                     <div class="col-md-3 col-6 mb-5 d-flex justify-content-center">
                         <div class="card text-center align-items-center card-item h-100 choose-card">
-                            <img class="mb-5" src="{{ asset('assets/frontend/img/home/choose1.png') }}"
+                            <img class="mb-5" src="{{ asset('assets/frontend/img/home/Biye Media Icon 3.webp') }}"
                                 alt="Trusted Marriage Media" width="90%">
                         </div>
                     </div>
                     <div class="col-md-3 col-6 mb-5 d-flex justify-content-center">
                         <div class="card text-center align-items-center card-item h-100 choose-card">
-                            <img class="mb-5" src="{{ asset('assets/frontend/img/home/choose2.png') }}"
-                                alt="Trusted Marriage Media" width="90%">
+                            <img class="mb-5" src="{{ asset('assets/frontend/img/home/Biye Media Icon 1.webp') }}"
+                                alt="Trusted Biye Media" width="90%">
                         </div>
                     </div>
                     <div class="col-md-3 col-6 mb-5 d-flex justify-content-center">
                         <div class="card text-center align-items-center card-item h-100 choose-card">
-                            <img class="mb-5" src="{{ asset('assets/frontend/img/home/choose3.png') }}"
+                            <img class="mb-5" src="{{ asset('assets/frontend/img/home/Biye Media Icon 2.webp') }}"
                                 alt="Trusted Marriage Media" width="90%">
                         </div>
                     </div>
                     <div class="col-md-3 col-6 mb-5 d-flex justify-content-center">
                         <div class="card text-center align-items-center card-item h-100 choose-card"
-                            style="background: url('{{ asset('assets/frontend/img/home/choose4.png') }}');     height: 84% !important; width: 90%; !important">
+                            style="background: url('{{ asset('assets/frontend/img/home/Biye Media Icon 4.webp') }}');     height: 84% !important; width: 90%; !important">
                             {{-- <img class="mb-5" src="" alt="Trusted Marriage Media" width="80%"> --}}
                             <div id="myclock" class="pt-5"></div>
                         </div>
@@ -61,11 +65,11 @@
                     <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
                         <div class="carousel-inner">
                             <div class="carousel-item active slider-container">
-                                <img class="d-block" src="{{ asset('assets/frontend/img/home/slider/slider-1.png') }}"
-                                    alt="Sylheti Bride" width="100%">
+                                <img class="d-block" src="{{ asset('assets/frontend/img/home/slider/BD Marriage Media -Roll Up 1.webp') }}"
+                                    alt="BD Marriage Media -Roll Up" width="100%">
                             </div>
                             <div class="carousel-item">
-                                <img class="d-block" src="{{ asset('assets/frontend/img/home/slider/slider-3.png') }}"
+                                <img class="d-block" src="{{ asset('assets/frontend/img/home/slider/BD Marriage Media -Roll Up 2.webp') }}"
                                     alt="Sylheti Bride" width="100%">
                             </div>
                         </div>
@@ -91,11 +95,11 @@
                     <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
                         <div class="carousel-inner">
                             <div class="carousel-item active slider-container">
-                                <img class="d-block" src="{{ asset('assets/frontend/img/home/slider/slider-2.png') }}"
-                                    alt="Sylheti Bride" width="100%">
+                                <img class="d-block" src="{{ asset('assets/frontend/img/home/slider/BD Marriage-Media -Roll-Up-3.webp') }}"
+                                    alt="BD Marriage Media -Roll Up" width="100%">
                             </div>
                             <div class="carousel-item">
-                                <img class="d-block" src="{{ asset('assets/frontend/img/home/slider/slider-4.png') }}"
+                                <img class="d-block" src="{{ asset('assets/frontend/img/home/slider/BD Marriage-Media -Roll-Up-4.webp') }}"
                                     alt="Sylheti Bride" width="100%">
                             </div>
                         </div>
@@ -113,11 +117,11 @@
 
     <!-- Verification System -->
     <div class="rainbow-verification"
-        style="background: url({{ asset('assets/frontend/img/home/rainbow-bg.jpg') }}); background-size: cover">
+        style="background: url({{ asset('assets/frontend/img/home/Bride-Groom-bg3.webp') }}); background-size: cover">
         <div class="container py-5">
             <div class="row justify-content-between">
                 <div class="col-md-5">
-                    <img src="{{ asset('assets/frontend/img/home/badge.png') }}" alt="" width="100%">
+                    <img src="{{ asset('assets/frontend/img/home/Marriage Match Maker Batch.webp') }}" alt="Marriage Match Maker Batch" width="100%">
                 </div>
                 <div class="col-md-6">
                     <h4 class="text-primary font-weight-bolder text-uppercase">Rainbow Verification System</h4>
@@ -141,7 +145,7 @@
             <div class="row justify-content-between">
                 <div class="col-md-6">
                     <div class="card rounded mb-5"
-                        style="background: url({{ asset('assets/frontend/img/home/featured-bg.jpg') }}); background-size: cover">
+                        style="background: url({{ asset('assets/frontend/img/home/Bride-Groom-bg2.webp') }}); background-size: cover; height: 90%">
                         <div class="card-head text-center py-3">
                             <h6 class="text-primary">Proposal Id: 12345 | 3 Days Ago</h6>
                         </div>
@@ -165,7 +169,9 @@
                                             <h6>Location :</h6>
                                             <h6>Caste :</h6>
                                             <h6>Status :</h6>
-                                            <h6><a class="btn btn-sm btn-primary">View Details >> </a></h6>
+                                            <div class="btn-details">
+                                                <a href="{{ route('registerProfile') }}"></a>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -175,7 +181,7 @@
                 </div>
                 <div class="col-md-6">
                     <div class="card rounded mb-5"
-                        style="background: url({{ asset('assets/frontend/img/home/featured-bg.jpg') }}); background-size: cover">
+                        style="background: url({{ asset('assets/frontend/img/home/Bride-Groom-bg2.webp') }}); background-size: cover; height: 90%">
                         <div class="card-head text-center py-3">
                             <h6 class="text-primary">Proposal Id: 12345 | 3 Days Ago</h6>
                         </div>
@@ -199,7 +205,9 @@
                                             <h6>Location :</h6>
                                             <h6>Caste :</h6>
                                             <h6>Status :</h6>
-                                            <h6><a class="btn btn-sm btn-primary">View Details >> </a></h6>
+                                            <div class="btn-details">
+                                                <a href="{{ route('registerProfile') }}"></a>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -209,7 +217,7 @@
                 </div>
                 <div class="col-md-6 hide-in-mobile">
                     <div class="card rounded mb-5"
-                        style="background: url({{ asset('assets/frontend/img/home/featured-bg.jpg') }}); background-size: cover">
+                        style="background: url({{ asset('assets/frontend/img/home/Bride-Groom-bg2.webp') }}); background-size: cover; height: 90%">
                         <div class="card-head text-center py-3">
                             <h6 class="text-primary">Proposal Id: 12345 | 3 Days Ago</h6>
                         </div>
@@ -233,7 +241,9 @@
                                             <h6>Location :</h6>
                                             <h6>Caste :</h6>
                                             <h6>Status :</h6>
-                                            <h6><a class="btn btn-sm btn-primary">View Details >> </a></h6>
+                                            <div class="btn-details">
+                                                <a href="{{ route('registerProfile') }}"></a>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -243,7 +253,7 @@
                 </div>
                 <div class="col-md-6 hide-in-mobile">
                     <div class="card rounded mb-5"
-                        style="background: url({{ asset('assets/frontend/img/home/featured-bg.jpg') }}); background-size: cover">
+                        style="background: url({{ asset('assets/frontend/img/home/Bride-Groom-bg2.webp') }}); background-size: cover; height: 90%">
                         <div class="card-head text-center py-3">
                             <h6 class="text-primary">Proposal Id: 12345 | 3 Days Ago</h6>
                         </div>
@@ -267,7 +277,9 @@
                                             <h6>Location :</h6>
                                             <h6>Caste :</h6>
                                             <h6>Status :</h6>
-                                            <h6><a class="btn btn-sm btn-primary">View Details >> </a></h6>
+                                            <div class="btn-details">
+                                                <a href="{{ route('registerProfile') }}"></a>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -286,7 +298,7 @@
             <div class="row align-items-center">
                 <div class="col-md-6">
                     <h2 class="contact-heading">Contact Us</h2>
-                    <img src="{{ asset('assets/frontend/img/home/Marriage-media-Contact.png') }}"
+                    <img src="{{ asset('assets/frontend/img/home/Marriage-media-Contact.webp') }}"
                         alt="Marriage media Contact" width="60%">
                 </div>
                 <div class="col-md-6 pl-4">
@@ -436,8 +448,12 @@
                     localStorage.setItem('lastExecutionTime', currentTime);
                 }, 7000);
             }
+
+            /*
+             ** Change Menu image after every 7 seconds
+             */
             var images = [
-                "url('assets/frontend/img/menu.png')",
+                "url('assets/frontend/img/Marriage Menu.webp')",
                 "url('assets/frontend/img/menu-hover.png')"
             ];
             var menus = $(".menuItem1, .menuItem2, .menuItem3, .menuItem4, .menuItem5");
@@ -457,12 +473,12 @@
                                 "url('assets/frontend/img/menu-hover.png')");
                         }, function() {
                             $(this).css("background-image",
-                                "url('assets/frontend/img/menu.png')");
+                                "url('assets/frontend/img/Marriage Menu.webp')");
                         });
                     } else {
                         $(this).hover(function() {
                             $(this).css("background-image",
-                                "url('assets/frontend/img/menu.png')");
+                                "url('assets/frontend/img/Marriage Menu.webp')");
                         }, function() {
                             $(this).css("background-image",
                                 "url('assets/frontend/img/menu-hover.png')");
