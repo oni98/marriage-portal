@@ -32,7 +32,7 @@ return new class extends Migration
             $table->string('father_other_profession')->nullable();
             $table->foreignId('mother_profession')->constrained('professions')->onUpdate('cascade')->onDelete('cascade');
             $table->string('mother_other_profession')->nullable();
-            $table->string('Height')->nullable();
+            $table->string('height')->nullable();
             $table->foreignId('father_district')->constrained('districts')->onUpdate('cascade')->onDelete('cascade');
             $table->foreignId('mother_district')->constrained('districts')->onUpdate('cascade')->onDelete('cascade');
             $table->foreignId('present_district')->constrained('districts')->onUpdate('cascade')->onDelete('cascade');

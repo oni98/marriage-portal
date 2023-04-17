@@ -25,7 +25,7 @@
                 <p> <strong>Father's Profession: </strong> {{$professions[$application->father_profession - 1]->name }}</p>
                 <p> <strong>Mother's Profession: </strong> {{$professions[$application->mother_profession - 1]->name }}</p>
                 
-                <p> <strong>Height: </strong> {{$application->Height }}</p>
+                <p> <strong>Height: </strong> {{$application->height }}</p>
                 <p> <strong>Father's District: </strong> {{$districts[$application->father_district - 1]->name }}</p>
                 <p> <strong>Mother's District: </strong> {{$districts[$application->mother_district - 1]->name }}</p>
                 <p> <strong>Present District: </strong> {{$districts[$application->present_district - 1]->name }}</p>
