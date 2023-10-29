@@ -33,7 +33,7 @@
             <div class="col-md-2 mb-4">
                 <h4 class="text-primary2 font-weight-bold">ADDRESS :::</h4>
                 <p>
-                    House #83, Road #18, Sector #11 Uttara, Dhaka
+                    Flat# D1, Floor# 4th Lift# 3, House# 8 Block# B, Banasree Main Road (Lake Side) Rampura,, Dhaka, Bangladesh
                 </p>
                 <div class="row">
                     <div class="col-md-12">
@@ -46,40 +46,45 @@
                 </div>
             </div>
             <div class="col-md-4 text-justify">
-                <h4 class="text-primary2 font-weight-bold">CONTACT :::</h4>
                 <div class="row">
                     <div class="col-md-6">
-                        <a class="text-dark d-flex" href="https://wa.me/8801715949825" target="_blank">
+                        <h4 class="text-primary2 font-weight-bold">CONTACT :::</h4>
+                    </div>
+                    <div class="col-md-6">
+                        <a href="{{ route('blog.marriageMedia') }}"><h4 class="text-primary2 font-weight-bold">BLOGS :::</h4></a>
+                    </div>
+                    <div class="col-md-6">
+                        <a class="text-dark d-flex" href="https://wa.me/8801715911963" target="_blank">
                             <img src="{{ asset('assets/frontend/img/Marriage Consultant WhatsApp.webp') }}"
-                                alt="Marriage Media Whatsapp" class="footer-phone-icon"> 017 1594 9825
+                                alt="Marriage Media Whatsapp" class="footer-phone-icon"> 017 1591&#x2800;1963
                         </a>
                     </div>
+                    <div class="col-md-6">
+                        <a class="text-dark d-flex" href="https://wa.me/8801715285484" target="_blank">
+                            <img src="{{ asset('assets/frontend/img/Marriage Consultant WhatsApp.webp') }}"
+                                alt="Marriage Media Whatsapp" class="footer-phone-icon"> 017 1528 5484
+                        </a>
+                    </div>
+                </div>
+                <div class="row">
                     <div class="col-md-6">
                         <a class="text-dark d-flex" href="https://wa.me/8801715585700" target="_blank">
                             <img src="{{ asset('assets/frontend/img/Marriage Consultant WhatsApp.webp') }}"
                                 alt="Marriage Media Whatsapp" class="footer-phone-icon"> 017 1558 5700
                         </a>
                     </div>
-                </div>
-                <div class="row">
                     <div class="col-md-6">
                         <a class="text-dark d-flex" href="https://wa.me/8801715583664" target="_blank">
                             <img src="{{ asset('assets/frontend/img/Marriage Consultant WhatsApp.webp') }}"
                                 alt="Marriage Media Whatsapp" class="footer-phone-icon"> 017 1558 3664
                         </a>
                     </div>
-                    <div class="col-md-6">
-                        <a class="text-dark d-flex" href="https://wa.me/01715905820" target="_blank">
-                            <img src="{{ asset('assets/frontend/img/Marriage Consultant WhatsApp.webp') }}"
-                                alt="Marriage Media Whatsapp" class="footer-phone-icon"> 017 1590 5820
-                        </a>
-                    </div>
                 </div>
                 <div class="row">
                     <div class="col-md-6">
-                        <a class="text-dark d-flex" href="https://wa.me/8801715911963" target="_blank">
+                        <a class="text-dark d-flex" href="https://wa.me/8801715949825" target="_blank">
                             <img src="{{ asset('assets/frontend/img/Marriage Consultant WhatsApp.webp') }}"
-                                alt="Marriage Media Whatsapp" class="footer-phone-icon"> 017 1591 1963
+                                alt="Marriage Media Whatsapp" class="footer-phone-icon"> 017 1594 9825
                         </a>
                     </div>
                     <div class="col-md-6">

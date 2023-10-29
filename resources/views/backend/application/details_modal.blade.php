@@ -9,6 +9,7 @@
                 </button>
             </div>
             <div class="modal-body">
+                <p> <strong>Registration Date: </strong> {{ date_format($application->created_at, 'd-m-Y') }}</p>
                 <p> <strong>Profile Created By: </strong> {{$application->profile_created_by }}</p>
                 <p> <strong>Looking For: </strong> {{$application->looking_for }}</p>
                 <p> <strong>Name: </strong> {{$application->name }}</p>

@@ -5,10 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <meta name="keywords" content="বিয়ে মিডিয়ায় খুঁজে নিন:বিয়ে-বিবাহ, শাদি-নিকাহ, পাত্র-পাত্রী, বর-কণে">
-    <meta name="description"
-        content="Looking for the best Bangladeshi matrimonial service out there? Look no further! On BiyeMedia.com Search for any of the following terms: biye, shadi, nikah, marriage, patro, patri, bride, and groom.">
-    <title>@yield('title') | Marriage Media BD</title>
+    <meta name="keywords" content=" Marriage Media, Marriage media bd, marriage media bangladesh,hindu patro,patri,বিয়ে,বিবাহ, শাদি-নিকাহ, পাত্র-পাত্রী, বর-কণে">
+
+    <meta name="title" content="বিয়ে মিডিয়া | Marriage Media | BD Matrimony | Online Matchmaker- نِكَاح">
+    
+    <meta name="description" content="Marriage Media means Biye Media. We are the Trusted Matrimonial Service In Dhaka BD. 01715911963 Call for Searching Bride Groom.Islamic Patro Patri, Online Ghotok For Wedding">
+    
+    <title>বিয়ে মিডিয়া | Marriage Media | BD Matrimony | Online Matchmaker- نِكَاح - @yield('title')</title>
+
     <!-- laravel Notify CSS -->
     @notifyCss
     <link rel="icon" type="image/x-icon" href="{{ asset('assets/fav-light.png') }}">
@@ -22,6 +26,18 @@
     <!-- Custom CSS Files -->
     <link rel="stylesheet" href="{{ asset('assets/frontend/css/style.css') }}">
     @stack('css')
+    
+    <meta name="google-site-verification" content="1h6EcKS09SXazj4yjK3Q3Ipm7CVMvX-OWpVQTO3im9I" />
+    <!-- Google tag (gtag.js) -->
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HLJB7YPJ1G"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'G-HLJB7YPJ1G');
+    </script>
 </head>
 
 <body>
@@ -44,6 +60,7 @@
         <div id="scroll" class="scroll-top" onclick="scrollToTop()" title="Back To Top"></div>
     </div>
 
+    {{ \TawkTo::widgetCode() }}
     <!-- General JS Scripts -->
     <script src="{{ asset('assets/backend/library/jquery/dist/jquery.min.js') }}"></script>
     <script src="{{ asset('assets/backend/library/popper.js/dist/umd/popper.js') }}"></script>

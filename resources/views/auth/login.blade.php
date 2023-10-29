@@ -26,7 +26,7 @@
             <div class="d-flex align-items-stretch flex-wrap">
                 <div class="col-lg-4 col-md-6 col-12 order-lg-1 min-vh-100 order-2 bg-white">
                     <div class="m-3 p-4">
-                        <a href="{{ url('/') }}"><img src="{{ asset('assets/logo.png') }}" alt="logo" width="60%" class="mb-2 mt-2"></a>
+                        <a href="{{ url('/') }}"><img src="{{ asset('assets/Marriage Media Logo.webp') }}" alt="logo" width="60%" class="mb-2 mt-2"></a>
                         
                         <h4 class="text-dark font-weight-normal">Welcome to <span
                                 class="font-weight-bold">{{ @config('app.name') }}</span>

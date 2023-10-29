@@ -485,9 +485,9 @@
     };
     var intVal, myclock;
 
-    $(window).resize(function() {
-        window.location.reload()
-    });
+    // $(window).resize(function() {
+    //     window.location.reload()
+    // });
 
     $(document).ready(function() {
 

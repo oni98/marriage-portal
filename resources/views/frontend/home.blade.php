@@ -65,11 +65,13 @@
                     <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
                         <div class="carousel-inner">
                             <div class="carousel-item active slider-container">
-                                <img class="d-block" src="{{ asset('assets/frontend/img/home/slider/BD Marriage Media -Roll Up 1.webp') }}"
+                                <img class="d-block"
+                                    src="{{ asset('assets/frontend/img/home/slider/BD Marriage Media -Roll Up 1.webp') }}"
                                     alt="BD Marriage Media -Roll Up" width="100%">
                             </div>
                             <div class="carousel-item">
-                                <img class="d-block" src="{{ asset('assets/frontend/img/home/slider/BD Marriage Media -Roll Up 2.webp') }}"
+                                <img class="d-block"
+                                    src="{{ asset('assets/frontend/img/home/slider/BD Marriage Media -Roll Up 2.webp') }}"
                                     alt="Sylheti Bride" width="100%">
                             </div>
                         </div>
@@ -77,16 +79,15 @@
                 </div>
                 <div class="col-md-4 mb-5 pb-5">
                     <h4 class="text-primary font-weight-bolder text-uppercase ">The perfect marriage media site for a
-                        perfect
-                        match
+                        perfect match
                     </h4>
-                    <p class="text-justify py-4">Biye Media or <a href="https://www.facebook.com/biyemedia" target="_blank">
-                            Marriage Media BD </a>have helped lakhs of people find their perfect partner and
-                        perfect families. Because at m4marry, we believe that a marriage is not about just two persons but
-                        about two families too. Biye Media helps you find your right partner and family who match your
-                        community, interests and preferences through its personalized search assistance.</p>
-                    {{-- <h5 class="text-dark">Millions of families have found each other on Biye Media. Find yours.</h5> --}}
-
+                    <p class="text-justify py-4">Biye Media or <a href="https://www.facebook.com/biyemedia" target="_blank">Marriage Media BD</a> have helped lakhs of people find their perfect partner and
+                        perfect families. Because at matrimony, we believe that marriage is not about just two persons but
+                        about two families too. Our Marriage Media helps to find the right partner for you and your family
+                        who match your community, interests, and preferences through its personalized search assistance.
+                        <a href="#" data-toggle="modal" data-target="#homeOverview"> Show More.. </a>
+                    </p>
+                    @include('frontend.modals.home_overview')
                     <div class="btn-register">
                         <a href="{{ route('registerProfile') }}"></a>
                     </div>
@@ -95,11 +96,13 @@
                     <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
                         <div class="carousel-inner">
                             <div class="carousel-item active slider-container">
-                                <img class="d-block" src="{{ asset('assets/frontend/img/home/slider/BD Marriage-Media -Roll-Up-3.webp') }}"
+                                <img class="d-block"
+                                    src="{{ asset('assets/frontend/img/home/slider/BD Marriage-Media -Roll-Up-3.webp') }}"
                                     alt="BD Marriage Media -Roll Up" width="100%">
                             </div>
                             <div class="carousel-item">
-                                <img class="d-block" src="{{ asset('assets/frontend/img/home/slider/BD Marriage-Media -Roll-Up-4.webp') }}"
+                                <img class="d-block"
+                                    src="{{ asset('assets/frontend/img/home/slider/BD Marriage-Media -Roll-Up-4.webp') }}"
                                     alt="Sylheti Bride" width="100%">
                             </div>
                         </div>
@@ -121,15 +124,20 @@
         <div class="container py-5">
             <div class="row justify-content-between">
                 <div class="col-md-5">
-                    <img src="{{ asset('assets/frontend/img/home/Marriage Match Maker Batch.webp') }}" alt="Marriage Match Maker Batch" width="100%">
+                    <img src="{{ asset('assets/frontend/img/home/Marriage Match Maker Batch.webp') }}"
+                        alt="Marriage Match Maker Batch" width="100%">
                 </div>
                 <div class="col-md-6">
                     <h4 class="text-primary font-weight-bolder text-uppercase">Rainbow Verification System</h4>
-                    <p class="text-justify py-4">Biye Media or <a href="https://www.facebook.com/biyemedia" target="_blank">
+                    <p class="text-justify py-4">Biye Media or <a href="https://www.facebook.com/biyemedia"
+                            target="_blank">
                             Marriage Media BD </a>uses unique 9-Points Trust and Safety features, for the
                         security of our members, called “Verification Badges” that display on member profiles after they
                         pass the verification of Mobile, Email, Location, Photo, Age, Education, Salary, Meeting, ID and
-                        Nationality. Fully verified members also get “The Famous Green Tick” on their profiles.</p>
+                        Nationality. Fully verified members also get “The Famous Green Tick” on their profiles.
+                        <a href="#" data-toggle="modal" data-target="#homeServices"> Show More.. </a>
+                    </p>
+                    @include('frontend.modals.home_services')
                     <div class="btn-register">
                         <a href="{{ route('registerProfile') }}"></a>
                     </div>
@@ -375,8 +383,10 @@
              ** Change Color
              */
             $("#toggle-button").click(function() {
-                $("container, .hero-video, .why-choose-us, .double-slider, .people, .rainbow-verification, .featured-cards, .contact, .color-change, .navbar, .scroll-top, .footer-above").toggleClass("gray");
-                $("container, .hero-video *, .why-choose-us *, .double-slider *, .people *, .rainbow-verification *, .featured-cards *, .contact *, .color-change *, .navbar *, .scroll-top *, .footer-above *").toggleClass("gray");
+                $("container, .hero-video, .why-choose-us, .double-slider, .people, .rainbow-verification, .featured-cards, .contact, .color-change, .navbar, .scroll-top, .footer-above")
+                    .toggleClass("gray");
+                $("container, .hero-video *, .why-choose-us *, .double-slider *, .people *, .rainbow-verification *, .featured-cards *, .contact *, .color-change *, .navbar *, .scroll-top *, .footer-above *")
+                    .toggleClass("gray");
             });
 
 
@@ -385,6 +395,7 @@
              */
             var interval = 5000;
             var timerId;
+
             function scrollPage() {
                 $('html, body').animate({
                     scrollTop: $(window).scrollTop() + $(window).height()

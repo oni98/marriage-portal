@@ -4,6 +4,7 @@ use App\Http\Controllers\Backend\ApplicationController;
 use App\Http\Controllers\Auth\RolesController;
 use App\Http\Controllers\Auth\UsersController;
 use App\Http\Controllers\Backend\DashboardController;
+use App\Http\Controllers\BlogController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -22,6 +23,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/create-new-profile', [HomeController::class, 'registerProfile'])->name('registerProfile');
 Route::post('/register-profile', [ApplicationController::class, 'store'])->name('register.profile');
+
+// Blogs
+Route::get('/blog/marriage-media', [BlogController::class, 'marriageMedia'])->name('blog.marriageMedia');
 
 Auth::routes();
 
