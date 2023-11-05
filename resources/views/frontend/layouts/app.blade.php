@@ -7,11 +7,11 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="keywords" content=" Marriage Media, Marriage media bd, marriage media bangladesh,hindu patro,patri,বিয়ে,বিবাহ, শাদি-নিকাহ, পাত্র-পাত্রী, বর-কণে">
 
-    <meta name="title" content="বিয়ে মিডিয়া | Marriage Media | BD Matrimony | Online Matchmaker- نِكَاح">
+    <meta name="title" content="Marriage Media: বিয়ে মিডিয়া | Best BD matrimony site">
     
-    <meta name="description" content="Marriage Media means Biye Media. We are the Trusted Matrimonial Service In Dhaka BD. 01715911963 Call for Searching Bride Groom.Islamic Patro Patri, Online Ghotok For Wedding">
+    <meta name="description" content="Finding Marriage Media for Wedding in BD? We are the Trusted Matrimonial Service In Dhaka.Call-01715911963 Islamic Patro Patri">
     
-    <title>বিয়ে মিডিয়া | Marriage Media | BD Matrimony | Online Matchmaker- نِكَاح - @yield('title')</title>
+    <title>Marriage Media: বিয়ে মিডিয়া | Best BD matrimony site- @yield('title')</title>
 
     <!-- laravel Notify CSS -->
     @notifyCss
@@ -42,6 +42,7 @@
 
 <body>
     <x:notify-messages />
+    <h1 class="d-none">Marriage Media</h1>
     <div>
         <audio id="myAudio">
             <source src="{{ asset('assets/frontend/ASSALAMUALAIKUM.mp3') }}" type="audio/mpeg">

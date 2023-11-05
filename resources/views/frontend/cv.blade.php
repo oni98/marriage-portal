@@ -1,53 +1,15 @@
 @extends('frontend.layouts.app')
-@section('title', 'Create Profile')
+@section('title', 'Generate CV')
 @section('content')
     <div class="container">
         @include('frontend.partials.message')
         <div class="register-form" id="register">
-            <form method="POST" action="{{ route('register.profile') }}" enctype="multipart/form-data">
+            <form method="POST" action="{{ route('cv.generate') }}" enctype="multipart/form-data">
                 @csrf
                 <h4 class="text-primary font-weight-bold">Basic Information</h4>
                 <div class="form-row align-items-center">
                     <div class="col-md-6 my-1 pr-4">
-                        <label class="font-weight-bold" for="inlineFormInputGroupUsername">Profile Created By <span
-                                class="text-danger">*</span></label>
-                        <div class="input-group">
-                            <div class="input-group-prepend">
-                                <div class="input-group-text"><img
-                                        src="{{ asset('assets/frontend/img/register-form/Profile-created-by.png') }}"
-                                        alt="" width="30px"></div>
-                            </div>
-                            <select class="form-control select" name="profile_created_by" id="" required>
-                                <option selected disabled value="">যে কোনো একটি সিলেক্ট করুন</option>
-                                <option value="Friend">Friend </option>
-                                <option value="Self">Self</option>
-                                <option value="Guardian">Guardian</option>
-                                <option value="Parent">Parent</option>
-                                <option value="Relatives">Relatives</option>
-                                <option value="Others">Others</option>
-                            </select>
-                            </select>
-                        </div>
-                    </div>
-                    <div class="col-md-6 my-1 pr-4">
-                        <label class="font-weight-bold" for="inlineFormInputGroupUsername">Looking For <span
-                                class="text-danger">*</span></label>
-                        <div class="input-group">
-                            <div class="input-group-prepend">
-                                <div class="input-group-text"><img
-                                        src="{{ asset('assets/frontend/img/register-form/Bride-Groom.png') }}"
-                                        alt="" width="30px"></div>
-                            </div>
-                            <select class="form-control select" name="looking_for" id="" required>
-                                <option selected disabled value="">যে কোনো একটি সিলেক্ট করুন</option>
-                                <option value="Bride">Bride (পাত্রী)</option>
-                                <option value="Groom">Groom (পাত্র)</option>
-                            </select>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6 my-1 pr-4">
-                        <label class="font-weight-bold" for="inlineFormInputGroupUsername">Bride/Groom Name <span
+                        <label class="font-weight-bold" for="inlineFormInputGroupUsername"> Name <span
                                 class="text-danger">*</span></label>
                         <div class="input-group">
                             <div class="input-group-prepend">
@@ -191,7 +153,7 @@
                         </div>
                     </div>
                     <div class="col-md-6 my-1 pr-4">
-                        <label class="font-weight-bold" for="inlineFormInputGroupUsername">Bride/Groom's Profession <span
+                        <label class="font-weight-bold" for="inlineFormInputGroupUsername">Profession <span
                                 class="text-danger">*</span></label>
                         <div class="input-group">
                             <div class="input-group-prepend">
@@ -208,9 +170,41 @@
                         </div>
                         <div class="input-group">
                             <input type="text" id="other_profession" name="other_profession" class="form-control"
-                                placeholder="পাত্র/পাত্রীর পেশা লিখুন">
+                                placeholder="পেশা লিখুন">
                         </div>
                     </div>
+
+                    <div class="col-md-6 my-1 pr-4">
+                        <label class="font-weight-bold" for="height">Nationality
+                            <span class="text-danger">*</span></label>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text"><img
+                                        src="{{ asset('assets/frontend/img/register-form/Division.png') }}"
+                                        alt="" width="30px"></div>
+                            </div>
+                            <input type="text" id="nationality" name="nationality" class="form-control"
+                                placeholder="জাতীয়তা">
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 my-1 pr-4">
+                        <label class="font-weight-bold" for="inlineFormInputGroupUsername">Permanent Address
+                            <span class="text-danger">*</span></label>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text"><img
+                                        src="{{ asset('assets/frontend/img/register-form/Resident.png') }}" alt=""
+                                        width="30px"></div>
+                            </div>
+                            <input type="text" name="permanent_address" class="form-control"
+                                placeholder="আপনার স্থায়ী ঠিকানা লিখুন" required>
+                        </div>
+                    </div>
+                </div>
+
+                <h4 class="text-primary font-weight-bold mt-5">Family's Information</h4>
+                <div class="form-row align-items-center">
                     <div class="col-md-6 my-1 pr-4">
                         <label class="font-weight-bold" for="father_profession">Father's Profession <span
                                 class="text-danger">*</span></label>
@@ -230,7 +224,7 @@
                         </div>
                         <div class="input-group">
                             <input type="text" id="father_other_profession" name="father_other_profession" class="form-control"
-                                placeholder="পাত্র/পাত্রীর পিতার পেশা লিখুন">
+                                placeholder="পিতার পেশা লিখুন">
                         </div>
                     </div>
                     <div class="col-md-6 my-1 pr-4">
@@ -252,33 +246,10 @@
                         </div>
                         <div class="input-group">
                             <input type="text" id="mother_other_profession" name="mother_other_profession" class="form-control"
-                                placeholder="পাত্র/পাত্রীর মাতার পেশা লিখুন">
+                                placeholder="মাতার পেশা লিখুন">
                         </div>
                     </div>
 
-                    <div class="col-md-6 my-1 pr-4">
-                        <label class="font-weight-bold" for="height">Height
-                            <span class="text-danger">*</span></label>
-                        <div class="input-group">
-                            <div class="input-group-prepend">
-                                <div class="input-group-text"><img
-                                        src="{{ asset('assets/frontend/img/register-form/District.png') }}"
-                                        alt="" width="30px"></div>
-                            </div>
-                            <select class="form-control" name="height" id="height" required>
-                                <option selected disabled value="">সিলেক্ট করুন</option>
-                                @for ($i = 48; $i <= 62; $i++)
-                                    <p>{{ $i / 10 }}"</p>
-                                    <option value="{{ number_format($i / 10, 1) }}">{{ number_format($i / 10, 1) }}"
-                                    </option>
-                                @endfor
-                            </select>
-                        </div>
-                    </div>
-                </div>
-
-                <h4 class="text-primary font-weight-bold mt-5">Location</h4>
-                <div class="form-row align-items-center">
                     <div class="col-md-6 my-1 pr-4">
                         <label class="font-weight-bold" for="father_district">Father's District
                             <span class="text-danger">*</span></label>
@@ -313,40 +284,36 @@
                             </select>
                         </div>
                     </div>
-                    <div class="col-md-6 my-1 pr-4">
-                        <label class="font-weight-bold" for="present_district">Present District
-                            <span class="text-danger">*</span></label>
-                        <div class="input-group">
-                            <div class="input-group-prepend">
-                                <div class="input-group-text"><img
-                                        src="{{ asset('assets/frontend/img/register-form/District.png') }}"
-                                        alt="" width="30px"></div>
-                            </div>
-                            <select class="form-control select2" name="present_district" id="present_district" required>
-                                <option selected disabled value="">সিলেক্ট করুন</option>
-                                @foreach ($districts as $district)
-                                    <option value="{{ $district->id }}">{{ $district->name }}</option>
-                                @endforeach
-                            </select>
-                        </div>
-                    </div>
 
                     <div class="col-md-6 my-1 pr-4">
-                        <label class="font-weight-bold" for="inlineFormInputGroupUsername">Location / Landmark / Area
+                        <label class="font-weight-bold" for="inlineFormInputGroupUsername">Sibling Brother
                             <span class="text-danger">*</span></label>
                         <div class="input-group">
                             <div class="input-group-prepend">
                                 <div class="input-group-text"><img
-                                        src="{{ asset('assets/frontend/img/register-form/Area.png') }}" alt=""
+                                        src="{{ asset('assets/frontend/img/register-form/Name.png') }}" alt=""
                                         width="30px"></div>
                             </div>
-                            <input type="text" name="area" class="form-control"
-                                placeholder="আপনার এলাকার নাম লিখুন" required>
+                            <input type="number" name="sibling_brother" class="form-control"
+                                placeholder="আপনার ভাই কতজন" required>
+                        </div>
+                    </div>
+                    <div class="col-md-6 my-1 pr-4">
+                        <label class="font-weight-bold" for="inlineFormInputGroupUsername">Sibling Sister
+                            <span class="text-danger">*</span></label>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <div class="input-group-text"><img
+                                        src="{{ asset('assets/frontend/img/register-form/Name.png') }}" alt=""
+                                        width="30px"></div>
+                            </div>
+                            <input type="number" name="sibling_sister" class="form-control"
+                                placeholder="আপনার বোন কতজন" required>
                         </div>
                     </div>
                 </div>
 
-                <h4 class="text-primary font-weight-bold mt-5">Account Information</h4>
+                <h4 class="text-primary font-weight-bold mt-5">Contact Information</h4>
                 <div class="form-row align-items-center">
                     <div class="col-md-6 my-1 pr-4">
                         <label class="font-weight-bold" for="inlineFormInputGroupUsername">Email Address</label>
@@ -374,7 +341,7 @@
                     </div>
 
                     <div class="col-md-6 my-1 pr-4">
-                        <label class="font-weight-bold" for="inlineFormInputGroupUsername">Bride/Groom Phone Number
+                        <label class="font-weight-bold" for="inlineFormInputGroupUsername">Phone Number
                             <span class="text-danger">*</span></label>
                         <div class="input-group">
                             <div class="input-group-prepend">
@@ -398,45 +365,25 @@
                                 placeholder="অভিভাবকের মোবাইল নাম্বার লিখুন" required>
                         </div>
                     </div>
+                </div>
 
-                    <div class="col-md-6 my-1 pr-4">
-                        <label class="font-weight-bold" for="inlineFormInputGroupUsername">Password
-                            <span class="text-danger">*</span></label>
-                        <div class="input-group">
-                            <div class="input-group-prepend">
-                                <div class="input-group-text"><img
-                                        src="{{ asset('assets/frontend/img/register-form/Password.png') }}"
-                                        alt="" width="30px"></div>
-                            </div>
-                            <input type="password" name="password" class="form-control"
-                                placeholder="আপনার পাসওয়ার্ড লিখুন" required>
-                        </div>
-                    </div>
-                    <div class="col-md-6 my-1 pr-4">
-                        <label class="font-weight-bold" for="inlineFormInputGroupUsername">Confirm Password <span
-                                class="text-danger">*</span></label>
-                        <div class="input-group">
-                            <div class="input-group-prepend">
-                                <div class="input-group-text"><img
-                                        src="{{ asset('assets/frontend/img/register-form/Confirm-password.png') }}"
-                                        alt="" width="30px"></div>
-                            </div>
-                            <input type="password" name="password_confirmation" class="form-control"
-                                placeholder="আপনার পাসওয়ার্ডটি পুনরায় লিখুন" required>
-                        </div>
+                <div class="form-row align-items-center">
+                    <div class="col-12 mt-1">
+                        <label class="font-weight-bold" for="inlineFormInputGroupUsername">About You</label>
+                        <textarea name="about" id="" class="form-control" rows="4" placeholder="আপনার সম্পর্কে লিখুন"></textarea>
                     </div>
                 </div>
 
-                <div class="form-check mt-4">
-                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                    <label class="form-check-label" for="exampleCheck1">I affirm that I have read and agreed to the
-                        Privacy Policy and Terms & Conditions of biyemedia.com for your convenience, these
-                        documents.</label>
+                <div class="form-row align-items-center">
+                    <div class="col-3 mt-1">
+                        <label class="font-weight-bold" for="inlineFormInputGroupUsername">Your Photo (আপনার ছবি দিন)</label>
+                        <input type="file" class="form-control" name="image">
+                    </div>
                 </div>
 
                 <div class="form-row align-items-center">
                     <div class="col-auto mt-4">
-                        <button type="submit" class="btn btn-primary px-4">SUBMIT</button>
+                        <button type="submit" class="btn btn-primary px-4">GENERATE</button>
                     </div>
                 </div>
             </form>
