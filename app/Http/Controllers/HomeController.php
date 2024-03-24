@@ -29,10 +29,10 @@ class HomeController extends Controller
         $education = Education::all();
         $professions = Profession::all();
         $divisions = Division::all();
-        $districts = District::all();
+        $districts = District::orderBy('name')->get();
         $upazilas = Upazila::all();
         $unions = Union::all();
-        return view('frontend.register', ['religions'=>$religions, 'marital_statuses'=>$marital_statuses, 'education'=>$education, 'professions'=>$professions, 'divisions'=>$divisions, 'districts'=>$districts, 'upazilas'=>$upazilas, 'unions'=>$unions]);
+        return view('frontend.process', ['religions'=>$religions, 'marital_statuses'=>$marital_statuses, 'education'=>$education, 'professions'=>$professions, 'divisions'=>$divisions, 'districts'=>$districts, 'upazilas'=>$upazilas, 'unions'=>$unions]);
     }
 
     public function fetchDistricts($id){

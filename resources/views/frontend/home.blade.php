@@ -368,8 +368,12 @@
         </div>
     </div>
 
-    {{-- <button id="scrollButton">Start Scrolling</button> --}}
-    {{-- <button id="scrollBtn" onclick="scrollToBottom()">Scroll Down</button> --}}
+    {{-- <button id="scrollButton">Start Scrolling</button>
+    <button id="scrollBtn" onclick="scrollToBottom()">Scroll Down</button> --}}
+    <!-- Scroll current view after every 5 seconds -->
+    <button id="scrollButton" class="view-scroll"></button>
+    <!-- Scroll From Top to Bottom slowly -->
+    <button id="scrollBtn" class="scroll-down"></button>
     <!-- Color Change -->
     <button class="color-change" id="toggle-button" title="Turn Off Website Color"></button>
 @endsection
@@ -393,7 +397,7 @@
             /*
              ** Scroll current view after every 5 seconds
              */
-            var interval = 5000;
+             var interval = 5000;
             var timerId;
 
             function scrollPage() {
@@ -405,10 +409,8 @@
                 if (timerId) {
                     clearInterval(timerId);
                     timerId = null;
-                    $(this).text('Start Scrolling');
                 } else {
                     timerId = setInterval(scrollPage, interval);
-                    $(this).text('Stop Scrolling');
                 }
             });
 
@@ -416,14 +418,14 @@
             /*
              ** Scroll From Top to Bottom slowly
              */
-            function scrollToBottom() {
+            $('#scrollBtn').click(function() {
                 $("html, body").animate({
                     scrollTop: 0
                 }, "slow");
                 $("html, body").animate({
                     scrollTop: $(document).height()
                 }, 50000);
-            }
+            });
 
 
             /*

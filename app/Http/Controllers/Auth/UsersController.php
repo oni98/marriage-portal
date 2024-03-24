@@ -17,17 +17,16 @@ class UsersController extends Controller
     public function login(Request $request)
     {
         $request->validate([
-            'email' => 'required',
+            'phone' => 'required',
             'password' => 'required',
         ]);
 
-        $user = User::where('email', '=', $request->email)->first();
-        $credentials = $request->only('email', 'password');
+        // $user = User::where('phone', '=', $request->phone)->first();
+        $credentials = $request->only('phone', 'password');
         if (Auth::attempt($credentials)) {
-            return redirect('/dashboard')->withSuccess('You have Successfully logged in');
+            return redirect('/dashboard')->with('success', 'You have Successfully logged in');
         } else {
-            session()->flash('success', 'UserName or Password did not match');
-            return redirect('/login');
+            return redirect('/login')->with('error', 'UserName or Password did not match');
         }
     }
 
@@ -76,8 +75,7 @@ class UsersController extends Controller
 
         $user->assignRole($request->role);
 
-        session()->flash('success', 'User has been Created');
-        return redirect()->route('users.index');
+        return redirect()->route('users.index')->with('success','User has been Created');
     }
 
     /**
@@ -133,8 +131,7 @@ class UsersController extends Controller
             $user->assignRole($request->role);
         }
 
-        session()->flash('success', 'User has been Updated');
-        return redirect()->route('users.index');
+        return redirect()->route('users.index')->with('success','User has been Updated');
     }
 
     /**
@@ -151,8 +148,7 @@ class UsersController extends Controller
             $user->delete();
         }
 
-        session()->flash('success', 'User has been Deleted');
-        return redirect()->route('users.index');
+        return redirect()->route('users.index')->with('success','User has been Deleted');
     }
 
     /**
@@ -208,10 +204,9 @@ class UsersController extends Controller
         }
 
         if ($user->save()) {
-            session()->flash('success', 'Profile has been Updated');
-            return redirect()->route('profile');
+            return redirect()->route('profile')->with('success','Profile has been Updated');
         } else {
-            session()->flash('error', 'Something Went Wrong');
+            return redirect()->back()->with('error', 'Something Went Wrong');
         }
     }
 }

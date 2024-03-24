@@ -33,16 +33,16 @@
                         </h4>
                         <p class="text-muted">Before you get started, you must login or register if you don't already
                             have an account.</p>
-                        <form method="POST" action="{{ route('login') }}" class="needs-validation">
+                        <form method="POST" action="{{ route('user.login') }}" class="needs-validation">
                             @csrf
                             <div class="form-group">
-                                <label for="email">Email</label>
-                                <input id="email" type="email"
-                                    class="form-control @error('email') is-invalid @enderror" name="email"
-                                    value="{{ old('email') }}" required autocomplete="email" tabindex="1" autofocus>
-                                @error('email')
+                                <label for="phone">Phone Number</label>
+                                <input id="phone" type="text"
+                                    class="form-control @error('phone') is-invalid @enderror" name="phone"
+                                    value="{{ old('phone') }}" required autocomplete="email" tabindex="1" autofocus>
+                                @error('phone')
                                     <div class="invalid-feedback">
-                                        Please fill in your email
+                                        Please fill in your phone number
                                     </div>
                                 @enderror
                             </div>
@@ -83,7 +83,7 @@
                             </div>
 
                             <div class="mt-5 text-center">
-                                Don't have an account? <a href="{{ route('register') }}">Create new one</a>
+                                Don't have an account? <a href="{{ route('registerProfile') }}">Create new one</a>
                             </div>
                         </form>
                     </div>

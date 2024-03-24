@@ -10,13 +10,14 @@
     <!-- General CSS Files -->
     <link rel="stylesheet" href="{{ asset('assets/backend/library/bootstrap/dist/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/backend/fontawesome/css/all.min.css') }}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.1/toastr.min.css" integrity="sha512-LEetX42b+K0TTmnfCNxYOrVTLlg36s06bJ8cutF3BpQT3VnpzdeqoYfn+FW2KBi/imYk2RpfQzlyzY7CrRW4CQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     @stack('style')
 
     <!-- Template CSS -->
     <link rel="stylesheet" href="{{ asset('assets/backend/css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/backend/css/components.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.1/toastr.min.css" integrity="sha512-LEetX42b+K0TTmnfCNxYOrVTLlg36s06bJ8cutF3BpQT3VnpzdeqoYfn+FW2KBi/imYk2RpfQzlyzY7CrRW4CQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 
     <!-- Start GA -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-94034622-3"></script>
@@ -35,7 +36,6 @@
 </head>
 
 <body>
-    <x:notify-messages />
     <div id="app">
         <div class="main-wrapper">
             <!-- Header -->
@@ -62,24 +62,12 @@
     <script src="{{ asset('assets/backend/js/stisla.js') }}"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.1/toastr.min.js" integrity="sha512-pi7w4/MYBJ/7/NFGQ1OCInentlT3CCVVKU2udjNRWhxIOY5K2vxSPKYEa6EKbEZvHkgyEB8SMlSU8E84Ig81Og==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    @stack('scripts')
+
+    <!-- Template JS File -->
+    <script src="{{ asset('assets/backend/js/scripts.js') }}"></script>
+    <script src="{{ asset('assets/backend/js/custom.js') }}"></script>
     <script>
-        toastr.options = {
-            "closeButton": false,
-            "debug": false,
-            "newestOnTop": false,
-            "progressBar": true,
-            "positionClass": "toast-top-right",
-            "preventDuplicates": true,
-            "onclick": null,
-            "showDuration": "300",
-            "hideDuration": "1000",
-            "timeOut": "5000",
-            "extendedTimeOut": "1000",
-            "showEasing": "swing",
-            "hideEasing": "linear",
-            "showMethod": "fadeIn",
-            "hideMethod": "fadeOut"
-        }
         @if (Session::has('success'))
 
             toastr.options = {
@@ -113,11 +101,6 @@
             toastr.warning("{{ session('warning') }}");
         @endif
     </script>
-    @stack('scripts')
-
-    <!-- Template JS File -->
-    <script src="{{ asset('assets/backend/js/scripts.js') }}"></script>
-    <script src="{{ asset('assets/backend/js/custom.js') }}"></script>
 </body>
 
 </html>

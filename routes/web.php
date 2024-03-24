@@ -32,14 +32,14 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/create-new-profile', [HomeController::class, 'registerProfile'])->name('registerProfile');
 Route::post('/register-profile', [ApplicationController::class, 'store'])->name('register.profile');
 
-// Generate CV
-Route::get('/cv', [CVController::class, 'cvForm'])->name('cvForm');
-Route::post('/generate-cv', [CVController::class, 'store'])->name('cv.generate');
+
 
 // Blogs
 Route::get('/blog/marriage-media', [BlogController::class, 'marriageMedia'])->name('blog.marriageMedia');
 
 Auth::routes();
+//Login
+Route::post('/login', [UsersController::class, 'login'])->name('user.login');
 Route::middleware(['auth'])->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 

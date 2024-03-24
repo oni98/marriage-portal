@@ -34,8 +34,8 @@
                                         <td>{{ $loop->index + 1 }}</td>
                                         <td>{{ $application->looking_for }}</td>
                                         <td>{{ $application->name }}</td>
-                                        <td>{{ $application->religion->name }}</td>
-                                        <td>{{ $application->profession->name }}</td>
+                                        <td>{{ $application->religion?->name }}</td>
+                                        <td>{{ $application->profession?->name }}</td>
                                         <td> <a href="https://wa.me/88{{ $application->whatsapp }}" target="_blank">{{ $application->whatsapp }}</a> </td>
                                         <td>{{ $application->phone }}</td>
                                         <td>
@@ -74,7 +74,7 @@
                 "responsive": true,
                 "lengthChange": false,
                 "autoWidth": true,
-                "ordering": false,
+                "ordering": true,
             });
         });
     </script>

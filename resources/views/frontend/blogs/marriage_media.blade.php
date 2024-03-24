@@ -32,7 +32,7 @@
                 counseling that go beyond wooing. It is essential to the process of organizing a wedding.
             </div>
             <div class="col-md-3">
-                <img src="{{ asset('assets/frontend/img/blogs/married-couple.jpeg') }}" alt="">
+                <img src="{{ asset('assets/frontend/img/blogs/married-couple.jpeg') }}" alt="" width="100%" height="100%">
             </div>
         </div>
         <p>

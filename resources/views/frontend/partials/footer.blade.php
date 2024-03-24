@@ -33,7 +33,7 @@
             <div class="col-md-2 mb-4">
                 <h4 class="text-primary2 font-weight-bold">ADDRESS :::</h4>
                 <p>
-                    Flat# D1, Floor# 4th Lift# 3, House# 8 Block# B, Banasree Main Road (Lake Side) Rampura,, Dhaka, Bangladesh
+                    Jamuna Future Park, Level 2, Zone A Shop 13B, Dhaka 1229, Bangladesh
                 </p>
                 <div class="row">
                     <div class="col-md-12">
@@ -68,9 +68,9 @@
                 </div>
                 <div class="row">
                     <div class="col-md-6">
-                        <a class="text-dark d-flex" href="https://wa.me/8801715585700" target="_blank">
+                        <a class="text-primary2 d-flex" href="https://wa.me/8801715574279" target="_blank">
                             <img src="{{ asset('assets/frontend/img/Marriage Consultant WhatsApp.webp') }}"
-                                alt="Marriage Media Whatsapp" class="footer-phone-icon"> 017 1558 5700
+                                alt="Marriage Media Whatsapp" class="footer-phone-icon"><h5>017 1557 4279</h5> 
                         </a>
                     </div>
                     <div class="col-md-6">

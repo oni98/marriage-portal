@@ -3659,3 +3659,7 @@ body.layout-3 .main-wrapper {
     opacity: 0;
   }
 }
+
+table.dataTable thead th {
+  padding: 10px 10px !important;
+}
