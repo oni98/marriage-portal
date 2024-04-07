@@ -24,6 +24,7 @@
                                 <tr>
                                     <th>SL</th>
                                     <th>Name</th>
+                                    <th>Phone</th>
                                     <th>Email</th>
                                     <th>Role</th>
                                     <th>Action</th>
@@ -34,6 +35,7 @@
                                     <tr>
                                         <td>{{ $loop->index + 1 }}</td>
                                         <td>{{ $user->name }}</td>
+                                        <td>{{ $user->phone }}</td>
                                         <td>{{ $user->email }}</td>
                                         <td>
                                             @foreach ($user->roles as $perm)

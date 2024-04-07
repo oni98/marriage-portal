@@ -54,4 +54,8 @@ class User extends Authenticatable
         }
         return $hasPermission;
     }
+
+    public function application(){
+        return $this->belongsTo(Application::class);
+    }
 }

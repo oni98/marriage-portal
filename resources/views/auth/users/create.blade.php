@@ -24,9 +24,9 @@
                                         placeholder="Enter your  Name">
                                 </div>
                                 <div class="form-group col-md-6 col-sm-12">
-                                    <label for="email">Email</label>
-                                    <input type="email" class="form-control" name="email" id="email"
-                                        placeholder="Enter your email">
+                                    <label for="phone">Phone</label>
+                                    <input type="text" class="form-control" name="phone" id="phone"
+                                        placeholder="Enter your phone number">
                                 </div>
                             </div>
                             <div class="form-row">

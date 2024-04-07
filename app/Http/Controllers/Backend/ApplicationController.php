@@ -8,6 +8,7 @@ use App\Models\Application;
 use App\Models\ApplicationFile;
 use App\Models\Education;
 use App\Models\MaritalStatus;
+use App\Models\Package;
 use App\Models\Profession;
 use App\Models\Religion;
 use App\Models\User;
@@ -22,12 +23,16 @@ use PDF;
 
 class ApplicationController extends Controller
 {
+    private $root = 'backend.application.';
+
     public function index()
     {
-        $applications = Application::with(['religion', 'maritalStatus', 'education'])->get();
+        $applications = Application::with(['religion', 'maritalStatus', 'education', 'userPackage', 'userPackage.package', 'files'])->get();
         $professions = Profession::all();
         $districts = District::all();
-        return view('backend.application.index', ['applications' => $applications, 'professions' => $professions, 'districts' => $districts]);
+        $packages = Package::all();
+
+        return view($this->root . 'index', ['applications' => $applications, 'professions' => $professions, 'districts' => $districts, 'packages' => $packages]);
     }
 
     public function store(Request $request)
@@ -72,6 +77,7 @@ class ApplicationController extends Controller
                     'ssc_year' => 'required',
                     'profession' => 'required',
                     'height' => 'required',
+                    'height' => 'required',
                     'present_district' => 'required',
                     'father_profession' => 'required',
                     'mother_profession' => 'required',
@@ -89,6 +95,7 @@ class ApplicationController extends Controller
                 if ($validator->fails()) {
                     return redirect()->back()->with('error', 'লাল চিহ্নিত ফিল্ডগুলো অবশ্যই ফিলআপ করতে হবে');
                 }
+
                 $register = new Application();
                 $register->name = $request->name;
                 $register->surname = $request->surname;
@@ -181,7 +188,7 @@ class ApplicationController extends Controller
         } catch (\Exception $e) {
             DB::rollBack();
             return redirect()->back()->with('error', $e->getMessage());
-            // return redirect()->back()->with('error', 'Something Went Wrong!! Please try again');
+            return redirect()->back()->with('error', 'Something Went Wrong!! Please try again');
         }
     }
 
@@ -205,13 +212,12 @@ class ApplicationController extends Controller
         try {
             $application = Application::find($id);
             if ($application->delete()) {
-                notify()->success('User also deleted', 'Application Deleted');
-                return redirect('/admin/applications');
+                return redirect()->back()->with('success', 'Application Deleted');
             }
+            return redirect()->back()->with('error', 'Something Went Wrong!! Please try again');
         } catch (\Exception $e) {
             DB::rollBack();
-            notify()->error('Something Went Wrong!! Please try again');
-            return redirect('/admin/applications');
+            return redirect()->back()->with('error', 'Something Went Wrong!! Please try again');
         }
     }
 }

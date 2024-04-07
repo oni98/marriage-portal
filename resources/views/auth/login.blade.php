@@ -13,11 +13,11 @@
         integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- CSS Libraries -->
     <link rel="stylesheet" href="{{ asset('assets/backend/library/bootstrap-social/bootstrap-social.css') }}">
-
     <!-- Template CSS -->
     <link rel="stylesheet" href="{{ asset('assets/backend/css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('assets/backend/css/components.css') }}">
     <style>::-webkit-scrollbar{width: 0px;}</style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.1/toastr.min.css" integrity="sha512-LEetX42b+K0TTmnfCNxYOrVTLlg36s06bJ8cutF3BpQT3VnpzdeqoYfn+FW2KBi/imYk2RpfQzlyzY7CrRW4CQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 
 <body>
@@ -71,11 +71,11 @@
                             </div>
 
                             <div class="form-group text-right">
-                                @if (Route::has('password.request'))
+                                {{-- @if (Route::has('password.request'))
                                     <a class="float-left mt-3" href="{{ route('password.request') }}">
                                         Forgot Password?
                                     </a>
-                                @endif
+                                @endif --}}
                                 <button type="submit" class="btn btn-primary btn-lg btn-icon icon-right"
                                     tabindex="4">
                                     Login
@@ -112,10 +112,44 @@
     <script src="{{ asset('assets/backend/library/moment/min/moment.min.js') }}"></script>
     <script src="{{ asset('assets/backend/js/stisla.js') }}"></script>
     <!-- JS Libraies -->
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/2.1.1/toastr.min.js" integrity="sha512-pi7w4/MYBJ/7/NFGQ1OCInentlT3CCVVKU2udjNRWhxIOY5K2vxSPKYEa6EKbEZvHkgyEB8SMlSU8E84Ig81Og==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <!-- Template JS File -->
     <script src="{{ asset('assets/backend/js/scripts.js') }}"></script>
     <script src="{{ asset('assets/backend/js/custom.js') }}"></script>
+    <script>
+        @if (Session::has('success'))
+
+            toastr.options = {
+                "closeButton": true,
+                "progressBar": true
+            }
+            toastr.success("{{ Session::get('success') }}");
+        @endif
+
+        @if (Session::has('error'))
+            toastr.options = {
+                "closeButton": true,
+                "progressBar": true
+            }
+            toastr.error("{{ session('error') }}");
+        @endif
+
+        @if (Session::has('info'))
+            toastr.options = {
+                "closeButton": true,
+                "progressBar": true
+            }
+            toastr.info("{{ session('info') }}");
+        @endif
+
+        @if (Session::has('warning'))
+            toastr.options = {
+                "closeButton": true,
+                "progressBar": true
+            }
+            toastr.warning("{{ session('warning') }}");
+        @endif
+    </script>
 </body>
 
 </html>

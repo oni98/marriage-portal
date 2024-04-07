@@ -176,8 +176,7 @@
                 </div>
 
                 <div class="col-md-6 my-1 pr-4">
-                    <label class="font-weight-bold" for="height">Nationality
-                        <span class="text-danger">*</span></label>
+                    <label class="font-weight-bold" for="height">Nationality</label>
                     <div class="input-group">
                         <div class="input-group-prepend">
                             <div class="input-group-text"><img
@@ -331,7 +330,8 @@
                 </div>
 
                 <div class="col-md-6 my-1 pr-4">
-                    <label class="font-weight-bold" for="inlineFormInputGroupUsername">Sibling Brother</label>
+                    <label class="font-weight-bold" for="inlineFormInputGroupUsername">Sibling Brother <span
+                        class="text-danger">*</span></label>
                     <div class="input-group">
                         <div class="input-group-prepend">
                             <div class="input-group-text"><img
@@ -343,7 +343,8 @@
                     </div>
                 </div>
                 <div class="col-md-6 my-1 pr-4">
-                    <label class="font-weight-bold" for="inlineFormInputGroupUsername">Sibling Sister</label>
+                    <label class="font-weight-bold" for="inlineFormInputGroupUsername">Sibling Sister <span
+                        class="text-danger">*</span></label>
                     <div class="input-group">
                         <div class="input-group-prepend">
                             <div class="input-group-text"><img

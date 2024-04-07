@@ -16,17 +16,22 @@ class UsersController extends Controller
 {
     public function login(Request $request)
     {
-        $request->validate([
-            'phone' => 'required',
-            'password' => 'required',
-        ]);
+        try {
+            $request->validate([
+                'phone' => 'required',
+                'password' => 'required',
+            ]);
 
-        // $user = User::where('phone', '=', $request->phone)->first();
-        $credentials = $request->only('phone', 'password');
-        if (Auth::attempt($credentials)) {
-            return redirect('/dashboard')->with('success', 'You have Successfully logged in');
-        } else {
-            return redirect('/login')->with('error', 'UserName or Password did not match');
+            // $user = User::where('phone', '=', $request->phone)->first();
+            $credentials = $request->only('phone', 'password');
+            if (Auth::attempt($credentials)) {
+                return redirect('/dashboard')->with('success', 'You have Successfully logged in');
+            }
+
+            return redirect('/login')->with('error', 'Phone number or Password did not match');
+        } catch (\Throwable $e) {
+            return redirect('/login')->with('error', $e->getMessage());
+            return redirect('/login')->with('error', 'Phone number or Password did not match');
         }
     }
 
@@ -63,19 +68,19 @@ class UsersController extends Controller
         // Validation
         $request->validate([
             'name' => 'required|max:100',
-            'email' => 'required|email|unique:users',
+            'phone' => 'required|unique:users',
             'password' => 'required|min:6|confirmed'
         ]);
 
         $user = new User();
         $user->name = $request->name;
-        $user->email = $request->email;
+        $user->phone = $request->phone;
         $user->password = Hash::make($request->password);
         $user->save();
 
         $user->assignRole($request->role);
 
-        return redirect()->route('users.index')->with('success','User has been Created');
+        return redirect()->route('users.index')->with('success', 'User has been Created');
     }
 
     /**
@@ -115,12 +120,12 @@ class UsersController extends Controller
         // Validation
         $request->validate([
             'name' => 'required|max:100',
-            'email' => 'required|email|unique:users,email,' . $id,
+            'phone' => 'required|unique:users,phone,' . $id,
             'password' => 'nullable|min:6|confirmed'
         ]);
 
         $user->name = $request->name;
-        $user->email = $request->email;
+        $user->phone = $request->phone;
         if ($request->password) {
             $user->password = Hash::make($request->password);
         }
@@ -131,7 +136,7 @@ class UsersController extends Controller
             $user->assignRole($request->role);
         }
 
-        return redirect()->route('users.index')->with('success','User has been Updated');
+        return redirect()->route('users.index')->with('success', 'User has been Updated');
     }
 
     /**
@@ -146,9 +151,11 @@ class UsersController extends Controller
 
         if (!is_null($user)) {
             $user->delete();
-        }
 
-        return redirect()->route('users.index')->with('success','User has been Deleted');
+            return redirect()->route('users.index')->with('success', 'User has been Deleted');
+        }
+        
+        return redirect()->route('users.index')->with('error','User could not be Deleted');
     }
 
     /**
@@ -204,7 +211,7 @@ class UsersController extends Controller
         }
 
         if ($user->save()) {
-            return redirect()->route('profile')->with('success','Profile has been Updated');
+            return redirect()->route('profile')->with('success', 'Profile has been Updated');
         } else {
             return redirect()->back()->with('error', 'Something Went Wrong');
         }

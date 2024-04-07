@@ -12,16 +12,16 @@
             </a>
         </div>
         <ul class="sidebar-menu">
-            <li class="{{ Request::is('dashboard') ? 'active' : '' }}">
+            <li class="{{ Request::routeIs('dashboard') ? 'active' : '' }}">
                 <a class="nav-link" href="{{ route('dashboard') }}"><i class="fas fa-fire"></i>
                     <span>Dashboard</span></a>
             </li>
             @role('admin')
-                <li class="{{ Request::is('admin/roles*') ? 'active' : '' }}">
+                {{-- <li class="{{ Request::routeIs('roles*') ? 'active' : '' }}">
                     <a class="nav-link" href="{{ route('roles.index') }}"><i class="fas fa-user-shield"></i> <span>Roles
                             Management</span></a>
-                </li>
-                <li class="{{ Request::is('admin/users*') ? 'active' : '' }}">
+                </li> --}}
+                <li class="{{ Request::routeIs('users*') ? 'active' : '' }}">
                     <a class="nav-link" href="{{ route('users.index') }}"><i class="fas fa-users-cog"></i> <span>Users
                             Management</span></a>
                 </li>
@@ -39,9 +39,13 @@
                     </li>
                 </ul>
             </li> --}}
-                <li class="{{ Request::is('admin/applications') ? 'active' : '' }}">
+                <li class="{{ Request::routeIs('applications*') ? 'active' : '' }}">
                     <a class="nav-link" href="{{ route('applications') }}"><i class="fas fa-list"></i>
-                        <span>Applications</span></a>
+                        <span>Clients</span></a>
+                </li>
+                <li class="{{ Request::routeIs('packages*') ? 'active' : '' }}">
+                    <a class="nav-link" href="{{ route('packages.index') }}"><i class="fas fa-gift"></i>
+                        <span>Packages</span></a>
                 </li>
             @endrole
         </ul>

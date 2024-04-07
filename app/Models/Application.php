@@ -29,4 +29,16 @@ class Application extends Model
     public function district(){
         return $this->belongsTo(District::class);
     }
+
+    public function user(){
+        return $this->hasOne(User::class);
+    }
+
+    public function userPackage(){
+        return $this->hasOne(UserPackage::class);
+    }
+
+    public function files(){
+        return $this->hasMany(ApplicationFile::class);
+    }
 }
