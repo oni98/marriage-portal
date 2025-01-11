@@ -1,5 +1,5 @@
 @extends('backend.layouts.app')
-@section('title', 'users Management')
+@section('title', 'Users Management')
 @push('style')
     <link rel="stylesheet" href="{{ asset('assets/backend/library/datatables/media/css/jquery.dataTables.min.css') }}">
 @endpush

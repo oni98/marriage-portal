@@ -1,5 +1,5 @@
 @extends('backend.layouts.app')
-@section('title', 'users Management')
+@section('title', 'Users Management')
 @push('style')
     <link rel="stylesheet" href="{{ asset('assets/backend/library/datatables/media/css/jquery.dataTables.min.css') }}">
 @endpush
@@ -38,9 +38,9 @@
                                         <td>{{ $user->phone }}</td>
                                         <td>{{ $user->email }}</td>
                                         <td>
-                                            @foreach ($user->roles as $perm)
+                                            @foreach ($user->roles as $role)
                                                 <span class="badge badge-info py-2 my-2">
-                                                    {{ $perm->name }}
+                                                    {{ $role->name }}
                                                 </span>
                                             @endforeach
                                         </td>
